@@ -1,8 +1,27 @@
-// Déclaration @font-face à l'échelle globale
-
+@use "../../utils/style/variables" as *;
+@use "../../utils/fonts/fonts";
 .home {
-    // Utilisation de la nouvelle police
-    font-family: 'Neue Montreal', serif;
-    font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $grey-background;
+
+  &__container {
+    width: calc(100% - 5rem);
+    height: calc(100% - 5rem);
+    background-image: url("./assets/sweetsBlacksLines.jpg");
+    color: $white;
+    font-family: "Neue Montreal", serif;
+    border: 1px solid rgb(230, 230, 230);
+  }
+  &__title {
+    font-size: 1rem;
     font-weight: 100;
+  }
+  .nameContainer {
+    font-size: 2rem;
+    font-weight: 100;
+  }
 }
