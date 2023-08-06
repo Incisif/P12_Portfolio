@@ -88,6 +88,23 @@ a:visited {
   font-style: normal;
   font-display: swap;
 }
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(14, 14, 14);
+}
+.layout__container {
+  width: calc(100% - 5rem);
+  height: calc(100% - 5rem);
+  color: rgb(245, 245, 245);
+  font-family: "Neue Montreal", serif;
+  border: 1px solid rgb(230, 230, 230);
+  background-color: rgb(14, 14, 14);
+}
+
 .navBar {
   position: absolute;
   bottom: 2rem;
@@ -134,21 +151,4 @@ a:visited {
   position: absolute;
   bottom: 5rem;
   left: 5rem;
-}
-
-.layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(14, 14, 14);
-}
-.layout__container {
-  width: calc(100% - 5rem);
-  height: calc(100% - 5rem);
-  color: rgb(245, 245, 245);
-  font-family: "Neue Montreal", serif;
-  border: 1px solid rgb(230, 230, 230);
-  background-color: rgb(14, 14, 14);
 }/*# sourceMappingURL=main.css.map */

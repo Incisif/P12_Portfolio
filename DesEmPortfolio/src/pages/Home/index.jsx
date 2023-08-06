@@ -9,7 +9,7 @@ function Home() {
           <div className="home__firstName">DESMORTREUX</div>
           <div className="home__secondName">EMMANUEL</div>
         </div>
-        <h1 className="home__title">Intégrateur web</h1>
+        <h1 className="home__title">Intégrateur web junior</h1>
         <img className="home__portrait" src={portrait} />
         <NavBar />
       </div>

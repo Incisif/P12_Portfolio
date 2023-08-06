@@ -1,6 +1,7 @@
 @use 'utils/style/variables' as *;
 @use 'utils/style/reset';
 @use 'utils/fonts/fonts';
+@use 'components/Layout/Layout';
 @use 'components/NavBar/NavBar';
 @use 'pages/Home/Home';
-@use 'components/Layout/Layout';
+@use 'pages/Projects/Projects';

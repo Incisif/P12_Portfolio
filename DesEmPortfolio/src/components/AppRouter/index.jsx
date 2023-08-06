@@ -3,6 +3,7 @@ import Home from "../../pages/Home";
 import Projects from "../../pages/Projects";
 import Contact from "../../pages/Contact";
 import Skills from "../../pages/Skills";
+import Formation from "../../pages/Formation";
 
 
 function AppRouter() {
@@ -13,6 +14,7 @@ function AppRouter() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/skills" element={<Skills />} />
+        <Route path="/tehs" element={<Formation />} />
       </Routes>
     </Router>
   );

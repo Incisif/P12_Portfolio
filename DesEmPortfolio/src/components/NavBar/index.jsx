@@ -5,13 +5,13 @@ function NavBar() {
         <nav className="navBar">
           <ul className="navBar_list">
             <li className="navBar__item">
-              <Link to="/projets">Projets</Link>
+              <Link to="/projects">Projets</Link>
             </li>
             <li className="navBar__item">
-              <Link to="/aptitudes">Aptitudes</Link>
+              <Link to="/Formation ">Formation</Link>
             </li>
             <li className="navBar__item">
-              <Link to="/outils">Outils</Link>
+              <Link to="/About">À propos</Link>
             </li>
             <li className="navBar__item">
               <Link to="/contact">Contact</Link>
