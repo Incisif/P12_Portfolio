@@ -4,6 +4,7 @@ import Projects from "../../pages/Projects";
 import Contact from "../../pages/Contact";
 import Skills from "../../pages/Skills";
 
+
 function AppRouter() {
   return (
     <Router>

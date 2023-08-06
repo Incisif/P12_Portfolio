@@ -1,4 +1,6 @@
-@use 'pages/Home/Home';
-@use 'utils/fonts/fonts';
+@use 'utils/style/variables' as *;
 @use 'utils/style/reset';
-@use 'utils/style/variables'as *;
+@use 'utils/fonts/fonts';
+@use 'components/NavBar/NavBar';
+@use 'pages/Home/Home';
+@use 'components/Layout/Layout';

@@ -1,0 +1,25 @@
+@use "../../utils/style/variables" as *;
+@use "../../utils/fonts/fonts";
+.navBar {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 18vh;
+  font-weight: 100;
+  margin-right: 2rem;
+  text-align: right;
+
+  &__list {
+    display: flex; // Pour aligner les éléments de la liste horizontalement
+  }
+
+  &__item {
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    &:hover {
+      color: #f9c80e;
+      font-style: italic;
+      transform: translateX(1rem);
+    }
+  }
+}

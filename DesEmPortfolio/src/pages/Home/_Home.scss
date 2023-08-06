@@ -1,27 +1,29 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/fonts/fonts";
 .home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: $grey-background;
+  height: 100%;
+  width: 100%;
+  background-image: url("./assets/sweetBlacksLines.webp");
+  background-size: cover;
+  color: $white;
+  font-family: "Neue Montreal", serif;
+  position: relative;
 
-  &__container {
-    width: calc(100% - 5rem);
-    height: calc(100% - 5rem);
-    background-image: url("./assets/sweetsBlacksLines.jpg");
-    color: $white;
-    font-family: "Neue Montreal", serif;
-    border: 1px solid rgb(230, 230, 230);
+  &__name {
+    font-size: 3rem;
+    font-weight: 100;
+    padding: 2rem 0 0 2rem;
   }
+
   &__title {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 100;
+    padding-left: 2rem;
   }
-  .nameContainer {
-    font-size: 2rem;
-    font-weight: 100;
+  &__portrait {
+    width: 300px;
+    position: absolute;
+    bottom: 5rem;
+    left: 5rem;
   }
 }
