@@ -19,6 +19,39 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
+html a, body a, div a, span a, applet a, object a, iframe a,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, blockquote a, pre a,
+a a, abbr a, acronym a, address a, big a, cite a, code a,
+del a, dfn a, em a, img a, ins a, kbd a, q a, s a, samp a,
+small a, strike a, strong a, sub a, sup a, tt a, var a,
+b a, u a, i a, center a,
+dl a, dt a, dd a, ol a, ul a, li a,
+fieldset a, form a, label a, legend a,
+table a, caption a, tbody a, tfoot a, thead a, tr a, th a, td a,
+article a, aside a, canvas a, details a, embed a,
+figure a, figcaption a, footer a, header a, hgroup a,
+menu a, nav a, output a, ruby a, section a, summary a,
+time a, mark a, audio a, video a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+html a:visited, body a:visited, div a:visited, span a:visited, applet a:visited, object a:visited, iframe a:visited,
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, p a:visited, blockquote a:visited, pre a:visited,
+a a:visited, abbr a:visited, acronym a:visited, address a:visited, big a:visited, cite a:visited, code a:visited,
+del a:visited, dfn a:visited, em a:visited, img a:visited, ins a:visited, kbd a:visited, q a:visited, s a:visited, samp a:visited,
+small a:visited, strike a:visited, strong a:visited, sub a:visited, sup a:visited, tt a:visited, var a:visited,
+b a:visited, u a:visited, i a:visited, center a:visited,
+dl a:visited, dt a:visited, dd a:visited, ol a:visited, ul a:visited, li a:visited,
+fieldset a:visited, form a:visited, label a:visited, legend a:visited,
+table a:visited, caption a:visited, tbody a:visited, tfoot a:visited, thead a:visited, tr a:visited, th a:visited, td a:visited,
+article a:visited, aside a:visited, canvas a:visited, details a:visited, embed a:visited,
+figure a:visited, figcaption a:visited, footer a:visited, header a:visited, hgroup a:visited,
+menu a:visited, nav a:visited, output a:visited, ruby a:visited, section a:visited, summary a:visited,
+time a:visited, mark a:visited, audio a:visited, video a:visited {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -37,9 +70,7 @@ ol, ul {
 blockquote, q {
   quotes: none;
 }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
@@ -47,17 +78,6 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-a:visited {
-  color: inherit;
-  text-decoration: none;
 }
 
 @font-face {
@@ -122,11 +142,28 @@ a:visited {
   transition: transform 0.4s ease;
 }
 .navBar__item:hover {
-  color: #f9c80e;
+  color: rgb(249, 198, 16);
   font-style: italic;
   transform: translateX(1rem);
 }
 
+@keyframes slideFromRight {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromBottom {
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes popUp {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .home {
   height: 100%;
   width: 100%;
@@ -137,18 +174,69 @@ a:visited {
   position: relative;
 }
 .home__name {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 100;
   padding: 2rem 0 0 2rem;
 }
+.home__textWrapper {
+  overflow: hidden;
+}
+.home__firstName {
+  animation: slideFromBottom 1s ease 0.3s forwards;
+}
+.home__secondName {
+  animation: slideFromBottom 1s ease 0.6s forwards;
+}
 .home__title {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 100;
+  padding-left: 2rem;
+  transform: translateY(100%);
+  animation: slideFromBottom 1s ease 0.9s forwards;
+  padding-bottom: 5px;
+}
+.home__firstName, .home__secondName, .home__title {
+  transform: translateY(100%);
+}
+.home__portrait {
+  animation: popUp 1s ease 0.6s forwards;
+  transform: scale(0);
+  height: 45%;
+  position: absolute;
+  bottom: 7rem;
+  left: 7rem;
+  opacity: 0;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+.projects__title {
+  font-size: 5rem;
+  font-weight: 100;
+  padding: 2rem 0 0 2rem;
+}
+.projects__subtitle {
+  font-size: 3rem;
   font-weight: 100;
   padding-left: 2rem;
 }
-.home__portrait {
-  width: 300px;
-  position: absolute;
-  bottom: 5rem;
-  left: 5rem;
+
+.card__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.projectCard {
+  width: 23%;
+  margin: 10px;
+}
+.projectCard__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
 }/*# sourceMappingURL=main.css.map */

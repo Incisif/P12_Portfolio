@@ -6,10 +6,16 @@ function Home() {
     <Layout>
       <div className="home">
         <div className="home__name">
-          <div className="home__firstName">DESMORTREUX</div>
-          <div className="home__secondName">EMMANUEL</div>
+          <div className="home__textWrapper">
+            <div className="home__firstName">DESMORTREUX</div>
+          </div>
+          <div className="home__textWrapper">
+            <div className="home__secondName">EMMANUEL</div>
+          </div>
         </div>
-        <h1 className="home__title">Intégrateur web junior</h1>
+        <div className="home__textWrapper">
+          <h1 className="home__title">Intégrateur web junior</h1>
+        </div>
         <img className="home__portrait" src={portrait} />
         <NavBar />
       </div>

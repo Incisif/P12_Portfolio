@@ -7,7 +7,6 @@ const store = configureStore({
   reducer: {
     transitionAnimation: transitionAnimationReducer,
     darkMode: darkModeReducer,
-    // Ajoutez d'autres reducers ici si nécessaire
   },
 });
 

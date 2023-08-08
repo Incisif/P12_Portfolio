@@ -17,9 +17,15 @@
     cursor: pointer;
     transition: transform 0.4s ease;
     &:hover {
-      color: #f9c80e;
+      color: $gold;
       font-style: italic;
       transform: translateX(1rem);
     }
+  }
+}
+@keyframes slideFromRight {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
