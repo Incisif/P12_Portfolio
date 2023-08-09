@@ -12,12 +12,15 @@
   margin: 10px;
   opacity: 0;
   transition: all 0.3s ease;
-  &:hover{
+  position: relative;
+
+  
+  &:hover {
     cursor: pointer;
     transform: scale(1.05);
   }
 
-  &.show { 
+  &.show {
     animation: appear 1s ease forwards;
   }
 
@@ -33,4 +36,7 @@
       filter: grayscale(0%) brightness(100%);
     }
   }
+}
+.projectCard:hover .projectCard__overlay {
+  opacity: 1; /* pleinement visible lors du survol */
 }

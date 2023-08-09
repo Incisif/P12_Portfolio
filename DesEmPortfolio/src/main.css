@@ -247,6 +247,7 @@ table {
   margin: 10px;
   opacity: 0;
   transition: all 0.3s ease;
+  position: relative;
 }
 .projectCard:hover {
   cursor: pointer;
@@ -265,4 +266,46 @@ table {
 }
 .projectCard__img:hover {
   filter: grayscale(0%) brightness(100%);
+}
+
+.projectCard:hover .projectCard__overlay {
+  opacity: 1; /* pleinement visible lors du survol */
+}
+
+@keyframes appearFromCenter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.ProjectModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 80%;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid white;
+  z-index: 1000;
+  animation: appearFromCenter 0.3s ease-out;
+}
+.ProjectModal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.ProjectModal__content {
+  width: auto;
 }/*# sourceMappingURL=main.css.map */
