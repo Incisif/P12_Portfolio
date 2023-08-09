@@ -1,6 +1,9 @@
-function Technologies() {
-    return(
-        <div>Technologies</div>
-    )
+import Layout from "../../components/Layout";
+function Formation() {
+  return (
+    <Layout>
+      <div>Formation</div>
+    </Layout>
+  );
 }
-export default Technologies
+export default Formation;

@@ -8,10 +8,10 @@ function NavBar() {
               <Link to="/projects">Projets</Link>
             </li>
             <li className="navBar__item">
-              <Link to="/Formation ">Formation</Link>
+              <Link to="/formation ">Formation</Link>
             </li>
             <li className="navBar__item">
-              <Link to="/About">À propos</Link>
+              <Link to="/about">À propos</Link>
             </li>
             <li className="navBar__item">
               <Link to="/contact">Contact</Link>
