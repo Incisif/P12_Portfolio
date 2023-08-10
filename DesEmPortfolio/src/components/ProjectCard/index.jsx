@@ -4,6 +4,7 @@ function ProjectCard({ imagePath, alt, className, onClick }) {
   return (
     <div className={`projectCard ${className}`} onClick={onClick}>
       <img className="projectCard__img" src={imagePath} alt={alt} />
+      
     </div>
   );
 }

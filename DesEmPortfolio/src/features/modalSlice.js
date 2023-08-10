@@ -4,12 +4,12 @@ export const modalSlice = createSlice({
   name: 'modal',
   initialState: {
     isOpen: false,
-    content: null, // Vous pouvez stocker le contenu spécifique de la modal ici, si nécessaire
+    content: null, 
   },
   reducers: {
     openModal: (state, action) => {
       state.isOpen = true;
-      state.content = action.payload; // Si vous souhaitez passer un contenu spécifique à la modal
+      state.content = action.payload;
     },
     closeModal: (state) => {
       state.isOpen = false;

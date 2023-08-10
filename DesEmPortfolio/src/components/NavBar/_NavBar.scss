@@ -4,13 +4,13 @@
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  font-size: 18vh;
+  font-size: 8vh;
   font-weight: 100;
   margin-right: 2rem;
   text-align: right;
 
   &__list {
-    display: flex; // Pour aligner les éléments de la liste horizontalement
+    display: flex;
   }
 
   &__item {
@@ -18,8 +18,8 @@
     transition: transform 0.4s ease;
     &:hover {
       color: $gold;
-      font-style: italic;
-      transform: translateX(1rem);
+      // font-style: italic;
+      transform: translateX(-1rem);
     }
   }
 }

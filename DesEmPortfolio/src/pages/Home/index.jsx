@@ -7,10 +7,7 @@ function Home() {
       <div className="home">
         <div className="home__name">
           <div className="home__textWrapper">
-            <div className="home__firstName">DESMORTREUX</div>
-          </div>
-          <div className="home__textWrapper">
-            <div className="home__secondName">EMMANUEL</div>
+            <div className="home__fullName">DESMORTREUX EMMANUEL</div>
           </div>
         </div>
         <div className="home__textWrapper">

@@ -13,11 +13,10 @@
   opacity: 0;
   transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
 
-  
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
   }
 
   &.show {
@@ -28,15 +27,16 @@
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 5px;
-    filter: grayscale(100%) brightness(80%);
-    transition: filter 0.3s ease;
+    filter: grayscale(100%) brightness(85%);
+    transition: filter 0.3s ease, transform 0.3s ease; 
+  }
 
-    &:hover {
-      filter: grayscale(0%) brightness(100%);
-    }
+  &:hover &__img {
+    filter: grayscale(0%) brightness(100%);
+    transform: scale(1.1); 
   }
 }
+
 .projectCard:hover .projectCard__overlay {
-  opacity: 1; /* pleinement visible lors du survol */
+  opacity: 1; 
 }

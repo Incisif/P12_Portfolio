@@ -133,7 +133,7 @@ table {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  font-size: 18vh;
+  font-size: 8vh;
   font-weight: 100;
   margin-right: 2rem;
   text-align: right;
@@ -147,8 +147,7 @@ table {
 }
 .navBar__item:hover {
   color: rgb(249, 198, 16);
-  font-style: italic;
-  transform: translateX(1rem);
+  transform: translateX(-1rem);
 }
 
 @keyframes slideFromRight {
@@ -178,28 +177,24 @@ table {
   position: relative;
 }
 .home__name {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 100;
-  padding: 2rem 0 0 2rem;
+  padding: 4rem 0 0 4rem;
 }
 .home__textWrapper {
   overflow: hidden;
 }
-.home__firstName {
+.home__fullName {
   animation: slideFromBottom 1s ease 0.3s forwards;
-}
-.home__secondName {
-  animation: slideFromBottom 1s ease 0.6s forwards;
 }
 .home__title {
   font-size: 2rem;
   font-weight: 100;
-  padding-left: 2rem;
-  transform: translateY(100%);
+  padding-left: 4rem;
   animation: slideFromBottom 1s ease 0.9s forwards;
   padding-bottom: 5px;
 }
-.home__firstName, .home__secondName, .home__title {
+.home__fullName, .home__title {
   transform: translateY(100%);
 }
 .home__portrait {
@@ -248,10 +243,10 @@ table {
   opacity: 0;
   transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 .projectCard:hover {
   cursor: pointer;
-  transform: scale(1.05);
 }
 .projectCard.show {
   animation: appear 1s ease forwards;
@@ -260,16 +255,16 @@ table {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 5px;
-  filter: grayscale(100%) brightness(80%);
-  transition: filter 0.3s ease;
+  filter: grayscale(100%) brightness(85%);
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
-.projectCard__img:hover {
+.projectCard:hover .projectCard__img {
   filter: grayscale(0%) brightness(100%);
+  transform: scale(1.1);
 }
 
 .projectCard:hover .projectCard__overlay {
-  opacity: 1; /* pleinement visible lors du survol */
+  opacity: 1;
 }
 
 @keyframes appearFromCenter {
@@ -282,6 +277,16 @@ table {
     transform: translate(-50%, -50%) scale(1);
   }
 }
+@keyframes disappearToCenter {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
 .ProjectModal {
   position: fixed;
   top: 50%;
@@ -291,21 +296,26 @@ table {
   height: 80%;
   background-color: black;
   color: white;
-  padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid white;
   z-index: 1000;
-  animation: appearFromCenter 0.3s ease-out;
+  animation: appearFromCenter 0.3s cubic-bezier(0.94, 0.29, 0.11, 0.76);
 }
-.ProjectModal__close {
-  position: absolute;
+.ProjectModal__content {
+  width: auto;
+}
+
+.container {
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.container__close {
+  margin: 5px;
   top: 10px;
   right: 10px;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-}
-.ProjectModal__content {
-  width: auto;
 }/*# sourceMappingURL=main.css.map */

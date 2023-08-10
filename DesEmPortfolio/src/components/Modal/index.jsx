@@ -5,15 +5,15 @@ import { useEffect, useRef, useCallback } from "react";
 
 function Modal({ children }) {
   const dispatch = useDispatch();
-  const isModalOpen = useSelector((state) => state.modal.isOpen); // Vérifiez que c'est le bon chemin dans votre état
+  const isModalOpen = useSelector((state) => state.modal.isOpen);
   const modalRef = useRef(null);
 
-  const handleClose = useCallback(() => { // Utilisation de useCallback ici
+  const handleClose = useCallback(() => {
     dispatch(closeModal());
-  }, [dispatch]); // Ajouté dispatch comme dépendance
+  }, [dispatch]);
 
   useEffect(() => {
-    if (!isModalOpen) return; 
+    if (!isModalOpen) return;
 
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -26,12 +26,16 @@ function Modal({ children }) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [handleClose, isModalOpen]); // handleClose ne change plus à chaque rendu
+  }, [handleClose, isModalOpen]);
 
   return (
-    <div className={`ProjectModal__wrapper ${isModalOpen ? 'is-open' : ''}`}>
+    <div className={`ProjectModal__wrapper ${isModalOpen ? "is-open" : ""}`}>
       <div ref={modalRef} className="ProjectModal">
-        <button className="ProjectModal__close" onClick={handleClose}>X</button>
+        <div className="container">
+          <button className="container__close" onClick={handleClose}>
+            X
+          </button>
+        </div>
         {children}
       </div>
     </div>
