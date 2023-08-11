@@ -305,16 +305,6 @@ table {
     transform: translate(-50%, -50%) scale(1);
   }
 }
-@keyframes disappearToCenter {
-  from {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
-  }
-}
 .ProjectModal {
   position: fixed;
   top: 50%;
@@ -322,12 +312,33 @@ table {
   transform: translate(-50%, -50%);
   width: 40%;
   height: 80%;
-  background-color: black;
-  color: white;
+  background-color: rgb(0, 0, 0);
+  color: rgb(245, 245, 245);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid white;
+  border: 1px solid rgb(245, 245, 245);
   z-index: 1000;
   animation: appearFromCenter 0.3s cubic-bezier(0.94, 0.29, 0.11, 0.76);
+}
+.ProjectModal.ProjectModal--dark {
+  background-color: rgb(0, 0, 0);
+  color: rgb(245, 245, 245);
+}
+.ProjectModal.ProjectModal--light {
+  background-color: rgb(245, 245, 245);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+}
+.ProjectModal.ProjectModal--light .container {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.ProjectModal.ProjectModal--light .container__close {
+  color: rgb(0, 0, 0);
+}
+.ProjectModal.ProjectModal--light .container__close:hover {
+  color: rgb(249, 198, 16);
+}
+.ProjectModal.ProjectModal--light .ProjectModal__description {
+  font-weight: 400;
 }
 .ProjectModal__content {
   display: flex;
@@ -337,6 +348,7 @@ table {
 }
 .ProjectModal__img {
   width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 .ProjectModal__title {
   font-size: 1.5rem;
@@ -348,25 +360,17 @@ table {
   font-weight: 100;
   padding: 1rem 0;
 }
-.ProjectModal__githubIcon {
+.ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
   font-size: 2rem;
   margin: 1rem 0;
-  fill: white;
+  fill: rgb(245, 245, 245);
 }
-.ProjectModal__githubIcon:hover {
-  color: rgb(249, 198, 16);
-}
-.ProjectModal__gitPageIcon {
-  font-size: 2rem;
-  margin: 1rem 0;
-  fill: white;
-}
-.ProjectModal__gitPageIcon:hover {
+.ProjectModal__githubIcon:hover, .ProjectModal__gitPageIcon:hover {
   color: rgb(249, 198, 16);
 }
 
 .container {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(245, 245, 245);
   display: flex;
   flex-direction: row-reverse;
 }
@@ -376,7 +380,7 @@ table {
   right: 10px;
   background: none;
   border: none;
-  color: white;
+  color: rgb(245, 245, 245);
   cursor: pointer;
 }
 .container__close:hover {
@@ -395,8 +399,8 @@ table {
 .ThemeSwitcher__input + .ThemeSwitcher__text::before {
   content: "";
   display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.65rem;
+  height: 0.65rem;
   border: 1px solid rgb(245, 245, 245);
   margin: 0 0.5rem 0 0.5rem;
 }

@@ -9,16 +9,19 @@ import booki from "../assets/projets/booki.webp";
 
 const projects = [
   {
-    id: 1,
-    frTitle: "Projet Scolaire 1",
-    enTitle:"School Project 1",
-    imagePath: booki,
-    alt: "Projet Print it",
-    githubLink:"",
-    gitPageLink:"",
-    frDescription:"",
-    enDescription:"",
-  },
+  id: 1,
+  frTitle: "Intégration de la Page d'Accueil de Booki, une Agence de Voyage",
+  enTitle: "Integration of the Home Page for Booki, a Travel Agency",
+  imagePath: booki,
+  alt: "Booki Project",
+  githubLink: "",
+  gitPageLink: "",
+  frDescription: "Intégration de la page d'accueil de l'agence de voyage Booki en utilisant HTML & CSS, avec un design responsive pour une expérience utilisateur optimisée.",
+  enDescription: "Integration of the home page for Booki travel agency using HTML & CSS, with a responsive design for an optimized user experience.",
+  frCompetences: ["Compréhension des Maquettes", "Utilisation de HTML & CSS", "Conception Responsive"],
+  enCompetences: ["Understanding of Mockups", "Using HTML & CSS", "Responsive Design"]
+}
+,
   {
     id: 2,
     frTitle: "Projet Scolaire 2",
