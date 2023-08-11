@@ -1,21 +1,46 @@
-.projects {
+@use "../../utils/style/variables" as *;
+
+.project {
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   &__title {
     font-size: 5rem;
     font-weight: 100;
     padding: 2rem 0 0 2rem;
+    color: $white; // Couleur en mode sombre
   }
+
   &__subtitle {
     font-size: 3rem;
     font-weight: 100;
     padding-left: 2rem;
+    color: $white;
+  }
+
+  &.project--dark {
+    background-color: $grey-background;
+  }
+
+  &.project--light {
+    background-color: $white;
+
+    .project__title,
+    .project__subtitle {
+      color: black;
+    }
   }
 }
-.card__container{
+
+.card__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2rem;
+}
+
+.project--blur {
+  filter: blur(2px);
+  transition: filter 0.5s ease;
 }

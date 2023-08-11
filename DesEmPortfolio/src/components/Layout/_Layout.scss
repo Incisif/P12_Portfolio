@@ -1,22 +1,36 @@
 @use "../../utils/style/variables" as *;
+
 .layout {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: $grey-background;
+  
+  position: relative;
 
   &__container {
     width: calc(100% - 5rem);
     height: calc(100% - 5rem);
     color: $white;
     font-family: "Neue Montreal", serif;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid $white;
     background-color: $grey-background;
     overflow: auto;
     &::-webkit-scrollbar {
-      width: 0.5rem;
+      width: 0rem;
+    }
+  }
+
+  &.layout--dark {
+    background-color: $grey-background;
+  }
+
+  &.layout--light {
+    background-color: $white;
+    
+    .layout__container {
+      border: 1px solid black;
     }
   }
 }

@@ -2,6 +2,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../../features/modalSlice";
 import PropTypes from "prop-types";
 import { useEffect, useRef, useCallback } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 function Modal() {
   const dispatch = useDispatch();
@@ -45,12 +48,22 @@ function Modal() {
               alt={modalContent.alt}
             />
             <h2 className="ProjectModal__title">{modalContent.frTitle}</h2>
-            <p className="ProjectModal__description">Description:{modalContent.frDescription}</p>
+            <p className="ProjectModal__description">
+              Description:{modalContent.frDescription}
+            </p>
             {modalContent.githubLink && (
-              <a href={modalContent.githubLink}>GitHub</a>
+              <a
+                className="ProjectModal__githubIcon"
+                href={modalContent.githubLink}
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
             )}
             {modalContent.gitPageLink && (
-              <a href={modalContent.gitPageLink}>Git Page</a>
+              <a className="ProjectModal__gitPageIcon" 
+              href={modalContent.gitPageLink}>
+                <FontAwesomeIcon icon={faGlobe} />
+              </a>
             )}
           </div>
         )}

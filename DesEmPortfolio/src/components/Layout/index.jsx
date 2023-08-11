@@ -1,8 +1,18 @@
 import PropTypes from "prop-types";
+import ThemeSwitcher from "../ThemeSwitcher";
+import HomePageLink from "../HomePageLink";
+import { useSelector } from "react-redux";
+
 const Layout = ({ children }) => {
+  
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+  const backgroundColorClass = darkMode ? "layout--dark" : "layout--light";
+
   return (
-    <div className="layout">
-      <div className="layout__container">{children}</div>
+    <div className={`layout ${backgroundColorClass}`}>
+      <div className={`layout__container`}>{children}</div>
+      <HomePageLink /> 
+      <ThemeSwitcher />
     </div>
   );
 };

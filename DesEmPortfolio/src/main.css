@@ -114,19 +114,28 @@ table {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(14, 14, 14);
+  position: relative;
 }
 .layout__container {
   width: calc(100% - 5rem);
   height: calc(100% - 5rem);
   color: rgb(245, 245, 245);
   font-family: "Neue Montreal", serif;
-  border: 1px solid rgb(230, 230, 230);
+  border: 1px solid rgb(245, 245, 245);
   background-color: rgb(14, 14, 14);
   overflow: auto;
 }
 .layout__container::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0rem;
+}
+.layout.layout--dark {
+  background-color: rgb(14, 14, 14);
+}
+.layout.layout--light {
+  background-color: rgb(245, 245, 245);
+}
+.layout.layout--light .layout__container {
+  border: 1px solid black;
 }
 
 .navBar {
@@ -207,19 +216,32 @@ table {
   opacity: 0;
 }
 
-.projects {
+.project {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
-.projects__title {
+.project__title {
   font-size: 5rem;
   font-weight: 100;
   padding: 2rem 0 0 2rem;
+  color: rgb(245, 245, 245);
 }
-.projects__subtitle {
+.project__subtitle {
   font-size: 3rem;
   font-weight: 100;
   padding-left: 2rem;
+  color: rgb(245, 245, 245);
+}
+.project.project--dark {
+  background-color: rgb(14, 14, 14);
+}
+.project.project--light {
+  background-color: rgb(245, 245, 245);
+}
+.project.project--light .project__title,
+.project.project--light .project__subtitle {
+  color: black;
 }
 
 .card__container {
@@ -227,6 +249,11 @@ table {
   flex-wrap: wrap;
   justify-content: center;
   padding: 2rem;
+}
+
+.project--blur {
+  filter: blur(2px);
+  transition: filter 0.5s ease;
 }
 
 @keyframes appear {
@@ -244,6 +271,7 @@ table {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgb(14, 14, 14);
 }
 .projectCard:hover {
   cursor: pointer;
@@ -255,7 +283,7 @@ table {
   width: 100%;
   height: auto;
   display: block;
-  filter: grayscale(100%) brightness(85%);
+  filter: grayscale(100%) brightness(90%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 .projectCard:hover .projectCard__img {
@@ -305,10 +333,36 @@ table {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 1vh;
+  margin: 1.8vh;
 }
 .ProjectModal__img {
   width: 100%;
+}
+.ProjectModal__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 1rem 0;
+}
+.ProjectModal__description {
+  font-size: 1rem;
+  font-weight: 100;
+  padding: 1rem 0;
+}
+.ProjectModal__githubIcon {
+  font-size: 2rem;
+  margin: 1rem 0;
+  fill: white;
+}
+.ProjectModal__githubIcon:hover {
+  color: rgb(249, 198, 16);
+}
+.ProjectModal__gitPageIcon {
+  font-size: 2rem;
+  margin: 1rem 0;
+  fill: white;
+}
+.ProjectModal__gitPageIcon:hover {
+  color: rgb(249, 198, 16);
 }
 
 .container {
@@ -324,4 +378,82 @@ table {
   border: none;
   color: white;
   cursor: pointer;
+}
+.container__close:hover {
+  color: rgb(249, 198, 16);
+}
+
+.ThemeSwitcher {
+  position: absolute;
+  top: 1rem;
+  right: 2.5rem;
+  display: flex;
+}
+.ThemeSwitcher__input {
+  display: none;
+}
+.ThemeSwitcher__input + .ThemeSwitcher__text::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid rgb(245, 245, 245);
+  margin: 0 0.5rem 0 0.5rem;
+}
+.ThemeSwitcher__input:checked + .ThemeSwitcher__text::before {
+  background-color: white;
+}
+.ThemeSwitcher__text {
+  font-family: "Neue Montreal";
+  color: rgb(245, 245, 245);
+  font-size: 1rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.ThemeSwitcher--light .ThemeSwitcher__text {
+  color: black;
+  font-weight: 400;
+}
+.ThemeSwitcher--light .ThemeSwitcher__input + .ThemeSwitcher__text::before {
+  border: 1px solid black;
+}
+.ThemeSwitcher--light .ThemeSwitcher__input:checked + .ThemeSwitcher__text::before {
+  background-color: black;
+}
+
+.homePageLink {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  left: 1rem;
+  bottom: 1.44rem;
+}
+.homePageLink__line {
+  width: 12vh;
+  border-top: 1px solid black;
+  margin-right: 1rem;
+}
+.homePageLink__text {
+  margin: 0;
+  color: black;
+  text-transform: uppercase;
+  font-family: "neue montreal", serif;
+  font-weight: 100;
+  font-weight: 400;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+.homePageLink__text:hover {
+  text-decoration: line-through;
+}
+.homePageLink--dark .homePageLink__line {
+  border-color: rgb(245, 245, 245);
+}
+.homePageLink--dark .homePageLink__text {
+  color: rgb(245, 245, 245);
+  font-weight: 400;
 }/*# sourceMappingURL=main.css.map */

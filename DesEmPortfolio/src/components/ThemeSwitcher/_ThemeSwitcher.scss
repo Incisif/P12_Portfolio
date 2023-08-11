@@ -1,0 +1,50 @@
+@use "../../utils/style/variables" as *;
+@use "../../utils/fonts/fonts" as *;
+
+.ThemeSwitcher {
+  position: absolute;
+  top: 1rem;
+  right: 2.5rem;
+  display: flex;
+
+  &__input {
+    display: none;
+
+    & + .ThemeSwitcher__text::before {
+      content: "";
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border: 1px solid $white;
+      margin: 0 0.5rem 0 0.5rem;
+    }
+
+    &:checked + .ThemeSwitcher__text::before {
+      background-color: white;
+    }
+  }
+
+  &__text {
+    font-family: "Neue Montreal";
+    color: $white;
+    font-size: 1rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+.ThemeSwitcher--light {
+  .ThemeSwitcher__text {
+    color: black;
+    font-weight: 400;
+  }
+
+  .ThemeSwitcher__input + .ThemeSwitcher__text::before {
+    border: 1px solid black;
+  }
+
+  .ThemeSwitcher__input:checked + .ThemeSwitcher__text::before {
+    background-color: black;
+  }
+}

@@ -10,6 +10,10 @@ function Projects() {
   const [showCards, setShowCards] = useState([]);
   const isModalOpen = useSelector((state) => state.modal.isOpen);
   const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+  const darkModeClass = darkMode ? "project--dark" : "project--light";
+  const modalBlurClass = isModalOpen ? "project--blur" : "";
+  const classes = `project ${darkModeClass} ${modalBlurClass}`;
 
   const handleCardClick = (project) => {
     dispatch(openModal(project));
@@ -27,9 +31,9 @@ function Projects() {
 
   return (
     <Layout>
-      <div className="project">
-        <h1 className="projects__title">Projets</h1>
-        <h2 className="projects__subtitle">Projets Scolaires</h2>
+      <div className={classes}>
+        <h1 className="project__title">Projets</h1>
+        <h2 className="project__subtitle">Projets Scolaires</h2>
         <div className="card__container">
           {dataProjects.map((project) => (
             <ProjectCard
@@ -42,10 +46,10 @@ function Projects() {
             />
           ))}
         </div>
-        <h2 className="projects__subtitle">Futures projets</h2>
+        <h2 className="project__subtitle">Futures projets</h2>
         <div className="card__container"></div>
-        {isModalOpen && <ProjectModal />}
       </div>
+      {isModalOpen && <ProjectModal />}
     </Layout>
   );
 }
