@@ -10,11 +10,10 @@ function ProjectCard({ imagePath, alt, className, onClick }) {
 }
 
 ProjectCard.propTypes = {
-  title: PropTypes.string.isRequired,
   imagePath: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  onClick: PropTypes.func.isRequired, // ajout d'une prop onClick pour gérer le clic
+  onClick: PropTypes.func.isRequired, 
 };
 
 export default ProjectCard;

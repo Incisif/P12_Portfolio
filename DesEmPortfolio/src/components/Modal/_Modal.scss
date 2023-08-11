@@ -34,7 +34,14 @@
   animation: appearFromCenter 0.3s cubic-bezier(0.94, 0.29, 0.11, 0.76);
 
   &__content {
-    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin:1vh ;
+  }
+  &__img{
+    width: 100%;
+    
   }
 }
 .container {
