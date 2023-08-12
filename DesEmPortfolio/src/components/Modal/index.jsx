@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 import { useEffect, useRef, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { selectLanguage } from "../../features/languageSlice";
+import { faGlobe,faCheck  } from "@fortawesome/free-solid-svg-icons";
 
+
+import { selectLanguage } from "../../features/languageSlice";
 
 function Modal() {
   const dispatch = useDispatch();
@@ -14,7 +15,9 @@ function Modal() {
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const modalContent = useSelector((state) => state.modal.content);
   const modalRef = useRef(null);
-  const modalModeClass = darkMode ? "ProjectModal--dark" : "ProjectModal--light";
+  const modalModeClass = darkMode
+    ? "ProjectModal--dark"
+    : "ProjectModal--light";
   const language = useSelector(selectLanguage);
 
   const handleClose = useCallback(() => {
@@ -55,33 +58,38 @@ function Modal() {
             <h2 className="ProjectModal__title">
               {language === "fr" ? modalContent.frTitle : modalContent.enTitle}
             </h2>
-            <p className="ProjectModal__description">
-              {language === "fr" ? modalContent.frDescription : modalContent.enDescription}
-            </p>
             <h3 className="ProjectModal__skillsTitle">
               {language === "fr" ? "Compétences:" : "Skills:"}
             </h3>
             <ul className="ProjectModal__skillsList">
-              {(language === "fr" ? modalContent.frCompetences : modalContent.enCompetences).map((skill, index) => (
+              {(language === "fr"
+                ? modalContent.frCompetences
+                : modalContent.enCompetences
+              ).map((skill, index) => (
                 <li key={index} className="ProjectModal__skill">
+                  <FontAwesomeIcon className="ProjectModal__icon" icon={faCheck} />
                   {skill}
                 </li>
               ))}
             </ul>
-            {modalContent.githubLink && (
-              <a
-                className="ProjectModal__githubIcon"
-                href={modalContent.githubLink}
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            )}
-            {modalContent.gitPageLink && (
-              <a className="ProjectModal__gitPageIcon" 
-              href={modalContent.gitPageLink}>
-                <FontAwesomeIcon icon={faGlobe} />
-              </a>
-            )}
+            <div className="ProjectModal__links">
+              {modalContent.githubLink && (
+                <a
+                  className="ProjectModal__githubIcon"
+                  href={modalContent.githubLink}
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              )}
+              {modalContent.gitPageLink && (
+                <a
+                  className="ProjectModal__gitPageIcon"
+                  href={modalContent.gitPageLink}
+                >
+                  <FontAwesomeIcon icon={faGlobe} />
+                </a>
+              )}
+            </div>
           </div>
         )}
       </div>

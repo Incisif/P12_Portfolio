@@ -17,7 +17,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
-  height: 80%;
   background-color: $black;
   color: $white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -37,15 +36,14 @@
 
     .container {
       border-bottom: 1px solid $black;
+
       &__close {
         color: $black;
+
         &:hover {
           color: $gold;
         }
       }
-    }
-    .ProjectModal__description {
-      font-weight: 400; 
     }
   }
 
@@ -53,7 +51,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 1.8vh;
+    margin: 1.8vh 1.8vh 0 1.8vh ;
   }
 
   &__img {
@@ -64,24 +62,39 @@
   &__title {
     font-size: 1.5rem;
     font-weight: 400;
-    padding: 1rem 0;
+    padding-top: 1.2rem;
   }
 
-  &__description {
-    font-size: 1rem;
-    font-weight: 100;
-    padding: 1rem 0;
+  &__links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 ;
   }
-
   &__githubIcon,
   &__gitPageIcon {
     font-size: 2rem;
-    margin: 1rem 0;
+    margin: 1rem 1rem;
     fill: $white;
 
     &:hover {
       color: $gold;
     }
+  }
+  &__skillsTitle {
+    margin-top: 1.5rem;
+  }
+  &__skill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+  }
+  &__icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    fill: $white;
   }
 }
 
