@@ -4,10 +4,20 @@
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  font-size: 8vh;
+  font-size: 4rem;
   font-weight: 100;
   margin-right: 2rem;
   text-align: right;
+  &--dark {
+    .navBar__item {
+      color: $white;
+    }
+  }
+  &--light {
+    .navBar__item {
+      color: $black;
+    }
+  }
 
   &__list {
     display: flex;
@@ -18,7 +28,6 @@
     transition: transform 0.4s ease;
     &:hover {
       color: $gold;
-      // font-style: italic;
       transform: translateX(-1rem);
     }
   }

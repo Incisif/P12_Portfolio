@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 import { useEffect, useRef, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe,faCheck  } from "@fortawesome/free-solid-svg-icons";
-
+import { faGlobe, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 import { selectLanguage } from "../../features/languageSlice";
 
@@ -67,7 +66,10 @@ function Modal() {
                 : modalContent.enCompetences
               ).map((skill, index) => (
                 <li key={index} className="ProjectModal__skill">
-                  <FontAwesomeIcon className="ProjectModal__icon" icon={faCheck} />
+                  <FontAwesomeIcon
+                    className="ProjectModal__icon"
+                    icon={faCheck}
+                  />
                   {skill}
                 </li>
               ))}

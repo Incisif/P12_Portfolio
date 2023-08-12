@@ -122,14 +122,14 @@ table {
   color: rgb(245, 245, 245);
   font-family: "Neue Montreal", serif;
   border: 1px solid rgb(245, 245, 245);
-  background-color: rgb(14, 14, 14);
+  background-color: rgba(14, 14, 14, 0.986);
   overflow: auto;
 }
 .layout__container::-webkit-scrollbar {
   width: 0rem;
 }
 .layout.layout--dark {
-  background-color: rgb(14, 14, 14);
+  background-color: rgba(14, 14, 14, 0.986);
 }
 .layout.layout--light {
   background-color: rgb(245, 245, 245);
@@ -142,10 +142,16 @@ table {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  font-size: 8vh;
+  font-size: 4rem;
   font-weight: 100;
   margin-right: 2rem;
   text-align: right;
+}
+.navBar--dark .navBar__item {
+  color: rgb(245, 245, 245);
+}
+.navBar--light .navBar__item {
+  color: rgb(0, 0, 0);
 }
 .navBar__list {
   display: flex;
@@ -179,11 +185,23 @@ table {
 .home {
   height: 100%;
   width: 100%;
-  background-image: url("./assets/sweetBlacksLines.webp");
   background-size: cover;
-  color: rgb(245, 245, 245);
   font-family: "Neue Montreal", serif;
   position: relative;
+}
+.home--dark {
+  background-color: rgba(14, 14, 14, 0.986);
+}
+.home--dark .home__fullName,
+.home--dark .home__title {
+  color: rgb(245, 245, 245);
+}
+.home--light {
+  background-color: rgb(245, 245, 245);
+}
+.home--light .home__fullName,
+.home--light .home__title {
+  color: rgb(0, 0, 0);
 }
 .home__name {
   font-size: 3rem;
@@ -214,12 +232,15 @@ table {
   bottom: 7rem;
   left: 7rem;
   opacity: 0;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .project {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+  background-color: red;
 }
 .project__title {
   font-size: 5rem;
@@ -234,7 +255,7 @@ table {
   color: rgb(245, 245, 245);
 }
 .project.project--dark {
-  background-color: rgb(14, 14, 14);
+  background-color: rgba(14, 14, 14, 0.986);
 }
 .project.project--light {
   background-color: rgb(245, 245, 245);
@@ -271,7 +292,7 @@ table {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgb(14, 14, 14);
+  border: 1px solid rgba(14, 14, 14, 0.986);
 }
 .projectCard:hover {
   cursor: pointer;
