@@ -108,175 +108,6 @@ table {
   font-style: normal;
   font-display: swap;
 }
-.layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-}
-.layout__container {
-  width: calc(100% - 5rem);
-  height: calc(100% - 5rem);
-  color: rgb(245, 245, 245);
-  font-family: "Neue Montreal", serif;
-  border: 1px solid rgb(245, 245, 245);
-  background-color: rgba(14, 14, 14, 0.986);
-  overflow: auto;
-}
-.layout__container::-webkit-scrollbar {
-  width: 0rem;
-}
-.layout.layout--dark {
-  background-color: rgba(14, 14, 14, 0.986);
-}
-.layout.layout--light {
-  background-color: rgb(245, 245, 245);
-}
-.layout.layout--light .layout__container {
-  border: 1px solid black;
-}
-
-.navBar {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  font-size: 4rem;
-  font-weight: 100;
-  margin-right: 2rem;
-  text-align: right;
-}
-.navBar--dark .navBar__item {
-  color: rgb(245, 245, 245);
-}
-.navBar--light .navBar__item {
-  color: rgb(0, 0, 0);
-}
-.navBar__list {
-  display: flex;
-}
-.navBar__item {
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-.navBar__item:hover {
-  color: rgb(249, 198, 16);
-  transform: translateX(-1rem);
-}
-
-@keyframes slideFromRight {
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slideFromBottom {
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes popUp {
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-.home {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  font-family: "Neue Montreal", serif;
-  position: relative;
-}
-.home--dark {
-  background-color: rgba(14, 14, 14, 0.986);
-}
-.home--dark .home__fullName,
-.home--dark .home__title {
-  color: rgb(245, 245, 245);
-}
-.home--light {
-  background-color: rgb(245, 245, 245);
-}
-.home--light .home__fullName,
-.home--light .home__title {
-  color: rgb(0, 0, 0);
-}
-.home__name {
-  font-size: 3rem;
-  font-weight: 100;
-  padding: 4rem 0 0 4rem;
-}
-.home__textWrapper {
-  overflow: hidden;
-}
-.home__fullName {
-  animation: slideFromBottom 1s ease 0.3s forwards;
-}
-.home__title {
-  font-size: 2rem;
-  font-weight: 100;
-  padding-left: 4rem;
-  animation: slideFromBottom 1s ease 0.9s forwards;
-  padding-bottom: 5px;
-}
-.home__fullName, .home__title {
-  transform: translateY(100%);
-}
-.home__portrait {
-  animation: popUp 1s ease 0.6s forwards;
-  transform: scale(0);
-  height: 45%;
-  position: absolute;
-  bottom: 7rem;
-  left: 7rem;
-  opacity: 0;
-  border: 1px solid rgb(0, 0, 0);
-}
-
-.project {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  background-color: red;
-}
-.project__title {
-  font-size: 5rem;
-  font-weight: 100;
-  padding: 2rem 0 0 2rem;
-  color: rgb(245, 245, 245);
-}
-.project__subtitle {
-  font-size: 3rem;
-  font-weight: 100;
-  padding-left: 2rem;
-  color: rgb(245, 245, 245);
-}
-.project.project--dark {
-  background-color: rgba(14, 14, 14, 0.986);
-}
-.project.project--light {
-  background-color: rgb(245, 245, 245);
-}
-.project.project--light .project__title,
-.project.project--light .project__subtitle {
-  color: black;
-}
-
-.card__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.project--blur {
-  filter: blur(2px);
-  transition: filter 0.5s ease;
-}
-
 @keyframes appear {
   from {
     opacity: 0;
@@ -493,4 +324,269 @@ table {
 .homePageLink--dark .homePageLink__text {
   color: rgb(245, 245, 245);
   font-weight: 400;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(14, 14, 14, 0.986);
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Neue Montreal", serif;
+  border: 1px solid rgb(0, 0, 0);
+}
+.contact-form--dark {
+  background-color: rgb(0, 0, 0);
+  color: rgb(245, 245, 245);
+  border: 1px solid rgb(245, 245, 245);
+}
+.contact-form--light {
+  background-color: rgb(245, 245, 245);
+  color: rgb(0, 0, 0);
+}
+.contact-form--light .contact-form__input, .contact-form--light .contact-form__textarea {
+  background-color: rgba(14, 14, 14, 0.986);
+  color: rgb(245, 245, 245);
+}
+.contact-form__input-wrapper {
+  margin-bottom: 1rem;
+}
+.contact-form__input-wrapper textarea {
+  height: 150px;
+  resize: none;
+}
+.contact-form__input-wrapper textarea::-webkit-scrollbar {
+  width: 10px;
+}
+.contact-form__input-wrapper textarea::-webkit-scrollbar-thumb {
+  background-color: rgb(249, 198, 16);
+}
+.contact-form__input-wrapper label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.contact-form__input-wrapper input, .contact-form__input-wrapper textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(245, 245, 245);
+  color: rgb(0, 0, 0);
+}
+.contact-form__input-wrapper input:focus, .contact-form__input-wrapper textarea:focus {
+  outline: 2px solid rgb(249, 198, 16);
+}
+.contact-form__button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: rgb(249, 198, 16);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-form__button:hover {
+  background-color: rgb(182, 145, 11);
+}
+.contact-form__message {
+  margin-top: 1rem;
+  text-align: center;
+}
+.contact-form__message--error {
+  color: red;
+}
+
+@keyframes slideFromBottom {
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes popUp {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.home {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  font-family: "Neue Montreal", serif;
+  position: relative;
+}
+.home--dark {
+  background-color: rgba(14, 14, 14, 0.986);
+}
+.home--dark .home__fullName,
+.home--dark .home__title {
+  color: rgb(245, 245, 245);
+}
+.home--light {
+  background-color: rgb(245, 245, 245);
+}
+.home--light .home__fullName,
+.home--light .home__title {
+  color: rgb(0, 0, 0);
+}
+.home__name {
+  font-size: 3rem;
+  font-weight: 100;
+  padding: 4rem 0 0 4rem;
+}
+.home__textWrapper {
+  overflow: hidden;
+}
+.home__fullName {
+  animation: slideFromBottom 1s ease 0.3s forwards;
+}
+.home__title {
+  font-size: 2rem;
+  font-weight: 100;
+  padding-left: 4rem;
+  animation: slideFromBottom 1s ease 0.9s forwards;
+  padding-bottom: 5px;
+}
+.home__fullName, .home__title {
+  transform: translateY(100%);
+}
+.home__portrait {
+  animation: popUp 1s ease 0.6s forwards;
+  transform: scale(0);
+  height: 45%;
+  position: absolute;
+  bottom: 7rem;
+  left: 7rem;
+  opacity: 0;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+.project__title {
+  font-size: 5rem;
+  font-weight: 100;
+  padding: 2rem 0 0 2rem;
+  color: rgb(245, 245, 245);
+}
+.project__subtitle {
+  font-size: 3rem;
+  font-weight: 100;
+  padding-left: 2rem;
+  color: rgb(245, 245, 245);
+}
+.project.project--dark {
+  background-color: rgba(14, 14, 14, 0.986);
+}
+.project.project--light {
+  background-color: rgb(245, 245, 245);
+}
+.project.project--light .project__title,
+.project.project--light .project__subtitle {
+  color: black;
+}
+
+.card__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.project--blur {
+  filter: blur(2px);
+  transition: filter 0.5s ease;
+}
+
+.contact {
+  height: 100%;
+  width: 100%;
+  font-family: "Neue Montreal", serif;
+  position: relative;
+}
+.contact--dark {
+  background-color: rgba(14, 14, 14, 0.986);
+}
+.contact--dark .contact__title {
+  color: rgb(245, 245, 245);
+}
+.contact--light {
+  background-color: rgb(245, 245, 245);
+}
+.contact--light .contact__title {
+  color: rgb(0, 0, 0);
+}
+.contact__title {
+  font-size: 5rem;
+  font-weight: 100;
+  padding: 2rem 0 0 2rem;
+  animation: slideFromBottom 1s ease 0.9s forwards;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.layout__container {
+  width: calc(100% - 5rem);
+  height: calc(100% - 5rem);
+  color: rgb(245, 245, 245);
+  font-family: "Neue Montreal", serif;
+  border: 1px solid rgb(245, 245, 245);
+  background-color: rgba(14, 14, 14, 0.986);
+  overflow: auto;
+}
+.layout__container::-webkit-scrollbar {
+  width: 0rem;
+}
+.layout.layout--dark {
+  background-color: rgba(14, 14, 14, 0.986);
+}
+.layout.layout--light {
+  background-color: rgb(245, 245, 245);
+}
+.layout.layout--light .layout__container {
+  border: 1px solid black;
+}
+
+.navBar {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 4rem;
+  font-weight: 100;
+  margin-right: 2rem;
+  text-align: right;
+}
+.navBar--dark .navBar__item {
+  color: rgb(245, 245, 245);
+}
+.navBar--light .navBar__item {
+  color: rgb(0, 0, 0);
+}
+.navBar__list {
+  display: flex;
+}
+.navBar__item {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.navBar__item:hover {
+  color: rgb(249, 198, 16);
+  transform: translateX(-1rem);
+}
+
+@keyframes slideFromRight {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=main.css.map */

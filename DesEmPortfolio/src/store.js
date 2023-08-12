@@ -4,6 +4,7 @@ import transitionAnimationReducer from './features/transitionAnimationSlice';
 import darkModeReducer from './features/darkModeSlice';
 import modalReducer from './features/modalSlice';
 import languageReducer from './features/languageSlice';
+import contactFormReducer from './features/contactFormSlice';
 
 
 const store = configureStore({
@@ -12,6 +13,7 @@ const store = configureStore({
     darkMode: darkModeReducer,
     modal: modalReducer,
     language: languageReducer,
+    contactForm: contactFormReducer,
   },
 });
 
