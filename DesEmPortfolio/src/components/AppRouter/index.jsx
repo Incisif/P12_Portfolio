@@ -3,8 +3,6 @@ import Home from "../../pages/Home";
 import Projects from "../../pages/Projects";
 import Contact from "../../pages/Contact";
 import About from "../../pages/About";
-import Formation from "../../pages/Formation";
-
 
 function AppRouter() {
   return (
@@ -14,7 +12,6 @@ function AppRouter() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/formation" element={<Formation />} />
       </Routes>
     </Router>
   );

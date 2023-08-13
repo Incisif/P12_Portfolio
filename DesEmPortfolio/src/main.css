@@ -402,6 +402,69 @@ table {
   color: red;
 }
 
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.layout__container {
+  width: calc(100% - 5rem);
+  height: calc(100% - 5rem);
+  color: rgb(245, 245, 245);
+  font-family: "Neue Montreal", serif;
+  border: 1px solid rgb(245, 245, 245);
+  background-color: rgba(14, 14, 14, 0.986);
+  overflow: auto;
+}
+.layout__container::-webkit-scrollbar {
+  width: 0rem;
+}
+.layout.layout--dark {
+  background-color: rgba(14, 14, 14, 0.986);
+}
+.layout.layout--light {
+  background-color: rgb(245, 245, 245);
+}
+.layout.layout--light .layout__container {
+  border: 1px solid black;
+}
+
+.navBar {
+  position: absolute;
+  bottom: 3rem;
+  right: 2rem;
+  font-size: 4rem;
+  font-weight: 100;
+  margin-right: 2rem;
+  text-align: right;
+}
+.navBar--dark a {
+  color: rgb(245, 245, 245);
+}
+.navBar--light .navBar__item {
+  color: rgb(0, 0, 0);
+}
+.navBar__list {
+  display: flex;
+}
+.navBar__item {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.navBar__item:hover {
+  color: rgb(249, 198, 16);
+  transform: translateX(-1rem);
+}
+
+@keyframes slideFromRight {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 @keyframes slideFromBottom {
   100% {
     transform: translateY(0);
@@ -474,7 +537,6 @@ table {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background-color: red;
 }
 .project__title {
   font-size: 5rem;
@@ -536,66 +598,40 @@ table {
   animation: slideFromBottom 1s ease 0.9s forwards;
 }
 
-.layout {
+.about {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
-.layout__container {
-  width: calc(100% - 5rem);
-  height: calc(100% - 5rem);
+.about__title {
+  font-size: 5rem;
+  font-weight: 100;
+  padding: 2rem 0 0 2rem;
   color: rgb(245, 245, 245);
-  font-family: "Neue Montreal", serif;
+}
+.about__content {
+  display: flex;
+  align-items: center;
+}
+.about__img {
+  width: 350px;
+  margin: 10rem;
+}
+.about__text {
+  font-size: 2rem;
+  color: rgb(245, 245, 245);
+}
+.about.about--dark {
+  background-color: rgba(14, 14, 14, 0.986);
+}
+.about.about--dark img {
   border: 1px solid rgb(245, 245, 245);
-  background-color: rgba(14, 14, 14, 0.986);
-  overflow: auto;
 }
-.layout__container::-webkit-scrollbar {
-  width: 0rem;
-}
-.layout.layout--dark {
-  background-color: rgba(14, 14, 14, 0.986);
-}
-.layout.layout--light {
+.about.about--light {
   background-color: rgb(245, 245, 245);
 }
-.layout.layout--light .layout__container {
-  border: 1px solid black;
-}
-
-.navBar {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  font-size: 4rem;
-  font-weight: 100;
-  margin-right: 2rem;
-  text-align: right;
-}
-.navBar--dark a {
-  color: rgb(245, 245, 245);
-}
-.navBar--light .navBar__item {
-  color: rgb(0, 0, 0);
-}
-.navBar__list {
-  display: flex;
-}
-.navBar__item {
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-.navBar__item:hover {
-  color: rgb(249, 198, 16);
-  transform: translateX(-1rem);
-}
-
-@keyframes slideFromRight {
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.about.about--light .about__title,
+.about.about--light .about__text {
+  color: black;
 }/*# sourceMappingURL=main.css.map */
