@@ -62,7 +62,7 @@
   &__title {
     font-size: 1.5rem;
     font-weight: 400;
-    padding-top: 1.2rem;
+    padding-top: 2.5rem;
   }
 
   &__links {
@@ -73,26 +73,28 @@
   }
   &__githubIcon,
   &__gitPageIcon {
+    display: flex;
+    align-items: center;
     font-size: 2rem;
     margin: 1rem 1rem;
     fill: $white;
-
-    &:hover {
-      color: $gold;
+    span{
+      font-size:1rem;
+      margin:  0 1rem;
     }
   }
   &__skillsTitle {
-    margin-top: 1.5rem;
+    margin: 1.5rem;
   }
   &__skill {
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 1rem;
+    margin: 0 1rem;
     padding-left: 1.5rem;
   }
   &__icon {
-    margin-right: 1rem;
+    margin-right: 1.2rem;
     font-size: 1.5rem;
     fill: $white;
   }

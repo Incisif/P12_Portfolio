@@ -201,7 +201,7 @@ table {
 .ProjectModal__title {
   font-size: 1.5rem;
   font-weight: 400;
-  padding-top: 1.2rem;
+  padding-top: 2.5rem;
 }
 .ProjectModal__links {
   width: 100%;
@@ -210,25 +210,28 @@ table {
   margin: 1rem 0;
 }
 .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
+  display: flex;
+  align-items: center;
   font-size: 2rem;
   margin: 1rem 1rem;
   fill: rgb(245, 245, 245);
 }
-.ProjectModal__githubIcon:hover, .ProjectModal__gitPageIcon:hover {
-  color: rgb(249, 198, 16);
+.ProjectModal__githubIcon span, .ProjectModal__gitPageIcon span {
+  font-size: 1rem;
+  margin: 0 1rem;
 }
 .ProjectModal__skillsTitle {
-  margin-top: 1.5rem;
+  margin: 1.5rem;
 }
 .ProjectModal__skill {
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  margin: 0 1rem;
   padding-left: 1.5rem;
 }
 .ProjectModal__icon {
-  margin-right: 1rem;
+  margin-right: 1.2rem;
   font-size: 1.5rem;
   fill: rgb(245, 245, 245);
 }
@@ -329,13 +332,16 @@ table {
 .contact-form {
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
   padding: 2rem;
   background-color: rgba(14, 14, 14, 0.986);
   text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Neue Montreal", serif;
   border: 1px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .contact-form--dark {
   background-color: rgb(0, 0, 0);
@@ -443,21 +449,24 @@ table {
   font-size: 2rem;
   font-weight: 100;
   padding-left: 4rem;
-  animation: slideFromBottom 1s ease 0.9s forwards;
+  animation: slideFromBottom 1s ease 0.5s forwards;
   padding-bottom: 5px;
 }
 .home__fullName, .home__title {
   transform: translateY(100%);
 }
 .home__portrait {
-  animation: popUp 1s ease 0.6s forwards;
+  animation: popUp 1s ease-in-out 0.2s forwards;
   transform: scale(0);
   height: 45%;
   position: absolute;
-  bottom: 7rem;
-  left: 7rem;
   opacity: 0;
   border: 1px solid rgb(0, 0, 0);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .project {
@@ -566,7 +575,7 @@ table {
   margin-right: 2rem;
   text-align: right;
 }
-.navBar--dark .navBar__item {
+.navBar--dark a {
   color: rgb(245, 245, 245);
 }
 .navBar--light .navBar__item {

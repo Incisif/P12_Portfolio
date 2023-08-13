@@ -9,15 +9,15 @@
   margin-right: 2rem;
   text-align: right;
   &--dark {
-    .navBar__item {
+    a {
       color: $white;
     }
   }
   &--light {
-    .navBar__item {
-      color: $black;
+    .navBar__item
+      {color: $black;}
     }
-  }
+  
 
   &__list {
     display: flex;

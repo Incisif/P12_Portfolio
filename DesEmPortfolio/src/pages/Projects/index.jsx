@@ -33,12 +33,11 @@ function Projects() {
     <Layout>
       <div className={classes}>
         <h1 className="project__title">Projets</h1>
-        <h2 className="project__subtitle">Projets Scolaires</h2>
+        <h2 className="project__subtitle">Scolaires</h2>
         <div className="card__container">
           {dataProjects.map((project) => (
             <ProjectCard
               key={project.id}
-              title={project.title}
               imagePath={project.imagePath}
               alt={project.alt}
               className={showCards.includes(project.id) ? "show" : ""}
@@ -46,7 +45,7 @@ function Projects() {
             />
           ))}
         </div>
-        <h2 className="project__subtitle">Futures projets</h2>
+        <h2 className="project__subtitle">Personnels</h2>
         <div className="card__container"></div>
       </div>
       {isModalOpen && <ProjectModal />}

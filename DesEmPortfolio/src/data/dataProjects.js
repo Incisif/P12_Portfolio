@@ -29,8 +29,7 @@ const projects = [
   },
   {
     id: 2,
-    frTitle:
-    "Animations CSS pour Ohmyfood",
+    frTitle: "Animations CSS pour Ohmyfood",
     enTitle: "CSS Animations for Ohmyfood",
     imagePath: ohmyfood,
     alt: "Ohmyfood Project",
@@ -51,10 +50,8 @@ const projects = [
   },
   {
     id: 3,
-    frTitle:
-    "Site Dynamique Print it",
-    enTitle:
-    "Dynamic Site: Print it",
+    frTitle: "Site Dynamique Print it",
+    enTitle: "Dynamic Site: Print it",
     imagePath: printIt,
     alt: "Print it Project",
     githubLink: "https://github.com/Incisif/Print-it",
@@ -81,13 +78,13 @@ const projects = [
     githubLink: "https://github.com/Incisif/Sophie_Bluel",
     gitPageLink: "https://incisif.github.io/Sophie_Bluel/",
     frCompetences: [
-      "Manipuler les éléments du DOM avec JavaScript",
-      "Récupérer les données utilisateurs dans le JavaScript via des formulaires",
-      "Gérer les événements utilisateurs avec JavaScript",
+      "Manipulation des éléments du DOM avec JavaScript",
+      "Récupération des données via des formulaires",
+      "Gestion des événements avec JavaScript",
     ],
     enCompetences: [
       "Manipulating DOM elements with JavaScript",
-      "Retrieving user data in JavaScript via forms",
+      "Retrieving data via forms",
       "Managing user events with JavaScript",
     ],
   },
@@ -100,18 +97,18 @@ const projects = [
     githubLink: "https://github.com/Incisif/Kasa",
     gitPageLink: "",
     frCompetences: [
-      "Développer une interface web avec Sass",
-      "Mettre en œuvre des animations CSS",
-      "Initialiser une application avec Create React App",
-      "Configurer la navigation entre les pages de l'application avec React Router",
-      "Développer des éléments de l'interface d'un site web grâce à des composants React",
+      "Développement d'interface web avec Sass",
+      "Animations CSS",
+      "Initialisation d'application avec Create React App",
+      "Navigation avec React Router",
+      "Développement d'éléments d'interface avec React",
     ],
     enCompetences: [
-      "Develop a web interface with Sass",
-      "Implement CSS animations",
-      "Initialize an application with Create React App",
-      "Configure navigation between application pages with React Router",
-      "Develop interface elements of a website using React components",
+      "Web interface development with Sass",
+      "CSS animations",
+      "Application initialization with Create React App",
+      "Navigation with React Router",
+      "Interface development with React components",
     ],
   },
   {
@@ -123,18 +120,18 @@ const projects = [
     githubLink: "https://github.com/Incisif/ninacarducci",
     gitPageLink: "https://incisif.github.io/ninacarducci/",
     frCompetences: [
-      "Analyser et auditer un site web pour l'optimisation SEO",
-      "Optimiser les images et la structure du code",
-      "Mettre en place le référencement local avec Schema.org",
-      "Ajouter des métadonnées pour les réseaux sociaux",
-      "Améliorer l'accessibilité du site et produire un rapport d'optimisation",
+      "Analyse et audit SEO",
+      "Optimisation des images et du code",
+      "Référencement local avec Schema.org",
+      "Ajout de métadonnées pour réseaux sociaux",
+      "Amélioration de l'accessibilité et rapport d'optimisation",
     ],
     enCompetences: [
-      "Analyze and audit a website for SEO optimization",
-      "Optimize images and code structure",
-      "Implement local SEO using Schema.org",
-      "Add metadata for social networks",
-      "Enhance site accessibility and produce an optimization report",
+      "SEO analysis and audit",
+      "Image and code optimization",
+      "Local SEO with Schema.org",
+      "Metadata for social networks",
+      "Accessibility enhancement and optimization report",
     ],
   },
   {
@@ -146,42 +143,35 @@ const projects = [
     githubLink: "https://github.com/Incisif/77events",
     gitPageLink: "",
     frCompetences: [
-      "Déboguer un site web grâce aux Chrome DevTools",
-      "Compléter le cahier de recette avec des scénarios de tests",
-      "Résoudre les problèmes spécifiques évoqués par le client",
-      "Présenter le site, le code débuggé, et le cahier de recette",
+      "Débogage avec Chrome DevTools",
+      "Utilisation de React Developer Tools ",
     ],
     enCompetences: [
-      "Debug a website using Chrome DevTools",
-      "Complete the acceptance test plan with test scenarios",
-      "Resolve specific client-mentioned issues",
-      "Present the site, debugged code, and acceptance test plan",
+      "Debugging with Chrome DevTools",
+      "Using React Developer Tools ",
     ],
   },
   {
     id: 8,
     frTitle: "Tableau de Bord pour Argent Bank avec React et Redux",
     enTitle: "Dashboard for Argent Bank with React and Redux",
-    imagePath: argentBank ,
+    imagePath: argentBank,
     alt: "Argent Bank Dashboard",
     githubLink: "https://github.com/Incisif/ArgentBank-website",
     gitPageLink: "https://incisif.github.io/ArgentBank-website/",
     frCompetences: [
-      "Créer une application web responsive avec React",
-      "Utiliser Redux pour la gestion du state",
-      "Implémenter l'authentification des utilisateurs",
-      "Optimiser les images et le code par la création de composants réutilisables",
-      "Concevoir des routes API pour la manipulation des transactions"
+      "Gestion du state avec Redux",
+      "Implémentation de l'authentification utilisateur",
+      "Développement de green code",
+      "Conception de routes API pour les transactions",
     ],
     enCompetences: [
-      "Create a responsive web application with React",
-      "Use Redux for state management",
-      "Implement user authentication",
-      "Optimize images and code by creating reusable components",
-      "Design API routes for transaction handling"
-    ]
-  }
-  ,
+      "State management with Redux",
+      "User authentication implementation",
+      "Green code development",
+      "API route design for transactions",
+    ],
+  },
 ];
 
 export default projects;

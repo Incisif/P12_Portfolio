@@ -80,6 +80,7 @@ function Modal() {
                   className="ProjectModal__githubIcon"
                   href={modalContent.githubLink}
                 >
+                  <span>GitHub</span>
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
               )}
@@ -89,6 +90,7 @@ function Modal() {
                   href={modalContent.gitPageLink}
                 >
                   <FontAwesomeIcon icon={faGlobe} />
+                  <span>GitHub Pages</span>
                 </a>
               )}
             </div>
