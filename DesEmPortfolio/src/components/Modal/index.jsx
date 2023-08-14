@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useEffect, useRef, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe, faCheck, faX } from "@fortawesome/free-solid-svg-icons";
 
 import { selectLanguage } from "../../features/languageSlice";
 
@@ -44,7 +44,7 @@ function Modal() {
       <div ref={modalRef} className={`ProjectModal ${modalModeClass}`}>
         <div className="container">
           <button className="container__close" onClick={handleClose}>
-            X
+            <FontAwesomeIcon className="close__icon" icon={faX} />
           </button>
         </div>
         {modalContent && (

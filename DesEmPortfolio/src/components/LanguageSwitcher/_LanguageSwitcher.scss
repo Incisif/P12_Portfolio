@@ -1,0 +1,62 @@
+@use "../../utils/style/variables" as *;
+
+.language-switcher {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  top: 7rem;
+  left: 1rem;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+
+  &--dark {
+    .language-switcher__option {
+      color: $white;
+    }
+    .language-switcher__line {
+      background-color: $white;
+    }
+  }
+
+  &--light {
+    .language-switcher__line {
+      background-color: $black;
+    }
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 1rem;
+  }
+
+  &__option {
+    cursor: pointer;
+    padding: 0 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    transition: color 0.3s;
+
+    
+  }
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 50%;
+    transition: left 0.3s;
+  }
+
+  &__line--fr {
+    left: 0;
+  }
+
+  &__line--en {
+    left: 50%;
+  }
+}

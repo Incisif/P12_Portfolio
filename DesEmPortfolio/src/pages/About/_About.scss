@@ -15,17 +15,23 @@
 
   &__content {
     display: flex;
-    align-items: center;
+    align-items: flex-end ;
   }
 
   &__img {
     width: 350px;
-    margin: 10rem;
+    margin: 15rem 0 0 10rem;
   }
-
+  &__textContainer {
+    margin-left: 3rem;
+    width: 50%;
+  }
   &__text {
-    font-size: 2rem;
+    display: flex;
+    font-size: 1.5rem;
     color: $white;
+    line-height: 2rem;
+  
   }
 
   &.about--dark {

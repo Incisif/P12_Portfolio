@@ -9,7 +9,9 @@
 @use 'components/ContactForm/ContactForm';
 @use 'components/Layout/Layout';
 @use 'components/NavBar/NavBar';
+@use 'components/LanguageSwitcher/LanguageSwitcher';
 @use 'pages/Home/Home';
 @use 'pages/Projects/Projects';
-@use 'pages/Contact/Contact';
+@use 'pages/Formation/Formation';
 @use 'pages/About/About';
+@use 'pages/Contact/Contact';

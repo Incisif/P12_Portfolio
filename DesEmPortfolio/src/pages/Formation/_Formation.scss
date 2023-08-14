@@ -1,0 +1,21 @@
+@use "../../utils/style/variables" as *;
+.formation{
+    display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  &__title {
+    font-size: 5rem;
+    font-weight: 100;
+    padding: 2rem 0 0 2rem;
+    color: $white;
+  }
+  &.formation--light {
+    background-color: $white;
+
+    .formation__title,
+    .formation__text {
+      color: black;
+    }
+  }
+}

@@ -16,9 +16,11 @@
   position: relative;
   overflow: hidden;
   border: 1px solid $grey-background;
+  border-radius: 5px;
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.03);
   }
 
   &.show {
@@ -35,7 +37,6 @@
 
   &:hover &__img {
     filter: grayscale(0%) brightness(100%);
-    transform: scale(1.1);
   }
 }
 

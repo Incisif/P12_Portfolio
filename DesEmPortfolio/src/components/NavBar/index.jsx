@@ -11,6 +11,9 @@ function NavBar() {
           <Link to="/projects">Projets</Link>
         </li>
         <li className="navBar__item">
+          <Link to="/formation">Formation</Link>
+        </li>
+        <li className="navBar__item">
           <Link to="/about">À propos</Link>
         </li>
         <li className="navBar__item">

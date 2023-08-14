@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import ThemeSwitcher from "../ThemeSwitcher";
+import LanguageSwitcher from "../LanguageSwitcher";
 import HomePageLink from "../HomePageLink";
 import { useSelector } from "react-redux";
 
@@ -13,6 +14,8 @@ const Layout = ({ children }) => {
       <div className={`layout__container`}>{children}</div>
       <HomePageLink /> 
       <ThemeSwitcher />
+      <LanguageSwitcher />
+      
     </div>
   );
 };
