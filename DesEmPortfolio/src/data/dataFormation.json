@@ -1,0 +1,102 @@
+{
+  "title": {
+    "fr": "Formation",
+    "en": "Education"
+  },
+  "content": [
+    {
+      "section": "programmingLanguages",
+      "title": {
+        "fr": "Langages de Programmation",
+        "en": "Programming Languages"
+      },
+      "fr": [
+        "HTML, CSS: Création de structures de pages et styles",
+        "JavaScript: Programmation front-end, manipulation du DOM, communication avec les API"
+      ],
+      "en": [
+        "HTML, CSS: Creating page structures and styles",
+        "JavaScript: Front-end programming, DOM manipulation, API communication"
+      ]
+    },
+    {
+      "section": "designAndDevelopment",
+      "title": {
+        "fr": "Conception et Développement",
+        "en": "Design and Development"
+      },
+      "fr": [
+        "Mobile First Design: Conception responsive pour mobile",
+        "React et React Router: Développement d'applications web modernes",
+        "Sass: Conception d'interfaces élégantes et réactives",
+        "Animations: Création d'animations fluides pour améliorer l'expérience utilisateur"
+      ],
+      "en": [
+        "Mobile First Design: Responsive design for mobile",
+        "React and React Router: Developing modern web applications",
+        "Sass: Designing elegant and responsive interfaces",
+        "Animations: Creating smooth animations to enhance user experience"
+      ]
+    },
+    {
+      "section": "toolsAndCollaboration",
+      "title": {
+        "fr": "Outils et Collaboration",
+        "en": "Tools and Collaboration"
+      },
+      "fr": [
+        "Git et GitHub: Gestion et collaboration sur le code",
+        "Chrome DevTools: Débogage et tests automatisés",
+        "Déploiement de Site Statique: Hébergement et mise en ligne"
+      ],
+      "en": [
+        "Git and GitHub: Code management and collaboration",
+        "Chrome DevTools: Debugging and automated testing",
+        "Static Site Deployment: Hosting and publishing"
+      ]
+    },
+    {
+      "section": "methodologyAndProjectManagement",
+      "title": {
+        "fr": "Méthodologie et Gestion de Projet",
+        "en": "Methodology and Project Management"
+      },
+      "fr": [
+        "Méthodes Agile, Kanban et Lean: Planification et gestion de projet"
+      ],
+      "en": [
+        "Agile, Kanban, and Lean Methods: Planning and project management"
+      ]
+    },
+    {
+      "section": "optimizationAndAccessibility",
+      "title": {
+        "fr": "Optimisation et Accessibilité",
+        "en": "Optimization and Accessibility"
+      },
+      "fr": [
+        "SEO: Optimisation du référencement et des performances",
+        "Règles WCAG: Conception de contenu web accessible"
+      ],
+      "en": [
+        "SEO: Search engine optimization and performance tuning",
+        "WCAG Guidelines: Designing accessible web content"
+      ]
+    },
+    {
+      "section": "stateManagementAndCommunication",
+      "title": {
+        "fr": "Gestion d'État et Communication",
+        "en": "State Management and Communication"
+      },
+      "fr": [
+        "Redux: Gestion de l'état des applications React",
+        "API REST: Communication entre le client et le serveur"
+      ],
+      "en": [
+        "Redux: State management for React applications",
+        "API REST: Client-server communication"
+      ]
+    }
+  ]
+}

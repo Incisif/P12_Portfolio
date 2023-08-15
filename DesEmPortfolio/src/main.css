@@ -627,6 +627,7 @@ table {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  /* Formation Content */
 }
 .formation__title {
   font-size: 5rem;
@@ -638,8 +639,37 @@ table {
   background-color: rgb(245, 245, 245);
 }
 .formation.formation--light .formation__title,
-.formation.formation--light .formation__text {
-  color: black;
+.formation.formation--light .formation__content {
+  color: rgb(0, 0, 0);
+}
+.formation__content {
+  margin: 4rem 0 0 10rem;
+  color: rgb(245, 245, 245);
+  max-width: 35%;
+}
+.formation__paragraph {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+.formation__section {
+  margin-top: 3rem;
+}
+.formation__section-title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.formation__skills {
+  list-style-type: disc;
+  padding-left: 4rem;
+  font-size: 1.2rem;
+}
+.formation__skills .formation__skill {
+  margin-bottom: 0.5rem;
+}
+.formation__conclusion {
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 .about {
@@ -664,7 +694,7 @@ table {
 }
 .about__textContainer {
   margin-left: 3rem;
-  width: 50%;
+  width: 40%;
 }
 .about__text {
   display: flex;

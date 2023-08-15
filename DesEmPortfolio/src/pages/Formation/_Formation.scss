@@ -1,21 +1,60 @@
 @use "../../utils/style/variables" as *;
-.formation{
-    display: flex;
+
+.formation {
+  display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+
   &__title {
     font-size: 5rem;
     font-weight: 100;
     padding: 2rem 0 0 2rem;
     color: $white;
   }
+
   &.formation--light {
     background-color: $white;
 
     .formation__title,
-    .formation__text {
-      color: black;
+    .formation__content {
+      color: $black;
     }
+  }
+
+  /* Formation Content */
+  &__content {
+    margin: 4rem 0 0 10rem;
+    color: $white;
+    max-width: 35%;
+  }
+
+  &__paragraph {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__section {
+    margin-top: 3rem;
+  }
+
+  &__section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  &__skills {
+    list-style-type: disc;
+    padding-left: 4rem;
+    font-size: 1.2rem;
+
+    .formation__skill {
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__conclusion{
+    font-size: 1.2rem;
+    margin-top: 2rem;
   }
 }
