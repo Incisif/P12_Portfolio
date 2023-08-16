@@ -9,18 +9,18 @@
 }
 
 .projectCard {
-  width: 23%;
+  width: 20%;
   margin: 10px;
   opacity: 0;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid $grey-background;
+  border: 1px solid $black;
   border-radius: 5px;
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.03);
+    transform: scale(1.05);
   }
 
   &.show {
@@ -42,4 +42,21 @@
 
 .projectCard:hover .projectCard__overlay {
   opacity: 1;
+}
+.projectCard__banner {
+  position: absolute;
+  top: 0;
+  left: -0px;
+  
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  z-index: 1;
+
+  &--dark {
+    background-color: white;
+    color: black;
+  }
 }
