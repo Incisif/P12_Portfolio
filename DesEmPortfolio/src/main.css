@@ -656,7 +656,7 @@ table {
 }
 .formation__section-title {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 100;
   margin-bottom: 1rem;
 }
 .formation__skills {
@@ -666,6 +666,7 @@ table {
 }
 .formation__skills .formation__skill {
   margin-bottom: 0.5rem;
+  font-weight: 100;
 }
 .formation__conclusion {
   font-size: 1.2rem;
@@ -677,10 +678,10 @@ table {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  font-weight: 100;
 }
 .about__title {
   font-size: 5rem;
-  font-weight: 100;
   padding: 2rem 0 0 2rem;
   color: rgb(245, 245, 245);
 }
@@ -695,6 +696,9 @@ table {
 .about__textContainer {
   margin-left: 3rem;
   width: 40%;
+}
+.about__textContainer::first-letter {
+  padding-left: 2rem;
 }
 .about__text {
   display: flex;
@@ -711,9 +715,12 @@ table {
 .about.about--light {
   background-color: rgb(245, 245, 245);
 }
+.about.about--light .about__text {
+  font-weight: 400;
+}
 .about.about--light .about__title,
 .about.about--light .about__text {
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .contact {
