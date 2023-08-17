@@ -4,7 +4,7 @@ import { toggleDarkMode } from "../../features/darkModeSlice";
 const ThemeSwitcher = () => {
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.darkMode.darkMode);
-  const themeSwitcherClass = darkMode ? "ThemeSwitcher--dark" : "ThemeSwitcher--light";
+  const themeSwitcherClass = darkMode ? "ThemeSwitcher--dark" : "ThemeSwitcher--light";                  
 
   return (
     <div className={`ThemeSwitcher ${themeSwitcherClass}`}>

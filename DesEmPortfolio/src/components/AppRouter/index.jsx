@@ -5,9 +5,11 @@ import Formation from "../../pages/Formation";
 import Contact from "../../pages/Contact";
 import About from "../../pages/About";
 
+
 function AppRouter() {
   return (
     <Router>
+      
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />

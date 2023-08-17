@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import dataProjects from "../../data/dataProjects";
-import dataInCommingProjects from "../../data/dataInCommingProjects";
+import dataPersonalProjects from "../../data/dataPersonnalProjects";
 import ProjectCard from "../../components/ProjectCard";
 import ProjectModal from "../../components/Modal";
 import { selectLanguage } from "../../features/languageSlice";
@@ -62,7 +62,7 @@ function Projects() {
           {language === "fr" ? "Personnels" : "Personal"}
         </h2>
         <div className="card__container">
-          {dataInCommingProjects.map((project) => (
+          {dataPersonalProjects.map((project) => (
             <ProjectCard
               key={project.id}
               imagePath={project.imagePath}

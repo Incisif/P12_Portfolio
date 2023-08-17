@@ -108,6 +108,82 @@ table {
   font-style: normal;
   font-display: swap;
 }
+.loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(14, 14, 14);
+  z-index: 99;
+  animation: transparence 0.5s ease-in-out 3.3s forwards;
+}
+.loader__border {
+  width: 20%;
+  height: 1.2rem;
+  border: 1px solid rgb(245, 245, 245);
+  overflow: hidden;
+  padding: 2px;
+  animation: expandBorder 0.5s ease-in-out 2.8s forwards;
+}
+.loader__container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.loader__bar {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  animation: loader 2.5s linear 0.3s forwards;
+}
+
+@keyframes loader {
+  0% {
+    transform: translateX(-100%);
+  }
+  10% {
+    transform: translateX(-85%);
+  }
+  15% {
+    transform: translateX(-80%);
+  }
+  20% {
+    transform: translateX(-80%);
+  }
+  70% {
+    transform: translateX(-40%);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+@keyframes expandBorder {
+  from {
+    width: 20%;
+    height: 1.2rem;
+  }
+  to {
+    width: calc(100% - 5rem);
+    height: calc(100% - 5rem);
+  }
+}
+@keyframes transparence {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(10px);
+  }
+}
 @keyframes appear {
   from {
     opacity: 0;
@@ -350,7 +426,7 @@ table {
   width: 100%;
   max-width: 500px;
   padding: 2rem;
-  background-color: rgba(14, 14, 14, 0.986);
+  background-color: rgb(14, 14, 14);
   text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Neue Montreal", serif;
@@ -370,7 +446,7 @@ table {
   color: rgb(0, 0, 0);
 }
 .contact-form--light .contact-form__input, .contact-form--light .contact-form__textarea {
-  background-color: rgba(14, 14, 14, 0.986);
+  background-color: rgb(14, 14, 14);
   color: rgb(245, 245, 245);
 }
 .contact-form__input-wrapper {
@@ -433,20 +509,20 @@ table {
   color: rgb(245, 245, 245);
   font-family: "Neue Montreal", serif;
   border: 1px solid rgb(245, 245, 245);
-  background-color: rgba(14, 14, 14, 0.986);
+  background-color: rgb(14, 14, 14);
   overflow: auto;
 }
 .layout__container::-webkit-scrollbar {
   width: 0rem;
 }
 .layout.layout--dark {
-  background-color: rgba(14, 14, 14, 0.986);
+  background-color: rgb(14, 14, 14);
 }
 .layout.layout--light {
   background-color: rgb(245, 245, 245);
 }
 .layout.layout--light .layout__container {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .navBar {
@@ -541,6 +617,14 @@ table {
     opacity: 1;
   }
 }
+@keyframes fadeBlur {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
 .home {
   height: 100%;
   width: 100%;
@@ -548,8 +632,11 @@ table {
   font-family: "Neue Montreal", serif;
   position: relative;
 }
+.home--blur {
+  animation: fadeBlur 3s ease forwards;
+}
 .home--dark {
-  background-color: rgba(14, 14, 14, 0.986);
+  background-color: rgb(14, 14, 14);
 }
 .home--dark .home__fullName,
 .home--dark .home__title {
@@ -616,7 +703,7 @@ table {
   color: rgb(245, 245, 245);
 }
 .project.project--dark {
-  background-color: rgba(14, 14, 14, 0.986);
+  background-color: rgb(14, 14, 14);
 }
 .project.project--light {
   background-color: rgb(245, 245, 245);
@@ -723,7 +810,7 @@ table {
   line-height: 2rem;
 }
 .about.about--dark {
-  background-color: rgba(14, 14, 14, 0.986);
+  background-color: rgb(14, 14, 14);
 }
 .about.about--dark img {
   border: 1px solid rgb(245, 245, 245);
@@ -746,7 +833,7 @@ table {
   position: relative;
 }
 .contact--dark {
-  background-color: rgba(14, 14, 14, 0.986);
+  background-color: rgb(14, 14, 14);
 }
 .contact--dark .contact__title {
   color: rgb(245, 245, 245);
