@@ -176,12 +176,10 @@ table {
 @keyframes transparence {
   0% {
     opacity: 1;
-    filter: blur(0px);
   }
   100% {
     opacity: 0;
     visibility: hidden;
-    filter: blur(10px);
   }
 }
 @keyframes appear {
@@ -618,11 +616,17 @@ table {
   }
 }
 @keyframes fadeBlur {
-  from {
-    filter: blur(10px);
+  0% {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
   }
-  to {
-    filter: blur(0px);
+  100% {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
   }
 }
 .home {
@@ -633,7 +637,7 @@ table {
   position: relative;
 }
 .home--blur {
-  animation: fadeBlur 3s ease forwards;
+  animation: fadeBlur 1s ease;
 }
 .home--dark {
   background-color: rgb(14, 14, 14);
@@ -681,7 +685,7 @@ table {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
+  margin: auto 18%;
 }
 
 .project {

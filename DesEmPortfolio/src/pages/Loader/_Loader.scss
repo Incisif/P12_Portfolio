@@ -16,7 +16,7 @@
     border: 1px solid $white;
     overflow: hidden;
     padding: 2px;
-    animation: expandBorder 0.5s ease-in-out 2.8s forwards; 
+    animation: expandBorder 0.5s ease-in-out 2.8s forwards;
   }
   &__container {
     width: 100%;
@@ -44,29 +44,32 @@
     transform: translateX(-80%);
   }
   70% {
-    transform: translateX(-40%) ;
+    transform: translateX(-40%);
   }
-  99%{opacity: 1;}
+  99% {
+    opacity: 1;
+  }
   100% {
     transform: translateX(0);
     opacity: 0;
   }
 }
 @keyframes expandBorder {
-    from {
-      width: 20%;
-      height: 1.2rem;
-    }
-    to {
-      width: calc(100% - 5rem); 
-      height: calc(100% - 5rem); 
-    }
+  from {
+    width: 20%;
+    height: 1.2rem;
   }
- @keyframes transparence{
-
-  0%{opacity: 1;
-  filter: blur(0px);}
-  100%{opacity: 0;
+  to {
+    width: calc(100% - 5rem);
+    height: calc(100% - 5rem);
+  }
+}
+@keyframes transparence {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
     visibility: hidden;
-  filter: blur(10px);}
- }
+  }
+}

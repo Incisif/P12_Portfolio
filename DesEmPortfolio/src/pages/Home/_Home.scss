@@ -13,11 +13,17 @@
   }
 }
 @keyframes fadeBlur {
-  from {
-    filter: blur(10px);
+  0% {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
   }
-  to {
-    filter: blur(0px);
+  100% {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
   }
 }
 .home {
@@ -27,7 +33,8 @@
   font-family: "Neue Montreal", serif;
   position: relative;
   &--blur {
-    animation: fadeBlur 3s ease  forwards;
+    animation: fadeBlur 1s ease;
+    
   }
   &--dark {
     background-color: $grey-background;
@@ -77,6 +84,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    margin: auto;
+    margin: auto 18%;
   }
 }
