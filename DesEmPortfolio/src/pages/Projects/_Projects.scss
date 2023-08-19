@@ -11,7 +11,7 @@
     font-size: 5rem;
     font-weight: 100;
     padding: 2rem 0 0 2rem;
-    color: $white; // Couleur en mode sombre
+    color: $white; 
   }
 
   &__subtitle {
@@ -30,7 +30,7 @@
 
     .project__title,
     .project__subtitle {
-      color: black;
+      color: $black;
     }
   }
 }

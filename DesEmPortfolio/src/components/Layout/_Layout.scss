@@ -6,17 +6,17 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  
+
   position: relative;
 
   &__container {
     width: calc(100% - 5rem);
     height: calc(100% - 5rem);
-    color: $white;
+
     font-family: "Neue Montreal", serif;
-    border: 1px solid $white;
     background-color: $grey-background;
-    overflow: auto;
+    overflow: scroll;
+
     &::-webkit-scrollbar {
       width: 0rem;
     }
@@ -24,13 +24,18 @@
 
   &.layout--dark {
     background-color: $grey-background;
+    color: $white;
+    .layout__container {
+      border: 1px solid $white;
+      background-color: $grey-background;
+    }
   }
 
   &.layout--light {
     background-color: $white;
-    
     .layout__container {
       border: 1px solid $black;
+      background-color: $white;
     }
   }
 }

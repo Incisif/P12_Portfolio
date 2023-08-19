@@ -18,7 +18,7 @@ function Home() {
       sessionStorage.setItem("visited", "true");
       setTimeout(() => {
         setBlur(true);
-      }, 3200);
+      }, 3300);
       setTimeout(() => {
         setBlur(true);
         setShowLoader(false);

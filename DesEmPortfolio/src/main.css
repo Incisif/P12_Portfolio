@@ -253,10 +253,10 @@ table {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: 35%;
   background-color: rgb(0, 0, 0);
   color: rgb(245, 245, 245);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 25px rgba(22, 22, 22, 0.4);
   border: 1px solid rgb(245, 245, 245);
   z-index: 1000;
   animation: appearFromCenter 0.3s cubic-bezier(0.94, 0.29, 0.11, 0.76);
@@ -504,16 +504,19 @@ table {
 .layout__container {
   width: calc(100% - 5rem);
   height: calc(100% - 5rem);
-  color: rgb(245, 245, 245);
   font-family: "Neue Montreal", serif;
-  border: 1px solid rgb(245, 245, 245);
   background-color: rgb(14, 14, 14);
-  overflow: auto;
+  overflow: scroll;
 }
 .layout__container::-webkit-scrollbar {
   width: 0rem;
 }
 .layout.layout--dark {
+  background-color: rgb(14, 14, 14);
+  color: rgb(245, 245, 245);
+}
+.layout.layout--dark .layout__container {
+  border: 1px solid rgb(245, 245, 245);
   background-color: rgb(14, 14, 14);
 }
 .layout.layout--light {
@@ -521,6 +524,7 @@ table {
 }
 .layout.layout--light .layout__container {
   border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(245, 245, 245);
 }
 
 .navBar {
@@ -637,7 +641,7 @@ table {
   position: relative;
 }
 .home--blur {
-  animation: fadeBlur 1s ease;
+  animation: fadeBlur 0.8s ease;
 }
 .home--dark {
   background-color: rgb(14, 14, 14);
@@ -714,7 +718,7 @@ table {
 }
 .project.project--light .project__title,
 .project.project--light .project__subtitle {
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .card__container {
