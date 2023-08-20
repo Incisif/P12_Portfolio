@@ -18,8 +18,8 @@ function Projects() {
   const classes = `project ${darkModeClass} ${modalBlurClass}`;
   const language = useSelector(selectLanguage);
 
-  const handleCardClick = (project) => {
-    dispatch(openModal(project));
+  const handleCardClick = (project, index) => {
+    dispatch(openModal({ content: project, index }));
   };
 
   useEffect(() => {
@@ -34,8 +34,45 @@ function Projects() {
   const translations = {
     comingSoon: {
       en: "Comming soon",
-      fr: "Bientôt disponible", // Peut être différent si besoin pour le mode sombre
+      fr: "Bientôt disponible",
     },
+  };
+  const currentIndex = useSelector((state) => state.modal.content?.index);
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      dispatch(
+        openModal({
+          content: dataProjects[currentIndex - 1],
+          index: currentIndex - 1,
+        })
+      );
+    } else {
+      dispatch(
+        openModal({
+          content: dataProjects[dataProjects.length - 1],
+          index: dataProjects.length - 1,
+        })
+      );
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < dataProjects.length - 1) {
+      dispatch(
+        openModal({
+          content: dataProjects[currentIndex + 1],
+          index: currentIndex + 1,
+        })
+      );
+    } else {
+      dispatch(
+        openModal({
+          content: dataProjects[0],
+          index: 0,
+        })
+      );
+    }
   };
 
   return (
@@ -48,13 +85,13 @@ function Projects() {
           {language === "fr" ? "Scolaires" : "School"}
         </h2>
         <div className="card__container">
-          {dataProjects.map((project) => (
+          {dataProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               imagePath={project.imagePath}
               alt={project.alt}
               className={showCards.includes(project.id) ? "show" : ""}
-              onClick={() => handleCardClick(project)}
+              onClick={() => handleCardClick(project, index)}
             />
           ))}
         </div>
@@ -74,7 +111,13 @@ function Projects() {
           ))}
         </div>
       </div>
-      {isModalOpen && <ProjectModal />}
+      {isModalOpen && (
+        <ProjectModal
+          projects={dataProjects}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
+        />
+      )}
     </Layout>
   );
 }

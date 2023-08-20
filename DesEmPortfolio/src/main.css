@@ -202,7 +202,8 @@ table {
 }
 .projectCard:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(22, 22, 22, 0.4);
 }
 .projectCard.show {
   animation: appear 1s ease forwards;
@@ -254,6 +255,7 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 35%;
+  height: 60%;
   background-color: rgb(0, 0, 0);
   color: rgb(245, 245, 245);
   box-shadow: 0 0 25px rgba(22, 22, 22, 0.4);
@@ -269,6 +271,14 @@ table {
   background-color: rgb(245, 245, 245);
   color: rgb(0, 0, 0);
   border: 1px solid rgb(0, 0, 0);
+}
+.ProjectModal.ProjectModal--light .rightArrow {
+  border-top: 1px solid rgb(0, 0, 0);
+  border-right: 1px solid rgb(0, 0, 0);
+}
+.ProjectModal.ProjectModal--light .leftArrow {
+  border-top: 1px solid rgb(0, 0, 0);
+  border-right: 1px solid rgb(0, 0, 0);
 }
 .ProjectModal.ProjectModal--light .container {
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -294,11 +304,19 @@ table {
   font-weight: 400;
   padding-top: 2.5rem;
 }
-.ProjectModal__links {
+.ProjectModal__linksWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   margin: 1rem 0;
+}
+.ProjectModal__links {
+  display: flex;
+  align-items: center;
 }
 .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
   display: flex;
@@ -343,6 +361,38 @@ table {
 }
 .container__close:hover {
   color: rgb(249, 198, 16);
+}
+
+.rightArrow {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-top: 1px solid rgb(245, 245, 245);
+  border-right: 1px solid rgb(245, 245, 245);
+  transform: rotate(45deg);
+  margin-right: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+.rightArrow:hover {
+  border-top: 1px solid rgb(249, 198, 16);
+  border-right: 1px solid rgb(249, 198, 16);
+}
+
+.leftArrow {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-top: 1px solid rgb(245, 245, 245);
+  border-right: 1px solid rgb(245, 245, 245);
+  transform: rotate(-135deg);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  margin-left: 2rem;
+}
+.leftArrow:hover {
+  border-top: 1px solid rgb(249, 198, 16);
+  border-right: 1px solid rgb(249, 198, 16);
 }
 
 .ThemeSwitcher {
@@ -738,7 +788,6 @@ table {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  /* Formation Content */
 }
 .formation__title {
   font-size: 5rem;
@@ -752,6 +801,13 @@ table {
 .formation.formation--light .formation__title,
 .formation.formation--light .formation__content {
   color: rgb(0, 0, 0);
+}
+.formation.formation--light .formation__section-title {
+  font-weight: 100;
+}
+.formation.formation--light .formation__skill {
+  font-weight: 400;
+  color: rgb(122, 122, 122);
 }
 .formation__content {
   margin: 4rem 0 0 10rem;

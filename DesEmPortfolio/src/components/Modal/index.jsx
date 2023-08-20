@@ -8,16 +8,17 @@ import { faGlobe, faCheck, faX } from "@fortawesome/free-solid-svg-icons";
 
 import { selectLanguage } from "../../features/languageSlice";
 
-function Modal() {
+function Modal({ handlePrev, handleNext }) {
   const dispatch = useDispatch();
   const isModalOpen = useSelector((state) => state.modal.isOpen);
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const modalContent = useSelector((state) => state.modal.content);
   const modalRef = useRef(null);
+  const language = useSelector(selectLanguage);
+
   const modalModeClass = darkMode
     ? "ProjectModal--dark"
     : "ProjectModal--light";
-  const language = useSelector(selectLanguage);
 
   const handleClose = useCallback(() => {
     dispatch(closeModal());
@@ -44,55 +45,62 @@ function Modal() {
       <div ref={modalRef} className={`ProjectModal ${modalModeClass}`}>
         <div className="container">
           <button className="container__close" onClick={handleClose}>
-            <FontAwesomeIcon className="close__icon" icon={faX} />
+            <FontAwesomeIcon className="close__icon" icon={faX} label="close" />
           </button>
         </div>
         {modalContent && (
           <div className="ProjectModal__content">
             <img
               className="ProjectModal__img"
-              src={modalContent.imagePath}
-              alt={modalContent.alt}
+              src={modalContent.content.imagePath}
+              alt={modalContent.content.alt}
             />
             <h2 className="ProjectModal__title">
-              {language === "fr" ? modalContent.frTitle : modalContent.enTitle}
+              {language === "fr"
+                ? modalContent.content.frTitle
+                : modalContent.enTitle}
             </h2>
             <h3 className="ProjectModal__skillsTitle">
               {language === "fr" ? "Compétences:" : "Skills:"}
             </h3>
             <ul className="ProjectModal__skillsList">
               {(language === "fr"
-                ? modalContent.frCompetences
-                : modalContent.enCompetences
+                ? modalContent.content.frCompetences
+                : modalContent.content.enCompetences
               ).map((skill, index) => (
                 <li key={index} className="ProjectModal__skill">
                   <FontAwesomeIcon
                     className="ProjectModal__icon"
                     icon={faCheck}
+                    label="check"
                   />
                   {skill}
                 </li>
               ))}
             </ul>
-            <div className="ProjectModal__links">
-              {modalContent.githubLink && (
-                <a
-                  className="ProjectModal__githubIcon"
-                  href={modalContent.githubLink}
-                >
-                  <span>GitHub</span>
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
-              )}
-              {modalContent.gitPageLink && (
-                <a
-                  className="ProjectModal__gitPageIcon"
-                  href={modalContent.gitPageLink}
-                >
-                  <FontAwesomeIcon icon={faGlobe} />
-                  <span>GitHub Pages</span>
-                </a>
-              )}
+            <div className="ProjectModal__linksWrapper">
+              <div className="leftArrow" onClick={handlePrev}></div>
+              <div className="ProjectModal__links">
+                {modalContent.content.githubLink && (
+                  <a
+                    className="ProjectModal__githubIcon"
+                    href={modalContent.content.githubLink}
+                  >
+                    <FontAwesomeIcon icon={faGithub} label="github link" />
+                    <span>GitHub</span>
+                  </a>
+                )}
+                {modalContent.content.gitPageLink && (
+                  <a
+                    className="ProjectModal__gitPageIcon"
+                    href={modalContent.content.gitPageLink}
+                  >
+                    <FontAwesomeIcon icon={faGlobe} label="github pages link" />
+                    <span>GitHub Pages</span>
+                  </a>
+                )}
+              </div>
+              <div className="rightArrow" onClick={handleNext}></div>
             </div>
           </div>
         )}
@@ -103,6 +111,8 @@ function Modal() {
 
 Modal.propTypes = {
   children: PropTypes.node,
+  handlePrev: PropTypes.func.isRequired,
+  handleNext: PropTypes.func.isRequired,
 };
 
 export default Modal;

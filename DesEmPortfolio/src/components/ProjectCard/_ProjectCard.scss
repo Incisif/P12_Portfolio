@@ -20,7 +20,8 @@
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(22, 22, 22, 0.4);
   }
 
   &.show {

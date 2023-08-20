@@ -20,9 +20,17 @@
     .formation__content {
       color: $black;
     }
+    .formation__section-title{
+      font-weight: 100;
+    
+    }
+    .formation__skill{
+      font-weight: 400;
+      color: rgb(122, 122, 122);
+    }
   }
 
-  /* Formation Content */
+
   &__content {
     margin: 4rem 0 0 10rem;
     color: $white;
