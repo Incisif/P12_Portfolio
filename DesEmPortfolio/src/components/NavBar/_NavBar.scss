@@ -1,12 +1,20 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/fonts/fonts";
+@use "../../utils/style/devices" as *;
+
+@keyframes slideFromRight {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .navBar {
   position: absolute;
-  bottom: 3rem;
-  right: 2rem;
+  bottom: 3vw;
+  right: 4vw;
   font-size: 4rem;
   font-weight: 100;
-  margin-right: 2rem;
   text-align: right;
   &--dark {
     a {
@@ -14,10 +22,10 @@
     }
   }
   &--light {
-    .navBar__item
-      {color: $black;}
+    .navBar__item {
+      color: $black;
     }
-  
+  }
 
   &__list {
     display: flex;
@@ -31,10 +39,24 @@
       transform: translateX(-1rem);
     }
   }
-}
-@keyframes slideFromRight {
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+  @include desktop {
+    &__item {
+      font-size: 3.5rem;
+    }
+  }
+  @include laptopL {
+    &__item {
+      font-size: 3rem;
+    }
+  }
+  @include laptop {
+    &__item {
+      font-size: 2rem;
+    }
+  }
+  @include mobileM {
+    &__item {
+      font-size: 1.7rem;
+    }
   }
 }

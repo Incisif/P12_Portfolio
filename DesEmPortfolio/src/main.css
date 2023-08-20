@@ -579,13 +579,18 @@ table {
   background-color: rgb(245, 245, 245);
 }
 
+@keyframes slideFromRight {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .navBar {
   position: absolute;
-  bottom: 3rem;
-  right: 2rem;
+  bottom: 3vw;
+  right: 4vw;
   font-size: 4rem;
   font-weight: 100;
-  margin-right: 2rem;
   text-align: right;
 }
 .navBar--dark a {
@@ -605,13 +610,27 @@ table {
   color: rgb(249, 198, 16);
   transform: translateX(-1rem);
 }
-
-@keyframes slideFromRight {
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+@media (max-width: 1440px) {
+  .navBar__item {
+    font-size: 3.5rem;
   }
 }
+@media (max-width: 1280px) {
+  .navBar__item {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 1024px) {
+  .navBar__item {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 375px) {
+  .navBar__item {
+    font-size: 1.7rem;
+  }
+}
+
 .language-switcher {
   position: absolute;
   display: flex;
@@ -712,7 +731,8 @@ table {
 .home__name {
   font-size: 3rem;
   font-weight: 100;
-  padding: 4rem 0 0 4rem;
+  padding: 4vw 0 0 4vw;
+  margin-right: 4vw;
 }
 .home__textWrapper {
   overflow: hidden;
@@ -723,12 +743,36 @@ table {
 .home__title {
   font-size: 2rem;
   font-weight: 100;
-  padding-left: 4rem;
+  padding-left: 4vw;
   animation: slideFromBottom 1s ease 0.5s forwards;
   padding-bottom: 5px;
 }
 .home__fullName, .home__title {
   transform: translateY(100%);
+}
+@media (max-width: 1440px) {
+  .home__name {
+    font-size: 2.5rem;
+  }
+  .home__title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1280px) {
+  .home__name {
+    font-size: 2rem;
+  }
+  .home__title {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .home__name {
+    font-size: 1.5rem;
+  }
+  .home__title {
+    font-size: 1rem;
+  }
 }
 
 .portrait {
@@ -753,6 +797,50 @@ table {
   font-weight: 100;
   align-self: flex-end;
   margin-left: 1.5rem;
+}
+@media (max-width: 1440px) {
+  .portrait {
+    margin: auto 0 auto 20%;
+  }
+  .portrait__quote {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1280px) {
+  .portrait {
+    margin: auto 0 auto 15%;
+  }
+  .portrait__quote {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .portrait {
+    margin: auto 0 auto 15%;
+  }
+  .portrait__quote {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .portrait {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    margin: 30% auto;
+    width: 80%;
+  }
+  .portrait__image {
+    width: 100%;
+  }
+  .portrait__quote {
+    display: none;
+  }
+}
+@media (max-width: 375px) {
+  .portrait {
+    width: 70%;
+  }
 }
 
 .project {

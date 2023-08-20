@@ -1,5 +1,6 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/fonts/fonts";
+@use "../../utils/style/devices" as *;
 
 @keyframes slideFromBottom {
   100% {
@@ -52,7 +53,8 @@
   &__name {
     font-size: 3rem;
     font-weight: 100;
-    padding: 4rem 0 0 4rem;
+    padding: 4vw 0 0 4vw;
+    margin-right: 4vw;
   }
   &__textWrapper {
     overflow: hidden;
@@ -64,13 +66,37 @@
   &__title {
     font-size: 2rem;
     font-weight: 100;
-    padding-left: 4rem;
+    padding-left: 4vw;
     animation: slideFromBottom 1s ease 0.5s forwards;
     padding-bottom: 5px;
   }
   &__fullName,
   &__title {
     transform: translateY(100%);
+  }
+  @include desktop {
+    &__name {
+      font-size: 2.5rem;
+    }
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+  @include laptopL {
+    &__name {
+      font-size: 2rem;
+    }
+    &__title {
+      font-size: 1.2rem;
+    }
+  }
+  @include tablet {
+    &__name {
+      font-size: 1.5rem;
+    }
+    &__title {
+      font-size: 1rem;
+    }
   }
 }
 .portrait {
@@ -95,5 +121,40 @@
     font-weight: 100;
     align-self: flex-end;
     margin-left: 1.5rem;
+  }
+  @include desktop {
+    margin: auto 0 auto 20%;
+    &__quote {
+      font-size: 1.2rem;
+    }
+  }
+  @include laptopL {
+    margin: auto 0 auto 15%;
+    &__quote {
+      font-size: 1rem;
+    }
+  }
+  @include tablet {
+    margin: auto 0 auto 15%;
+    &__quote {
+      font-size: 0.8rem;
+    }
+  }
+  @include mobileL {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    margin: 30% auto;
+    width: 80%;
+    &__image {
+      width: 100%;
+    }
+    &__quote {
+      display: none;
+    }
+  }
+  @include mobileM {
+    width: 70%;
+   
   }
 }
