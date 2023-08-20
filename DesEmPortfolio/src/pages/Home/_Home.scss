@@ -34,7 +34,6 @@
   position: relative;
   &--blur {
     animation: fadeBlur 0.8s ease;
-    
   }
   &--dark {
     background-color: $grey-background;
@@ -73,17 +72,28 @@
   &__title {
     transform: translateY(100%);
   }
-  &__portrait {
+}
+.portrait {
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto 0 auto 26%;
+  padding-top: 4rem;
+  height: 45%;
+  &__image {
     animation: popUp 1s ease-in-out 0.2s forwards;
     transform: scale(0);
-    height: 45%;
-    position: absolute;
+
     opacity: 0;
     border: 1px solid $black;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto 18%;
+  }
+  &__quote {
+    font-size: 1.5rem;
+    font-weight: 100;
+    align-self: flex-end;
+    margin-left: 1.5rem;
   }
 }

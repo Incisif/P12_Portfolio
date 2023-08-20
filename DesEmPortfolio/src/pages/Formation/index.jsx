@@ -2,6 +2,7 @@ import Layout from "../../components/Layout";
 import { useSelector } from "react-redux";
 import { selectLanguage } from "../../features/languageSlice";
 import dataFormation from "../../data/dataFormation.json";
+import { useEffect } from "react";
 
 function Formation() {
   const darkMode = useSelector((state) => state.darkMode.darkMode);
@@ -10,6 +11,10 @@ function Formation() {
 
   const jsonData = dataFormation;
   const sections = jsonData.content;
+
+  useEffect(() => {
+    document.title = 'Formation - Portfolio Desmortreux Emmanuel';
+  }, []);
 
   return (
     <Layout>

@@ -20,19 +20,18 @@
     .formation__content {
       color: $black;
     }
-    .formation__section-title{
+    .formation__section-title {
       font-weight: 100;
-    
     }
-    .formation__skill{
+    .formation__skill {
       font-weight: 400;
       color: rgb(122, 122, 122);
     }
   }
 
-
   &__content {
-    margin: 4rem 0 0 10rem;
+    margin: 3rem 0 2rem 15rem;
+    padding-bottom: 2rem;
     color: $white;
     max-width: 35%;
   }
@@ -56,13 +55,13 @@
     list-style-type: disc;
     padding-left: 4rem;
     font-size: 1.2rem;
-
-    .formation__skill {
-      margin-bottom: 0.5rem;
-      font-weight: 100;
-    }
   }
-  &__conclusion{
+  &__skill {
+    margin-bottom: 0.5rem;
+    font-weight: 100;
+    line-height:2rem;
+  }
+  &__conclusion {
     font-size: 1.2rem;
     margin-top: 2rem;
   }

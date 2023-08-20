@@ -13,6 +13,10 @@ function Home() {
   const [blur, setBlur] = useState(false);
 
   useEffect(() => {
+    document.title = "Accueil - Portfolio Desmortreux Emmanuel";
+  }, []);
+
+  useEffect(() => {
     if (sessionStorage.getItem("visited") !== "true") {
       setShowLoader(true);
       sessionStorage.setItem("visited", "true");
@@ -45,8 +49,11 @@ function Home() {
                 : "Junior Web Developer"}
             </h1>
           </div>
-          
-          <img className="home__portrait" src={portrait} />
+          <div className="portrait">
+            <img className="portrait__image" src={portrait} />
+            <p className="portrait__quote">{`"Créer, c'est vivre deux fois." - Albert Camus`}</p>
+          </div>
+
           <NavBar />
         </div>
       </Layout>

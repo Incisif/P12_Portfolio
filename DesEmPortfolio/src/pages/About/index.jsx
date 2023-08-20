@@ -2,11 +2,15 @@ import Layout from "../../components/Layout";
 import portrait from "../../assets/portrait_About.webp";
 import { useSelector } from "react-redux";
 import { selectLanguage } from "../../features/languageSlice";
-
+import { useEffect } from "react";
 function About() {
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const backgroundColorClass = darkMode ? "about--dark" : "about--light";
   const language = useSelector(selectLanguage);
+
+  useEffect(() => {
+    document.title = 'À propos - Portfolio Desmortreux Emmanuel';
+  }, []);
 
   return (
     <Layout>

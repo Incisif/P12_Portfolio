@@ -1,6 +1,7 @@
 @use 'utils/style/variables' as *;
 @use 'utils/style/reset';
 @use 'utils/fonts/fonts';
+@use 'utils/style/devices';
 @use 'pages/Loader/Loader';
 @use 'components/ProjectCard/ProjectCard';
 @use 'components/Modal/Modal';

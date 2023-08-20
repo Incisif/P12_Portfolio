@@ -18,6 +18,8 @@ function Projects() {
   const classes = `project ${darkModeClass} ${modalBlurClass}`;
   const language = useSelector(selectLanguage);
 
+  useEffect(() => {document.title = 'Projets - Portfolio Desmortreux Emmanuel';}, []);
+
   const handleCardClick = (project, index) => {
     dispatch(openModal({ content: project, index }));
   };
