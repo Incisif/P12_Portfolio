@@ -13,6 +13,14 @@
     opacity: 1;
   }
 }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 @keyframes fadeBlur {
   0% {
     -webkit-filter: blur(10px);
@@ -51,7 +59,7 @@
     }
   }
   &__name {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 100;
     padding: 4vw 0 0 4vw;
     margin-right: 4vw;
@@ -60,14 +68,14 @@
     overflow: hidden;
   }
   &__fullName {
-    animation: slideFromBottom 1s ease 0.3s forwards;
+    animation: slideFromBottom 0.8s ease 0.3s forwards;
   }
 
   &__title {
     font-size: 2rem;
     font-weight: 100;
     padding-left: 4vw;
-    animation: slideFromBottom 1s ease 0.5s forwards;
+    animation: slideFromBottom 0.8s ease 0.8s forwards;
     padding-bottom: 5px;
   }
   &__fullName,
@@ -76,7 +84,7 @@
   }
   @include desktop {
     &__name {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
     }
     &__title {
       font-size: 1.5rem;
@@ -92,7 +100,7 @@
   }
   @include tablet {
     &__name {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
     &__title {
       font-size: 1rem;
@@ -106,11 +114,11 @@
   right: 0;
   bottom: 0;
   position: absolute;
-  margin: auto 0 auto 26%;
+  margin: 14% 0 auto 26%;
   padding-top: 4rem;
   height: 45%;
   &__image {
-    animation: popUp 1s ease-in-out 0.2s forwards;
+    animation: popUp 0.7s ease-in-out 1s forwards;
     transform: scale(0);
 
     opacity: 0;
@@ -121,6 +129,10 @@
     font-weight: 100;
     align-self: flex-end;
     margin-left: 1.5rem;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s 1.5s steps(40, end) forwards;
   }
   @include desktop {
     margin: auto 0 auto 20%;
@@ -135,17 +147,17 @@
     }
   }
   @include tablet {
-    margin: auto 0 auto 15%;
+    margin: 10vh 0 auto 15%;
     &__quote {
-      font-size: 0.8rem;
+      visibility: hidden;
     }
   }
   @include mobileL {
     padding: 0;
     flex-direction: column;
     align-items: center;
-    margin: 30% auto;
-    width: 80%;
+    margin-top: auto;
+    width: 70%;
     &__image {
       width: 100%;
     }
@@ -154,7 +166,6 @@
     }
   }
   @include mobileM {
-    width: 70%;
-   
+    width: 60%;
   }
 }

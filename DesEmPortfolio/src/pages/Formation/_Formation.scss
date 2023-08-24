@@ -9,7 +9,7 @@
   &__title {
     font-size: 5rem;
     font-weight: 100;
-    padding: 2rem 0 0 2rem;
+    padding: 4vw 0 0 4vw;
     color: $white;
   }
 
@@ -30,10 +30,10 @@
   }
 
   &__content {
-    margin: 3rem 0 2rem 15rem;
+    margin: 1rem 0 2rem 15rem;
     padding-bottom: 2rem;
     color: $white;
-    max-width: 35%;
+    max-width: 630px;
   }
 
   &__paragraph {

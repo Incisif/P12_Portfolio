@@ -3,13 +3,15 @@ import portrait from "../../assets/portrait_About.webp";
 import { useSelector } from "react-redux";
 import { selectLanguage } from "../../features/languageSlice";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+
 function About() {
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const backgroundColorClass = darkMode ? "about--dark" : "about--light";
   const language = useSelector(selectLanguage);
 
   useEffect(() => {
-    document.title = 'À propos - Portfolio Desmortreux Emmanuel';
+    document.title = "À propos - Portfolio Desmortreux Emmanuel";
   }, []);
 
   return (
@@ -31,6 +33,11 @@ function About() {
                 ? "Aujourd'hui, je crée des sites web esthétiques et solides. Cette seconde carrière n'est pas seulement un métier pour moi, c'est ma vocation. Je suis prêt à vous aider à concrétiser vos rêves numériques."
                 : "Today, I create aesthetically pleasing and robust websites. This second career isn't just a job for me, it's my vocation. I'm ready to help you bring your digital dreams to life."}
             </p>
+          </div>
+          <div className="link">
+            <Link to="/contact" className="link__text">
+              Contact<i className="material-icons link__icon">north_east</i>
+            </Link>
           </div>
         </div>
       </div>

@@ -9,10 +9,9 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Neue Montreal", serif;
   border: 1px solid $black;
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
+  margin-left: 20vw;
+  margin-top: 5vw;
+
   &--dark {
     background-color: $black;
     color: $white;

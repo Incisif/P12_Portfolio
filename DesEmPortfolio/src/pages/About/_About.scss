@@ -9,23 +9,29 @@
 
   &__title {
     font-size: 5rem;
-
     padding: 2rem 0 0 2rem;
     color: $white;
   }
 
   &__content {
+    height: 40%;
     display: flex;
+    margin: 10vw 0 0 10vw;
     align-items: flex-end;
+    flex-wrap: wrap;
   }
 
   &__img {
-    width: 350px;
-    margin: 15rem 0 0 10rem;
+    
+    
+    height: 100%;
+    border: 1px solid $black;
+    margin: 0 3rem 0 3rem ;
   }
   &__textContainer {
-    margin-left: 3rem;
-    width: 40%;
+    margin: 1rem 3rem 0 3rem;
+    width: 35%;
+    min-width: 580px;
     &::first-letter {
       padding-left: 2rem;
     }
@@ -35,24 +41,37 @@
     font-size: 1.5rem;
     color: $white;
     line-height: 2rem;
-    
+    margin-top: 1rem;
   }
-
+  
   &.about--dark {
     background-color: $grey-background;
     img {
       border: 1px solid $white;
     }
   }
-
+  
   &.about--light {
     background-color: $white;
-    .about__text{
+    .about__text {
       font-weight: 400;
     }
     .about__title,
     .about__text {
       color: $black;
+    }
+  }
+}
+.link{
+  position: absolute;
+  right: 8rem;
+  bottom:8rem;
+  &__text{
+    font-size: 1.5rem;
+    color: $white;
+    text-decoration: none;
+    &:hover{
+      color: $gold;
     }
   }
 }

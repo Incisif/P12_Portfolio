@@ -51,7 +51,7 @@ function Home() {
           </div>
           <div className="portrait">
             <img className="portrait__image" src={portrait} />
-            <p className="portrait__quote">{`"Créer, c'est vivre deux fois." - Albert Camus`}</p>
+            <p className="portrait__quote">{`// Dans les détails se trouve la perfection.`}</p>
           </div>
 
           <NavBar />

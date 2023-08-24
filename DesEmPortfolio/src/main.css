@@ -115,7 +115,7 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
   z-index: 99;
   animation: transparence 0.5s ease-in-out 3.3s forwards;
 }
@@ -192,6 +192,7 @@ table {
 }
 .projectCard {
   width: 20%;
+  min-width: 187px;
   margin: 10px;
   opacity: 0;
   transition: all 0.3s ease;
@@ -476,15 +477,13 @@ table {
   width: 100%;
   max-width: 500px;
   padding: 2rem;
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
   text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Neue Montreal", serif;
   border: 1px solid rgb(0, 0, 0);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: 20vw;
+  margin-top: 5vw;
 }
 .contact-form--dark {
   background-color: rgb(0, 0, 0);
@@ -496,7 +495,7 @@ table {
   color: rgb(0, 0, 0);
 }
 .contact-form--light .contact-form__input, .contact-form--light .contact-form__textarea {
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
   color: rgb(245, 245, 245);
 }
 .contact-form__input-wrapper {
@@ -557,19 +556,19 @@ table {
   width: calc(100% - 5rem);
   height: calc(100% - 5rem);
   font-family: "Neue Montreal", serif;
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
   overflow: scroll;
 }
 .layout__container::-webkit-scrollbar {
   width: 0rem;
 }
 .layout.layout--dark {
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
   color: rgb(245, 245, 245);
 }
 .layout.layout--dark .layout__container {
   border: 1px solid rgb(245, 245, 245);
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
 }
 .layout.layout--light {
   background-color: rgb(245, 245, 245);
@@ -690,6 +689,14 @@ table {
     opacity: 1;
   }
 }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 @keyframes fadeBlur {
   0% {
     -webkit-filter: blur(10px);
@@ -715,7 +722,7 @@ table {
   animation: fadeBlur 0.8s ease;
 }
 .home--dark {
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
 }
 .home--dark .home__fullName,
 .home--dark .home__title {
@@ -729,7 +736,7 @@ table {
   color: rgb(0, 0, 0);
 }
 .home__name {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 100;
   padding: 4vw 0 0 4vw;
   margin-right: 4vw;
@@ -738,13 +745,13 @@ table {
   overflow: hidden;
 }
 .home__fullName {
-  animation: slideFromBottom 1s ease 0.3s forwards;
+  animation: slideFromBottom 0.8s ease 0.3s forwards;
 }
 .home__title {
   font-size: 2rem;
   font-weight: 100;
   padding-left: 4vw;
-  animation: slideFromBottom 1s ease 0.5s forwards;
+  animation: slideFromBottom 0.8s ease 0.8s forwards;
   padding-bottom: 5px;
 }
 .home__fullName, .home__title {
@@ -752,7 +759,7 @@ table {
 }
 @media (max-width: 1440px) {
   .home__name {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   .home__title {
     font-size: 1.5rem;
@@ -768,7 +775,7 @@ table {
 }
 @media (max-width: 768px) {
   .home__name {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   .home__title {
     font-size: 1rem;
@@ -782,12 +789,12 @@ table {
   right: 0;
   bottom: 0;
   position: absolute;
-  margin: auto 0 auto 26%;
+  margin: 14% 0 auto 26%;
   padding-top: 4rem;
   height: 45%;
 }
 .portrait__image {
-  animation: popUp 1s ease-in-out 0.2s forwards;
+  animation: popUp 0.7s ease-in-out 1s forwards;
   transform: scale(0);
   opacity: 0;
   border: 1px solid rgb(0, 0, 0);
@@ -797,6 +804,10 @@ table {
   font-weight: 100;
   align-self: flex-end;
   margin-left: 1.5rem;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s 1.5s steps(40, end) forwards;
 }
 @media (max-width: 1440px) {
   .portrait {
@@ -816,10 +827,10 @@ table {
 }
 @media (max-width: 768px) {
   .portrait {
-    margin: auto 0 auto 15%;
+    margin: 10vh 0 auto 15%;
   }
   .portrait__quote {
-    font-size: 0.8rem;
+    visibility: hidden;
   }
 }
 @media (max-width: 480px) {
@@ -827,8 +838,8 @@ table {
     padding: 0;
     flex-direction: column;
     align-items: center;
-    margin: 30% auto;
-    width: 80%;
+    margin-top: auto;
+    width: 70%;
   }
   .portrait__image {
     width: 100%;
@@ -839,7 +850,7 @@ table {
 }
 @media (max-width: 375px) {
   .portrait {
-    width: 70%;
+    width: 60%;
   }
 }
 
@@ -852,17 +863,17 @@ table {
 .project__title {
   font-size: 5rem;
   font-weight: 100;
-  padding: 2rem 0 0 2rem;
+  padding: 4vw 0 0 4vw;
   color: rgb(245, 245, 245);
 }
 .project__subtitle {
   font-size: 3rem;
   font-weight: 100;
-  padding-left: 2rem;
+  padding-left: 4vw;
   color: rgb(245, 245, 245);
 }
 .project.project--dark {
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
 }
 .project.project--light {
   background-color: rgb(245, 245, 245);
@@ -893,7 +904,7 @@ table {
 .formation__title {
   font-size: 5rem;
   font-weight: 100;
-  padding: 2rem 0 0 2rem;
+  padding: 4vw 0 0 4vw;
   color: rgb(245, 245, 245);
 }
 .formation.formation--light {
@@ -911,10 +922,10 @@ table {
   color: rgb(122, 122, 122);
 }
 .formation__content {
-  margin: 3rem 0 2rem 15rem;
+  margin: 1rem 0 2rem 15rem;
   padding-bottom: 2rem;
   color: rgb(245, 245, 245);
-  max-width: 35%;
+  max-width: 630px;
 }
 .formation__paragraph {
   font-size: 1.2rem;
@@ -956,16 +967,21 @@ table {
   color: rgb(245, 245, 245);
 }
 .about__content {
+  height: 40%;
   display: flex;
+  margin: 10vw 0 0 10vw;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 .about__img {
-  width: 350px;
-  margin: 15rem 0 0 10rem;
+  height: 100%;
+  border: 1px solid rgb(0, 0, 0);
+  margin: 0 3rem 0 3rem;
 }
 .about__textContainer {
-  margin-left: 3rem;
-  width: 40%;
+  margin: 1rem 3rem 0 3rem;
+  width: 35%;
+  min-width: 580px;
 }
 .about__textContainer::first-letter {
   padding-left: 2rem;
@@ -975,9 +991,10 @@ table {
   font-size: 1.5rem;
   color: rgb(245, 245, 245);
   line-height: 2rem;
+  margin-top: 1rem;
 }
 .about.about--dark {
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
 }
 .about.about--dark img {
   border: 1px solid rgb(245, 245, 245);
@@ -993,6 +1010,20 @@ table {
   color: rgb(0, 0, 0);
 }
 
+.link {
+  position: absolute;
+  right: 8rem;
+  bottom: 8rem;
+}
+.link__text {
+  font-size: 1.5rem;
+  color: rgb(245, 245, 245);
+  text-decoration: none;
+}
+.link__text:hover {
+  color: rgb(249, 198, 16);
+}
+
 .contact {
   height: 100%;
   width: 100%;
@@ -1000,7 +1031,7 @@ table {
   position: relative;
 }
 .contact--dark {
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(19, 19, 19);
 }
 .contact--dark .contact__title {
   color: rgb(245, 245, 245);
