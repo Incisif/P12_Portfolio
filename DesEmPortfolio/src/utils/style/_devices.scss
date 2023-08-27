@@ -22,4 +22,4 @@ $desktopL: 2560px;
 @mixin mobileM-landscape { @media (max-width: $mobileM) and (orientation: landscape) { @content; } }
 @mixin mobileL-landscape { @media (max-width: $mobileL) and (orientation: landscape) { @content; } }
 @mixin tablet-landscape { @media (max-width: $tablet) and (orientation: landscape) { @content; } }
-
+@mixin laptop-landscape { @media (max-width: $laptop) and (orientation: landscape) { @content; } }

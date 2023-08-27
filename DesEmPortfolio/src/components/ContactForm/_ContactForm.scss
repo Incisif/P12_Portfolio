@@ -1,5 +1,6 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/fonts/fonts";
+@use"../../utils/style/devices" as *;
 .contact-form {
   width: 100%;
   max-width: 500px;
@@ -65,7 +66,7 @@
   &__button {
     padding: 0.5rem 1rem;
     border: none;
-    background-color: $gold;
+    background-color: rgb(164, 164, 164);
     color: $black;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -82,5 +83,9 @@
     &--error {
       color: red;
     }
+  }
+  @include laptop {
+    margin: 10vw auto 0 auto;
+    
   }
 }

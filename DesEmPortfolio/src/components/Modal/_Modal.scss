@@ -1,4 +1,5 @@
 @use "../../utils/style/variables" as *;
+@use "../../utils/style/devices" as *;
 
 @keyframes appearFromCenter {
   from {
@@ -17,7 +18,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 35%;
-  height: 800px;
+  height: 70%;
   background-color: $black;
   color: $white;
   box-shadow: 0 0 25px rgba(22, 22, 22, 0.4);
@@ -34,13 +35,14 @@
     background-color: $white;
     color: $black;
     border: 1px solid $black;
-    .rightArrow{
+    .rightArrow {
       border-top: 1px solid $black;
       border-right: 1px solid $black;
     }
-    .leftArrow{
+    .leftArrow {
       border-top: 1px solid $black;
-      border-right: 1px solid $black;}
+      border-right: 1px solid $black;
+    }
     .container {
       border-bottom: 1px solid $black;
 
@@ -67,12 +69,12 @@
   }
 
   &__title {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 400;
-    padding-top: 2.5rem;
+    padding-top: clamp(0.5rem, 2vh, 1rem);
   }
 
-  &__linksWrapper{
+  &__linksWrapper {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -82,10 +84,8 @@
     align-items: center;
     justify-content: space-between;
     margin: 1rem 0;
-    
   }
   &__links {
-    
     display: flex;
     align-items: center;
   }
@@ -102,13 +102,13 @@
     }
   }
   &__skillsTitle {
-    margin: 1.5rem;
+    margin: clamp(1rem, 2vh, 2rem);
   }
   &__skill {
     position: relative;
     display: flex;
     align-items: center;
-    margin: 0 1rem;
+    margin: 0 clamp(0.5rem, 1vh, 1rem);
     padding-left: 1.5rem;
     line-height: 2rem;
   }
@@ -117,8 +117,65 @@
     font-size: 1.5rem;
     fill: $white;
   }
+  @include desktop {
+    width: 50%;
+    height: 70%;
+  }
+  @include laptop {
+    width: 60%;
+    height: 70%;
+  }
+  @include tablet {
+    width: 70%;
+    height: 70%;
+  }
+  @include laptop-landscape {
+    width: 80%;
+    .ProjectModal__content {
+        flex-direction: row;
+        align-items: center;
+        height: 70%;  // Assurez-vous qu'il prend toute la hauteur disponible
+        justify-content: center;
+        margin: 5%;
+    }
+
+    .ProjectModal__img {
+        width: 50%;
+        height: 40vh;
+        margin-right: 5%; 
+        align-self: center;
+    }
+    .ProjectModal__title,
+    .ProjectModal__skillsTitle,
+    .ProjectModal__skill {
+        margin-bottom: 0rem; 
+    }
+    &__title{
+      font-size: clamp(0rem, 3vh, 2rem);
+    }
+    &__skillsTitle{
+      font-size: clamp(0rem, 3vh, 2rem);
+    }
+    &__skill{
+      font-size: clamp(0rem, 3vh, 2rem);
+      line-height: 1.2rem;
+    }
+    &__icon{
+      font-size: clamp(0rem, 3vh, 2rem);
+    }
+    &__linksWrapper{
+      margin: 0;
+
+    }
+    &__githubIcon{
+      font-size: 1.5rem;
+    }
+    &__gitPageIcon{
+      font-size: 1.5rem;
+    }
 }
 
+}
 .container {
   border-bottom: 1px solid $white;
   display: flex;

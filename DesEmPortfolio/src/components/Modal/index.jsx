@@ -55,29 +55,31 @@ function Modal({ handlePrev, handleNext }) {
               src={modalContent.content.imagePath}
               alt={modalContent.content.alt}
             />
-            <h2 className="ProjectModal__title">
-              {language === "fr"
-                ? modalContent.content.frTitle
-                : modalContent.enTitle}
-            </h2>
-            <h3 className="ProjectModal__skillsTitle">
-              {language === "fr" ? "Compétences:" : "Skills:"}
-            </h3>
-            <ul className="ProjectModal__skillsList">
-              {(language === "fr"
-                ? modalContent.content.frCompetences
-                : modalContent.content.enCompetences
-              ).map((skill, index) => (
-                <li key={index} className="ProjectModal__skill">
-                  <FontAwesomeIcon
-                    className="ProjectModal__icon"
-                    icon={faCheck}
-                    label="check"
-                  />
-                  {skill}
-                </li>
-              ))}
-            </ul>
+            <div className="ProjectModal__text-container">
+              <h2 className="ProjectModal__title">
+                {language === "fr"
+                  ? modalContent.content.frTitle
+                  : modalContent.enTitle}
+              </h2>
+              <h3 className="ProjectModal__skillsTitle">
+                {language === "fr" ? "Compétences:" : "Skills:"}
+              </h3>
+              <ul className="ProjectModal__skillsList">
+                {(language === "fr"
+                  ? modalContent.content.frCompetences
+                  : modalContent.content.enCompetences
+                ).map((skill, index) => (
+                  <li key={index} className="ProjectModal__skill">
+                    <FontAwesomeIcon
+                      className="ProjectModal__icon"
+                      icon={faCheck}
+                      label="check"
+                    />
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
             <div className="ProjectModal__linksWrapper">
               <div className="leftArrow" onClick={handlePrev}></div>
               <div className="ProjectModal__links">
