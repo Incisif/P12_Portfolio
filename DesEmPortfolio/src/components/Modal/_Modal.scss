@@ -60,12 +60,15 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 1.8vh 1.8vh 0 1.8vh;
+    margin: 3vh 3vh 0 3vh;
   }
 
   &__img {
     width: 100%;
+    height: 20vh;
+    object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    align-self: center;
   }
 
   &__title {
@@ -74,12 +77,26 @@
     padding-top: clamp(0.5rem, 2vh, 1rem);
   }
 
+  &__skillsTitle {
+    margin: clamp(1rem, 2vh, 2rem);
+    font-size: clamp(0.8rem, 2vw, 1.4rem);
+  }
+  &__skill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 clamp(0.5rem, 1vh, 1rem);
+    padding-left: 1.5rem;
+    line-height: clamp(3rem, 3vw, 3rem);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
   &__linksWrapper {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
     width: 100%;
     height: 4rem;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -93,29 +110,19 @@
   &__gitPageIcon {
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: clamp(1rem, 3vh, 1.5rem);
     margin: 1rem 1rem;
     fill: $white;
     span {
-      font-size: 1rem;
+      font-size: clamp(0.5rem, 2vw, 1.5rem);
       margin: 0 1rem;
     }
-  }
-  &__skillsTitle {
-    margin: clamp(1rem, 2vh, 2rem);
-  }
-  &__skill {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0 clamp(0.5rem, 1vh, 1rem);
-    padding-left: 1.5rem;
-    line-height: 2rem;
   }
   &__icon {
     margin-right: 1.2rem;
     font-size: 1.5rem;
     fill: $white;
+    
   }
   @include desktop {
     width: 50%;
@@ -124,57 +131,115 @@
   @include laptop {
     width: 60%;
     height: 70%;
+    &__title {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+    }
+    &__skillsTitle {
+      font-size: clamp(1.2rem, 1.9vw, 2rem);
+    }
+    &__skill {
+      font-size: clamp(1rem, 1.7vw, 2rem);
+      line-height: 1.2rem;
+      padding-left: clamp(1rem, 1.5vw, 2rem);
+    }
+    &__icon {
+      font-size: clamp(0rem, 3vw, 2rem);
+    }
+    &__linksWrapper {
+      margin: 0;
+      width: 90%;
+    }
+    &__githubIcon {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+    &__gitPageIcon {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+    }
   }
   @include tablet {
     width: 70%;
     height: 70%;
+    &__title {
+      font-size: clamp(0rem, 3vh, 1.3rem);
+    }
+  }
+  @include mobileL {
+    height: content;
+    &__title {
+      font-size: clamp(0rem, 3vh, 1.3rem);
+    }
+    &__img {
+      height: 20%;
+    }
+    &__githubIcon {
+      font-size: 1rem;
+      margin: 0;
+    }
+    &__gitPageIcon {
+      font-size: 1rem;
+      margin: 0;
+    }
+    .leftArrow {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+    }
+    .rightArrow {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+    }
+  }
+  @include mobileM {
+    &__title {
+      font-size: clamp(0rem, 2vh, 1.3rem);
+    }
+    &__skillsTitle {
+      font-size: clamp(0rem, 1.9vh, 1.3rem);
+    }
+    &__skill {
+      font-size: clamp(0rem, 1.8vh, 1.3rem);
+    }
   }
   @include laptop-landscape {
     width: 80%;
     .ProjectModal__content {
-        flex-direction: row;
-        align-items: center;
-        height: 70%;  // Assurez-vous qu'il prend toute la hauteur disponible
-        justify-content: center;
-        margin: 5%;
+      flex-direction: row;
+      align-items: center;
+      height: 70%; // Assurez-vous qu'il prend toute la hauteur disponible
+      justify-content: center;
+      margin: 0 3vw;
     }
 
     .ProjectModal__img {
-        width: 50%;
-        height: 40vh;
-        margin-right: 5%; 
-        align-self: center;
+      width: 50%;
+      height: 30vh;
+      margin-right: 1.7vw;
+      align-self: center;
+      object-fit: cover;
     }
     .ProjectModal__title,
     .ProjectModal__skillsTitle,
     .ProjectModal__skill {
-        margin-bottom: 0rem; 
+      margin-bottom: 0rem;
     }
-    &__title{
-      font-size: clamp(0rem, 3vh, 2rem);
+    &__title {
+      font-size: clamp(0rem, 3vh, 1.5rem);
     }
-    &__skillsTitle{
-      font-size: clamp(0rem, 3vh, 2rem);
+    &__skillsTitle {
+      font-size: clamp(0rem, 3vh, 1.3rem);
     }
-    &__skill{
-      font-size: clamp(0rem, 3vh, 2rem);
+    &__skill {
+      font-size: clamp(0rem, 3vh, 1rem);
       line-height: 1.2rem;
     }
-    &__icon{
+    &__icon {
       font-size: clamp(0rem, 3vh, 2rem);
     }
-    &__linksWrapper{
+    &__linksWrapper {
       margin: 0;
-
     }
-    &__githubIcon{
-      font-size: 1.5rem;
-    }
-    &__gitPageIcon{
-      font-size: 1.5rem;
-    }
-}
-
+  }
 }
 .container {
   border-bottom: 1px solid $white;

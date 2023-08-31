@@ -1,4 +1,5 @@
 @use "../../utils/style/variables" as *;
+@use "../../utils/style/devices" as *;
 
 .formation {
   display: flex;
@@ -7,9 +8,9 @@
   width: 100%;
 
   &__title {
-    font-size: 5rem;
+    font-size: clamp(2rem, 8vw, 5rem);
     font-weight: 100;
-    padding: 4vw 0 0 4vw;
+    padding: 4vw 0 1rem 4vw;
     color: $white;
   }
 
@@ -30,39 +31,45 @@
   }
 
   &__content {
-    margin: 1rem 0 2rem 15rem;
+    margin: 0 0 2rem clamp(4vw, 10vw, 10rem);
     padding-bottom: 2rem;
     color: $white;
     max-width: 630px;
   }
 
-  &__paragraph {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-  }
-
   &__section {
     margin-top: 3rem;
+    padding-left: clamp(0.5rem, 20vw, 5rem);
   }
 
   &__section-title {
-    font-size: 2rem;
+    font-size: clamp(1rem, 4vw, 2rem);
     font-weight: 100;
     margin-bottom: 1rem;
   }
 
   &__skills {
     list-style-type: disc;
-    padding-left: 4rem;
-    font-size: 1.2rem;
+    padding-left: clamp(0.5rem, 10vw, 1.5rem);
+    font-size: clamp(1rem, 3vw, 1rem);
   }
   &__skill {
     margin-bottom: 0.5rem;
     font-weight: 100;
-    line-height:2rem;
+    line-height: clamp(1.5rem, 5vw, 2rem);
   }
   &__conclusion {
     font-size: 1.2rem;
     margin-top: 2rem;
+  }
+  @include laptop {
+    &__content {
+      align-self: center;
+      margin: 0;
+    }
+    &__section {
+      margin-top: 2rem;
+      padding: 0 3rem;
+    }
   }
 }

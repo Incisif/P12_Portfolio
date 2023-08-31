@@ -2,16 +2,17 @@
 @use "../../utils/fonts/fonts";
 @use"../../utils/style/devices" as *;
 .contact-form {
-  width: 100%;
+  width: clamp(300px, 60vw, 500px);
   max-width: 500px;
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background-color: $grey-background;
   text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Neue Montreal", serif;
   border: 1px solid $black;
-  margin-left: 20vw;
-  margin-top: 5vw;
+  margin-left: clamp(1rem, 20vw, 20rem);
+  margin-top: 10vh;
+  box-sizing: border-box;
 
   &--dark {
     background-color: $black;
@@ -32,7 +33,7 @@
   &__input-wrapper {
     margin-bottom: 1rem;
     & textarea {
-      height: 150px;
+      height: clamp(80px, 20vh, 100px);
       resize: none;
 
       &::-webkit-scrollbar {
@@ -55,6 +56,7 @@
       border: 1px solid $black;
       background-color: $white;
       color: $black;
+      box-sizing: border-box;
     }
 
     & input:focus,
@@ -84,8 +86,15 @@
       color: red;
     }
   }
+  @include desktop{
+    margin-left: clamp(1rem, 15vw, 20rem);
+  }
+  @include laptopL{
+    margin-left:  6vw;
+  }
   @include laptop {
-    margin: 10vw auto 0 auto;
-    
+   align-self: center;
+   margin-left: 0;
+  
   }
 }

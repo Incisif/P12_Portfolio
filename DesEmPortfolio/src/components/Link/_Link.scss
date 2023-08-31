@@ -1,0 +1,21 @@
+@use "../../utils/style/variables" as *;
+@use "../../utils/style/devices" as *;
+.link{
+    position: absolute;
+    right: 8rem;
+    bottom:8rem;
+    &__text{
+      font-size: 1.5rem;
+      font-weight: 100;
+      color: $white;
+      text-decoration: none;
+      &:hover{
+        color: $gold;
+      }
+    }
+    @include laptop{
+      position:static;
+      text-align: end;
+      margin: 2rem 2rem 0 0;
+    }
+  }

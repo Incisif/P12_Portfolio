@@ -1,6 +1,6 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/fonts/fonts";
-@use"../../utils/style/devices" as *;
+@use "../../utils/style/devices" as *;
 
 .contact {
   height: 100%;
@@ -27,5 +27,48 @@
     padding: 4vw 0 0 4vw;
     font-weight: 100;
     animation: slideFromBottom 1s ease 0.9s forwards;
+  }
+  &__content {
+    display: flex;
+  }
+  &__icon {
+    align-self: flex-end;
+    margin-left: 1rem;
+    padding-bottom: 5rem;
+  }
+  &__text {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-left: 1rem;
+    padding-bottom: 5rem;
+    font-weight: 100;
+    width: 30%;
+    align-self: flex-end;
+  }
+  @include laptop {
+    &__content {
+      flex-direction: column;
+    }
+    &__icon {
+      display: none;
+    }
+    &__text {
+      align-self: center;
+      margin-left: 0;
+      margin-top: 2rem;
+      padding-bottom: 1rem;
+      width: clamp(300px, 60vw, 500px);
+      line-height: 1.5rem;
+    }
+  }
+}
+.social {
+  position: absolute;
+  bottom: clamp(1.5rem, 2vw, 2rem);
+  right: clamp(1.5rem, 2vw, 2rem);
+  display: flex;
+  ul li {
+    display: inline-block;
+    margin: 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
   }
 }

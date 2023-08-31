@@ -3,17 +3,20 @@ import { useSelector } from "react-redux";
 import { selectLanguage } from "../../features/languageSlice";
 import dataFormation from "../../data/dataFormation.json";
 import { useEffect } from "react";
+import Link from "../../components/Link";
 
 function Formation() {
   const darkMode = useSelector((state) => state.darkMode.darkMode);
-  const backgroundColorClass = darkMode ? "formation--dark" : "formation--light";
+  const backgroundColorClass = darkMode
+    ? "formation--dark"
+    : "formation--light";
   const language = useSelector(selectLanguage);
 
   const jsonData = dataFormation;
   const sections = jsonData.content;
 
   useEffect(() => {
-    document.title = 'Formation - Portfolio Desmortreux Emmanuel';
+    document.title = "Formation - Portfolio Desmortreux Emmanuel";
   }, []);
 
   return (
@@ -35,6 +38,7 @@ function Formation() {
               </ul>
             </div>
           ))}
+          <Link link={"https://www.linkedin.com/in/emmanuel-desmortreux-1223a5257/"} text={"LinkedIn"}></Link>
         </div>
       </div>
     </Layout>

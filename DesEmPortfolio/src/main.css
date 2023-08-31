@@ -304,23 +304,41 @@ table {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 1.8vh 1.8vh 0 1.8vh;
+  margin: 3vh 3vh 0 3vh;
 }
 .ProjectModal__img {
   width: 100%;
+  height: 20vh;
+  -o-object-fit: cover;
+     object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  align-self: center;
 }
 .ProjectModal__title {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 400;
   padding-top: clamp(0.5rem, 2vh, 1rem);
 }
+.ProjectModal__skillsTitle {
+  margin: clamp(1rem, 2vh, 2rem);
+  font-size: clamp(0.8rem, 2vw, 1.4rem);
+}
+.ProjectModal__skill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 clamp(0.5rem, 1vh, 1rem);
+  padding-left: 1.5rem;
+  line-height: clamp(3rem, 3vw, 3rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
 .ProjectModal__linksWrapper {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 100%;
   height: 4rem;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -333,24 +351,13 @@ table {
 .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: clamp(1rem, 3vh, 1.5rem);
   margin: 1rem 1rem;
   fill: rgb(245, 245, 245);
 }
 .ProjectModal__githubIcon span, .ProjectModal__gitPageIcon span {
-  font-size: 1rem;
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
   margin: 0 1rem;
-}
-.ProjectModal__skillsTitle {
-  margin: clamp(1rem, 2vh, 2rem);
-}
-.ProjectModal__skill {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin: 0 clamp(0.5rem, 1vh, 1rem);
-  padding-left: 1.5rem;
-  line-height: 2rem;
 }
 .ProjectModal__icon {
   margin-right: 1.2rem;
@@ -368,11 +375,78 @@ table {
     width: 60%;
     height: 70%;
   }
+  .ProjectModal__title {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+  }
+  .ProjectModal__skillsTitle {
+    font-size: clamp(1.2rem, 1.9vw, 2rem);
+  }
+  .ProjectModal__skill {
+    font-size: clamp(1rem, 1.7vw, 2rem);
+    line-height: 1.2rem;
+    padding-left: clamp(1rem, 1.5vw, 2rem);
+  }
+  .ProjectModal__icon {
+    font-size: clamp(0rem, 3vw, 2rem);
+  }
+  .ProjectModal__linksWrapper {
+    margin: 0;
+    width: 90%;
+  }
+  .ProjectModal__githubIcon {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+  .ProjectModal__gitPageIcon {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
 }
 @media (max-width: 768px) {
   .ProjectModal {
     width: 70%;
     height: 70%;
+  }
+  .ProjectModal__title {
+    font-size: clamp(0rem, 3vh, 1.3rem);
+  }
+}
+@media (max-width: 480px) {
+  .ProjectModal {
+    height: content;
+  }
+  .ProjectModal__title {
+    font-size: clamp(0rem, 3vh, 1.3rem);
+  }
+  .ProjectModal__img {
+    height: 20%;
+  }
+  .ProjectModal__githubIcon {
+    font-size: 1rem;
+    margin: 0;
+  }
+  .ProjectModal__gitPageIcon {
+    font-size: 1rem;
+    margin: 0;
+  }
+  .ProjectModal .leftArrow {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+  .ProjectModal .rightArrow {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+}
+@media (max-width: 375px) {
+  .ProjectModal__title {
+    font-size: clamp(0rem, 2vh, 1.3rem);
+  }
+  .ProjectModal__skillsTitle {
+    font-size: clamp(0rem, 1.9vh, 1.3rem);
+  }
+  .ProjectModal__skill {
+    font-size: clamp(0rem, 1.8vh, 1.3rem);
   }
 }
 @media (max-width: 1024px) and (orientation: landscape) {
@@ -384,13 +458,15 @@ table {
     align-items: center;
     height: 70%;
     justify-content: center;
-    margin: 5%;
+    margin: 0 3vw;
   }
   .ProjectModal .ProjectModal__img {
     width: 50%;
-    height: 40vh;
-    margin-right: 5%;
+    height: 30vh;
+    margin-right: 1.7vw;
     align-self: center;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .ProjectModal .ProjectModal__title,
   .ProjectModal .ProjectModal__skillsTitle,
@@ -398,13 +474,13 @@ table {
     margin-bottom: 0rem;
   }
   .ProjectModal__title {
-    font-size: clamp(0rem, 3vh, 2rem);
+    font-size: clamp(0rem, 3vh, 1.5rem);
   }
   .ProjectModal__skillsTitle {
-    font-size: clamp(0rem, 3vh, 2rem);
+    font-size: clamp(0rem, 3vh, 1.3rem);
   }
   .ProjectModal__skill {
-    font-size: clamp(0rem, 3vh, 2rem);
+    font-size: clamp(0rem, 3vh, 1rem);
     line-height: 1.2rem;
   }
   .ProjectModal__icon {
@@ -412,12 +488,6 @@ table {
   }
   .ProjectModal__linksWrapper {
     margin: 0;
-  }
-  .ProjectModal__githubIcon {
-    font-size: 1.5rem;
-  }
-  .ProjectModal__gitPageIcon {
-    font-size: 1.5rem;
   }
 }
 
@@ -547,16 +617,17 @@ table {
 }
 
 .contact-form {
-  width: 100%;
+  width: clamp(300px, 60vw, 500px);
   max-width: 500px;
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background-color: rgb(19, 19, 19);
   text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Neue Montreal", serif;
   border: 1px solid rgb(0, 0, 0);
-  margin-left: 20vw;
-  margin-top: 5vw;
+  margin-left: clamp(1rem, 20vw, 20rem);
+  margin-top: 10vh;
+  box-sizing: border-box;
 }
 .contact-form--dark {
   background-color: rgb(0, 0, 0);
@@ -575,7 +646,7 @@ table {
   margin-bottom: 1rem;
 }
 .contact-form__input-wrapper textarea {
-  height: 150px;
+  height: clamp(80px, 20vh, 100px);
   resize: none;
 }
 .contact-form__input-wrapper textarea::-webkit-scrollbar {
@@ -594,6 +665,7 @@ table {
   border: 1px solid rgb(0, 0, 0);
   background-color: rgb(245, 245, 245);
   color: rgb(0, 0, 0);
+  box-sizing: border-box;
 }
 .contact-form__input-wrapper input:focus, .contact-form__input-wrapper textarea:focus {
   outline: 2px solid rgb(249, 198, 16);
@@ -616,9 +688,20 @@ table {
 .contact-form__message--error {
   color: red;
 }
+@media (max-width: 1440px) {
+  .contact-form {
+    margin-left: clamp(1rem, 15vw, 20rem);
+  }
+}
+@media (max-width: 1280px) {
+  .contact-form {
+    margin-left: 6vw;
+  }
+}
 @media (max-width: 1024px) {
   .contact-form {
-    margin: 10vw auto 0 auto;
+    align-self: center;
+    margin-left: 0;
   }
 }
 
@@ -754,6 +837,28 @@ table {
 }
 .language-switcher__line--en {
   left: 50%;
+}
+
+.link {
+  position: absolute;
+  right: 8rem;
+  bottom: 8rem;
+}
+.link__text {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: rgb(245, 245, 245);
+  text-decoration: none;
+}
+.link__text:hover {
+  color: rgb(249, 198, 16);
+}
+@media (max-width: 1024px) {
+  .link {
+    position: static;
+    text-align: end;
+    margin: 2rem 2rem 0 0;
+  }
 }
 
 @keyframes slideFromBottom {
@@ -980,9 +1085,9 @@ table {
   width: 100%;
 }
 .formation__title {
-  font-size: 5rem;
+  font-size: clamp(2rem, 8vw, 5rem);
   font-weight: 100;
-  padding: 4vw 0 0 4vw;
+  padding: 4vw 0 1rem 4vw;
   color: rgb(245, 245, 245);
 }
 .formation.formation--light {
@@ -1000,42 +1105,48 @@ table {
   color: rgb(122, 122, 122);
 }
 .formation__content {
-  margin: 1rem 0 2rem 15rem;
+  margin: 0 0 2rem clamp(4vw, 10vw, 10rem);
   padding-bottom: 2rem;
   color: rgb(245, 245, 245);
   max-width: 630px;
 }
-.formation__paragraph {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-}
 .formation__section {
   margin-top: 3rem;
+  padding-left: clamp(0.5rem, 20vw, 5rem);
 }
 .formation__section-title {
-  font-size: 2rem;
+  font-size: clamp(1rem, 4vw, 2rem);
   font-weight: 100;
   margin-bottom: 1rem;
 }
 .formation__skills {
   list-style-type: disc;
-  padding-left: 4rem;
-  font-size: 1.2rem;
+  padding-left: clamp(0.5rem, 10vw, 1.5rem);
+  font-size: clamp(1rem, 3vw, 1rem);
 }
 .formation__skill {
   margin-bottom: 0.5rem;
   font-weight: 100;
-  line-height: 2rem;
+  line-height: clamp(1.5rem, 5vw, 2rem);
 }
 .formation__conclusion {
   font-size: 1.2rem;
   margin-top: 2rem;
 }
+@media (max-width: 1024px) {
+  .formation__content {
+    align-self: center;
+    margin: 0;
+  }
+  .formation__section {
+    margin-top: 2rem;
+    padding: 0 3rem;
+  }
+}
 
 .about {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
   font-weight: 100;
 }
@@ -1045,30 +1156,25 @@ table {
   color: rgb(245, 245, 245);
 }
 .about__content {
-  height: 40%;
   display: flex;
-  margin: 10vw 0 0 10vw;
+  margin: 9vw 0 0 9vw;
   align-items: flex-end;
   flex-wrap: wrap;
 }
 .about__img {
-  height: 100%;
+  width: clamp(200px, 20vw, 300px);
+  margin-right: 2rem;
   border: 1px solid rgb(0, 0, 0);
-  margin: 0 3rem 0 3rem;
 }
 .about__textContainer {
-  margin: 1rem 3rem 0 3rem;
   width: 35%;
-  min-width: 580px;
-}
-.about__textContainer::first-letter {
-  padding-left: 2rem;
+  width: clamp(20%, 50vw, 50%);
 }
 .about__text {
   display: flex;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   color: rgb(245, 245, 245);
-  line-height: 2rem;
+  line-height: clamp(1.5rem, 2vw, 2rem);
   margin-top: 1rem;
 }
 .about.about--dark {
@@ -1087,19 +1193,29 @@ table {
 .about.about--light .about__text {
   color: rgb(0, 0, 0);
 }
-
-.link {
-  position: absolute;
-  right: 8rem;
-  bottom: 8rem;
+@media (max-width: 1024px) {
+  .about__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about__textContainer {
+    width: 70%;
+  }
 }
-.link__text {
-  font-size: 1.5rem;
-  color: rgb(245, 245, 245);
-  text-decoration: none;
-}
-.link__text:hover {
-  color: rgb(249, 198, 16);
+@media (max-width: 480px) {
+  .about__content {
+    margin: 2rem 2rem;
+  }
+  .about__textContainer {
+    width: 100%;
+  }
+  .about__text {
+    align-self: center;
+  }
+  .about__img {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .contact {
@@ -1125,4 +1241,48 @@ table {
   padding: 4vw 0 0 4vw;
   font-weight: 100;
   animation: slideFromBottom 1s ease 0.9s forwards;
+}
+.contact__content {
+  display: flex;
+}
+.contact__icon {
+  align-self: flex-end;
+  margin-left: 1rem;
+  padding-bottom: 5rem;
+}
+.contact__text {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin-left: 1rem;
+  padding-bottom: 5rem;
+  font-weight: 100;
+  width: 30%;
+  align-self: flex-end;
+}
+@media (max-width: 1024px) {
+  .contact__content {
+    flex-direction: column;
+  }
+  .contact__icon {
+    display: none;
+  }
+  .contact__text {
+    align-self: center;
+    margin-left: 0;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    width: clamp(300px, 60vw, 500px);
+    line-height: 1.5rem;
+  }
+}
+
+.social {
+  position: absolute;
+  bottom: clamp(1.5rem, 2vw, 2rem);
+  right: clamp(1.5rem, 2vw, 2rem);
+  display: flex;
+}
+.social ul li {
+  display: inline-block;
+  margin: 1rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }/*# sourceMappingURL=main.css.map */
