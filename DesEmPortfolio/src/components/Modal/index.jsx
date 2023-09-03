@@ -5,7 +5,6 @@ import { useEffect, useRef, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe, faCheck, faX } from "@fortawesome/free-solid-svg-icons";
-
 import { selectLanguage } from "../../features/languageSlice";
 
 function Modal({ handlePrev, handleNext }) {
@@ -50,38 +49,39 @@ function Modal({ handlePrev, handleNext }) {
         </div>
         {modalContent && (
           <div className="ProjectModal__content">
-            <img
-              className="ProjectModal__img"
-              src={modalContent.content.imagePath}
-              alt={modalContent.content.alt}
-            />
-            <div className="ProjectModal__text-container">
-              <h2 className="ProjectModal__title">
-                {language === "fr"
-                  ? modalContent.content.frTitle
-                  : modalContent.enTitle}
-              </h2>
-              <h3 className="ProjectModal__skillsTitle">
-                {language === "fr" ? "Compétences:" : "Skills:"}
-              </h3>
-              <ul className="ProjectModal__skillsList">
-                {(language === "fr"
-                  ? modalContent.content.frCompetences
-                  : modalContent.content.enCompetences
-                ).map((skill, index) => (
-                  <li key={index} className="ProjectModal__skill">
-                    <FontAwesomeIcon
-                      className="ProjectModal__icon"
-                      icon={faCheck}
-                      label="check"
-                    />
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="ProjectModal__linksWrapper">
-              <div className="leftArrow" onClick={handlePrev}></div>
+            <div className="leftClickableArea" onClick={handlePrev}></div>
+            <div className="ProjectModal__mainContent">
+              <img
+                className="ProjectModal__img"
+                src={modalContent.content.imagePath}
+                alt={modalContent.content.alt}
+              />
+              <div className="ProjectModal__text-container">
+                <h2 className="ProjectModal__title">
+                  {language === "fr"
+                    ? modalContent.content.frTitle
+                    : modalContent.enTitle}
+                </h2>
+                <h3 className="ProjectModal__skillsTitle">
+                  {language === "fr" ? "Compétences:" : "Skills:"}
+                </h3>
+                <ul className="ProjectModal__skillsList">
+                  {(language === "fr"
+                    ? modalContent.content.frCompetences
+                    : modalContent.content.enCompetences
+                  ).map((skill, index) => (
+                    <li key={index} className="ProjectModal__skill">
+                      <FontAwesomeIcon
+                        className="ProjectModal__icon"
+                        icon={faCheck}
+                        label="check"
+                      />
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="ProjectModal__links">
                 {modalContent.content.githubLink && (
                   <a
@@ -102,8 +102,8 @@ function Modal({ handlePrev, handleNext }) {
                   </a>
                 )}
               </div>
-              <div className="rightArrow" onClick={handleNext}></div>
             </div>
+            <div className="rightClickableArea" onClick={handleNext}></div>
           </div>
         )}
       </div>

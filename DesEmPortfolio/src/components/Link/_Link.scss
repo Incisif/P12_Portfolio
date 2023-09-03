@@ -5,7 +5,7 @@
     right: 8rem;
     bottom:8rem;
     &__text{
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 2vw, 1.5rem);
       font-weight: 100;
       color: $white;
       text-decoration: none;

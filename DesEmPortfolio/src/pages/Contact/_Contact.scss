@@ -44,7 +44,7 @@
     width: 30%;
     align-self: flex-end;
   }
-  @include laptop {
+  @include laptop { 
     &__content {
       flex-direction: column;
     }
