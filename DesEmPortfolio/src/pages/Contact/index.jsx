@@ -27,7 +27,7 @@ function Contact() {
     <Layout>
       {/* Contact Section */}
       <div className={`contact ${backgroundColorClass}`}>
-        <h1 className="contact__title">CONTACT</h1>
+        <h1 className="contact__title">Contact</h1>
         <div className="contact__content">
           {/* Contact Form */}
           <ContactForm />
