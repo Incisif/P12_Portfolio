@@ -192,25 +192,38 @@
     }
   }
   @include mobileL {
-    width: 100%;
+
+    width: 70%;
+    &__content{
+      margin: 0 ;
+      padding:1rem;
+      width: 100%;
+    }
     &__title {
-      font-size: clamp(2rem, 4.5vw, 2.5rem);
+      font-size: clamp(1rem, 2.5vw, 2rem);
     }
     &__skillsTitle {
-      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-size: clamp(0.9rem, 2.3vw, 2rem);
     }
     &__skill {
-      font-size: clamp(1.4rem, 3vw, 2.5rem);
-      line-height: 2rem;
-      padding-left: clamp(0.7rem, 3vw, 2.5rem);
+      font-size: clamp(0.8rem, 2vw, 2rem);
+      line-height: 1.5rem;
+      padding-left: clamp(0.5rem, 2vw, 2rem);
     }
     &__icon {
-      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-size: clamp(1rem, 3.5vw, 2rem);
+      margin: 0;
     }
-    &__githubIcon,
-    &__gitPageIcon {
-      font-size: clamp(1.5rem, 3.5vw, 3rem);
-      margin: 1rem 0.3rem;
+    &__githubIcon, &_githubPages{
+      margin: 0 ;
+    }
+    &__githubIcon span {
+      font-size: clamp(0.8rem, 3vw, 2rem);
+      margin: 1rem 0.5rem;
+    }
+    &__githubPages span{
+      font-size: clamp(0.8rem, 3vw, 2rem);
+      margin: 1rem 0.5rem;
     }
   }
 }

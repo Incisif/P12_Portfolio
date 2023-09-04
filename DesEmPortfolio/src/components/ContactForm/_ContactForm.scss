@@ -113,4 +113,10 @@
     align-self: center;
     margin-left: 0;
   }
+  @include mobileM{
+    width: 90%;
+    &__label{
+      font-size: 0.8rem;
+    }
+  }
 }

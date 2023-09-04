@@ -25,24 +25,19 @@ function Contact() {
   // RENDER
   return (
     <Layout>
-      {/* Contact Section */}
       <div className={`contact ${backgroundColorClass}`}>
         <h1 className="contact__title">Contact</h1>
         <div className="contact__content">
-          {/* Contact Form */}
           <ContactForm />
-          {/* Icon */}
           <div className="contact__icon">
             <i className="material-icons link__icon">north_west</i>
           </div>
-          {/* Text */}
           <div className="contact__text">
             {language === "fr"
               ? "Que vous ayez une idée précise ou juste une ébauche, contactez-moi et ensemble, donnons vie à votre vision web."
               : "Whether you have a specific idea or just a rough sketch, contact me and together, let's bring your web vision to life."}
           </div>
         </div>
-        {/* Social Links */}
         <div className="social">
           <ul>
             <li>
@@ -62,10 +57,7 @@ function Contact() {
               </Link>
             </li>
             <li>
-              <Link
-                className="social__link"
-                to="https://twitter.com/_Emdodj"
-              >
+              <Link className="social__link" to="https://twitter.com/_Emdodj">
                 <FontAwesomeIcon icon={faSquareXTwitter} />
               </Link>
             </li>

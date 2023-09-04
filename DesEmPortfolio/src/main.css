@@ -80,6 +80,13 @@ table {
   border-spacing: 0;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "Neue Montreal";
   src: url("./utils/fonts/NeueMontreal-Regular.woff2") format("woff2"), url("./utils/fonts/NeueMontreal-Regular.woff") format("woff");
@@ -432,25 +439,38 @@ table {
 }
 @media (max-width: 480px) {
   .ProjectModal {
+    width: 70%;
+  }
+  .ProjectModal__content {
+    margin: 0;
+    padding: 1rem;
     width: 100%;
   }
   .ProjectModal__title {
-    font-size: clamp(2rem, 4.5vw, 2.5rem);
+    font-size: clamp(1rem, 2.5vw, 2rem);
   }
   .ProjectModal__skillsTitle {
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: clamp(0.9rem, 2.3vw, 2rem);
   }
   .ProjectModal__skill {
-    font-size: clamp(1.4rem, 3vw, 2.5rem);
-    line-height: 2rem;
-    padding-left: clamp(0.7rem, 3vw, 2.5rem);
+    font-size: clamp(0.8rem, 2vw, 2rem);
+    line-height: 1.5rem;
+    padding-left: clamp(0.5rem, 2vw, 2rem);
   }
   .ProjectModal__icon {
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(1rem, 3.5vw, 2rem);
+    margin: 0;
   }
-  .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
-    font-size: clamp(1.5rem, 3.5vw, 3rem);
-    margin: 1rem 0.3rem;
+  .ProjectModal__githubIcon, .ProjectModal_githubPages {
+    margin: 0;
+  }
+  .ProjectModal__githubIcon span {
+    font-size: clamp(0.8rem, 3vw, 2rem);
+    margin: 1rem 0.5rem;
+  }
+  .ProjectModal__githubPages span {
+    font-size: clamp(0.8rem, 3vw, 2rem);
+    margin: 1rem 0.5rem;
   }
 }
 
@@ -623,6 +643,14 @@ table {
     margin-left: 0;
   }
 }
+@media (max-width: 375px) {
+  .contact-form {
+    width: 90%;
+  }
+  .contact-form__label {
+    font-size: 0.8rem;
+  }
+}
 
 .layout {
   display: flex;
@@ -631,6 +659,7 @@ table {
   width: 100vw;
   height: 100vh;
   position: relative;
+  padding: 0;
 }
 .layout__container {
   width: calc(100% - 5rem);
@@ -1188,6 +1217,11 @@ table {
     line-height: 1.5rem;
   }
 }
+@media (max-width: 375px) {
+  .contact__text {
+    width: 90%;
+  }
+}
 
 .social {
   position: absolute;
@@ -1199,4 +1233,10 @@ table {
   display: inline-block;
   margin: 1rem;
   font-size: clamp(1rem, 2vw, 1.5rem);
+}
+@media (max-width: 375px) {
+  .social {
+    bottom: 0;
+    right: 0;
+  }
 }/*# sourceMappingURL=main.css.map */
