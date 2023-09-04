@@ -46,6 +46,7 @@
   }
   &__content {
     margin: clamp(1rem, 2vh, 1.2rem);
+    padding:0 clamp(1rem, 2vh, 1.2rem);
   }
   &__mainContent {
     display: flex;

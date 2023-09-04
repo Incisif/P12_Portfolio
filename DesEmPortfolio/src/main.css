@@ -293,6 +293,7 @@ table {
 }
 .ProjectModal__content {
   margin: clamp(1rem, 2vh, 1.2rem);
+  padding: 0 clamp(1rem, 2vh, 1.2rem);
 }
 .ProjectModal__mainContent {
   display: flex;
@@ -565,6 +566,10 @@ table {
 .contact-form__message {
   margin-top: 1rem;
   text-align: center;
+  margin-left: 10px;
+}
+.contact-form__message--success {
+  color: green;
 }
 .contact-form__message--error {
   color: red;

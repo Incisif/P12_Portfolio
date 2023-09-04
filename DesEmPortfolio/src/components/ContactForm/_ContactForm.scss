@@ -1,6 +1,8 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/fonts/fonts";
-@use"../../utils/style/devices" as *;
+@use "../../utils/style/devices" as *;
+
+// BASE STYLES
 .contact-form {
   width: clamp(300px, 60vw, 500px);
   max-width: 500px;
@@ -14,15 +16,18 @@
   margin-top: 10vh;
   box-sizing: border-box;
 
+  // Dark Mode
   &--dark {
     background-color: $black;
     color: $white;
     border: 1px solid $white;
   }
 
+  // Light Mode
   &--light {
     background-color: $white;
     color: $black;
+
     & .contact-form__input,
     & .contact-form__textarea {
       background-color: $grey-background;
@@ -30,20 +35,21 @@
     }
   }
 
+  // INPUTS & LABELS
   &__input-wrapper {
     margin-bottom: 1rem;
+
     & textarea {
       height: clamp(80px, 20vh, 100px);
       resize: none;
-
       &::-webkit-scrollbar {
         width: 10px;
       }
-
       &::-webkit-scrollbar-thumb {
         background-color: $gold;
       }
     }
+
     & label {
       display: block;
       margin-bottom: 0.5rem;
@@ -65,6 +71,7 @@
     }
   }
 
+  // BUTTONS
   &__button {
     padding: 0.5rem 1rem;
     border: none;
@@ -78,23 +85,32 @@
     }
   }
 
+  // FORM MESSAGES
   &__message {
     margin-top: 1rem;
     text-align: center;
+    margin-left: 10px;
+
+    &--success {
+      color: green;
+    }
 
     &--error {
       color: red;
     }
   }
-  @include desktop{
+
+  // RESPONSIVE STYLES
+  @include desktop {
     margin-left: clamp(1rem, 15vw, 20rem);
   }
-  @include laptopL{
-    margin-left:  6vw;
+
+  @include laptopL {
+    margin-left: 6vw;
   }
+
   @include laptop {
-   align-self: center;
-   margin-left: 0;
-  
+    align-self: center;
+    margin-left: 0;
   }
 }
