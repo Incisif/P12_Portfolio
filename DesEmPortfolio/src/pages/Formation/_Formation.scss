@@ -1,12 +1,14 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/style/devices" as *;
 
+// GENERAL STRYLES
 .formation {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
 
+  // TITLE
   &__title {
     font-size: clamp(2rem, 8vw, 5rem);
     font-weight: 100;
@@ -14,6 +16,7 @@
     color: $white;
   }
 
+  // LIGHT MODE
   &.formation--light {
     background-color: $white;
 
@@ -30,6 +33,7 @@
     }
   }
 
+  // CONTENT
   &__content {
     margin: 0 0 2rem clamp(4vw, 10vw, 10rem);
     padding-bottom: 2rem;
@@ -37,17 +41,21 @@
     max-width: 630px;
   }
 
+  // SECTION
   &__section {
     margin-top: 3rem;
     padding-left: clamp(0.5rem, 20vw, 5rem);
   }
 
+  // SECTION TITLE
   &__section-title {
     font-size: clamp(1rem, 4vw, 2rem);
     font-weight: 100;
     margin-bottom: 1rem;
+    text-transform: uppercase;
   }
 
+  // SKILLS LIST
   &__skills {
     list-style-type: disc;
     padding-left: clamp(0.5rem, 10vw, 1.5rem);
@@ -62,6 +70,8 @@
     font-size: 1.2rem;
     margin-top: 2rem;
   }
+
+  // MEDIA QUERIES
   @include laptop {
     &__content {
       align-self: center;

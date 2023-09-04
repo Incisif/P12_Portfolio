@@ -1,21 +1,29 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/style/devices" as *;
-.link{
+
+// LINK
+.link {
     position: absolute;
     right: 8rem;
-    bottom:8rem;
-    &__text{
+    bottom: 8rem;
+
+    // TEXT
+    &__text {
       font-size: clamp(1rem, 2vw, 1.5rem);
       font-weight: 100;
       color: $white;
       text-decoration: none;
-      &:hover{
+
+      // HOVER STATE
+      &:hover {
         color: $gold;
       }
     }
-    @include laptop{
-      position:static;
+
+    // LAPTOP VIEW
+    @include laptop {
+      position: static;
       text-align: end;
       margin: 2rem 2rem 0 0;
     }
-  }
+}

@@ -9,20 +9,29 @@ import { selectLanguage } from "../../features/languageSlice";
 import { openModal } from "../../features/modalSlice";
 
 function Projects() {
+
+  // STATES
   const [showCards, setShowCards] = useState([]);
   const isModalOpen = useSelector((state) => state.modal.isOpen);
-  const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.darkMode.darkMode);
+  const language = useSelector(selectLanguage);
+  const currentIndex = useSelector((state) => state.modal.content?.index);
+
+  // VARIABLES
   const darkModeClass = darkMode ? "project--dark" : "project--light";
   const modalBlurClass = isModalOpen ? "project--blur" : "";
   const classes = `project ${darkModeClass} ${modalBlurClass}`;
-  const language = useSelector(selectLanguage);
-
-  useEffect(() => {document.title = 'Projets - Portfolio Desmortreux Emmanuel';}, []);
-
-  const handleCardClick = (project, index) => {
-    dispatch(openModal({ content: project, index }));
+  const translations = {
+    comingSoon: {
+      en: "Comming soon",
+      fr: "Bientôt disponible",
+    },
   };
+
+  // EFFECTS
+  useEffect(() => {
+    document.title = 'Projets - Portfolio Desmortreux Emmanuel';
+  }, []);
 
   useEffect(() => {
     dataProjects.forEach((project) => {
@@ -33,13 +42,13 @@ function Projects() {
       }, delay);
     });
   }, []);
-  const translations = {
-    comingSoon: {
-      en: "Comming soon",
-      fr: "Bientôt disponible",
-    },
+
+  // HANDLERS
+  const dispatch = useDispatch();
+
+  const handleCardClick = (project, index) => {
+    dispatch(openModal({ content: project, index }));
   };
-  const currentIndex = useSelector((state) => state.modal.content?.index);
 
   const handlePrev = () => {
     if (currentIndex > 0) {
@@ -77,6 +86,7 @@ function Projects() {
     }
   };
 
+  // RENDER
   return (
     <Layout>
       <div className={classes}>

@@ -108,37 +108,6 @@ table {
   font-style: normal;
   font-display: swap;
 }
-.loader {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(19, 19, 19);
-  z-index: 99;
-  animation: transparence 0.5s ease-in-out 3.3s forwards;
-}
-.loader__border {
-  width: 20%;
-  height: 1.2rem;
-  border: 1px solid rgb(245, 245, 245);
-  overflow: hidden;
-  padding: 2px;
-  animation: expandBorder 0.5s ease-in-out 2.8s forwards;
-}
-.loader__container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.loader__bar {
-  width: 100%;
-  height: 100%;
-  background-color: rgb(245, 245, 245);
-  animation: loader 2.5s linear 0.3s forwards;
-}
-
 @keyframes loader {
   0% {
     transform: translateX(-100%);
@@ -182,6 +151,36 @@ table {
     visibility: hidden;
   }
 }
+.loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(19, 19, 19);
+  z-index: 99;
+}
+.loader__border {
+  width: 20%;
+  height: 1.2rem;
+  border: 1px solid rgb(245, 245, 245);
+  overflow: hidden;
+  padding: 2px;
+  animation: expandBorder 0.5s ease-in-out 2.8s forwards;
+}
+.loader__container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.loader__bar {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  animation: loader 2.5s linear 0.3s forwards;
+}
+
 @keyframes appear {
   from {
     opacity: 0;
@@ -206,6 +205,12 @@ table {
   transform: scale(1.03);
   box-shadow: 0 0 10px rgba(22, 22, 22, 0.4);
 }
+.projectCard:hover .projectCard__img {
+  filter: grayscale(0%) brightness(100%);
+}
+.projectCard:hover .projectCard__overlay {
+  opacity: 1;
+}
 .projectCard.show {
   animation: appear 1s ease forwards;
 }
@@ -216,24 +221,6 @@ table {
   filter: grayscale(100%) brightness(90%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
-.projectCard:hover .projectCard__img {
-  filter: grayscale(0%) brightness(100%);
-}
-@media (max-width: 1024px) {
-  .projectCard {
-    width: 40%;
-  }
-}
-@media (max-width: 768px) {
-  .projectCard {
-    width: 80%;
-  }
-}
-
-.projectCard:hover .projectCard__overlay {
-  opacity: 1;
-}
-
 .projectCard__banner {
   position: absolute;
   top: 0;
@@ -248,6 +235,16 @@ table {
 .projectCard__banner--dark {
   background-color: white;
   color: black;
+}
+@media (max-width: 1024px) {
+  .projectCard {
+    width: 40%;
+  }
+}
+@media (max-width: 768px) {
+  .projectCard {
+    width: 80%;
+  }
 }
 
 @keyframes appearFromCenter {
@@ -370,7 +367,7 @@ table {
 .ProjectModal .leftClickableArea,
 .ProjectModal .rightClickableArea {
   position: absolute;
-  top: 0;
+  top: 1.7rem;
   bottom: 0;
   width: 50%;
   height: 80%;
@@ -406,20 +403,54 @@ table {
     font-size: clamp(1rem, 3vw, 2rem);
   }
   .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 2rem);
+    margin: 1rem 0;
   }
 }
 @media (max-width: 768px) {
   .ProjectModal {
-    width: 70%;
+    width: 80%;
   }
   .ProjectModal__title {
-    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-size: clamp(1.8rem, 2.5vw, 2rem);
+  }
+  .ProjectModal__skillsTitle {
+    font-size: clamp(1.2rem, 2.3vw, 2rem);
+  }
+  .ProjectModal__skill {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    line-height: 1.5rem;
+    padding-left: clamp(0.5rem, 2vw, 2rem);
+  }
+  .ProjectModal__icon {
+    font-size: clamp(1.2rem, 3.5vw, 2rem);
+  }
+  .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    margin: 1rem 0.5rem;
   }
 }
 @media (max-width: 480px) {
-  .ProjectModal__img {
-    height: 20%;
+  .ProjectModal {
+    width: 100%;
+  }
+  .ProjectModal__title {
+    font-size: clamp(2rem, 4.5vw, 2.5rem);
+  }
+  .ProjectModal__skillsTitle {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  }
+  .ProjectModal__skill {
+    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    line-height: 2rem;
+    padding-left: clamp(0.7rem, 3vw, 2.5rem);
+  }
+  .ProjectModal__icon {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+  .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
+    margin: 1rem 0.3rem;
   }
 }
 
@@ -429,6 +460,7 @@ table {
   right: 2.5rem;
   display: flex;
 }
+
 .ThemeSwitcher__input {
   display: none;
 }
@@ -443,6 +475,7 @@ table {
 .ThemeSwitcher__input:checked + .ThemeSwitcher__text::before {
   background-color: white;
 }
+
 .ThemeSwitcher__text {
   font-family: "Neue Montreal";
   color: rgb(245, 245, 245);
@@ -453,14 +486,14 @@ table {
 }
 
 .ThemeSwitcher--light .ThemeSwitcher__text {
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: 400;
 }
 .ThemeSwitcher--light .ThemeSwitcher__input + .ThemeSwitcher__text::before {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
 }
 .ThemeSwitcher--light .ThemeSwitcher__input:checked + .ThemeSwitcher__text::before {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 .homePageLink {
@@ -474,12 +507,12 @@ table {
 }
 .homePageLink__line {
   width: 12vh;
-  border-top: 1px solid black;
+  border-top: 1px solid rgb(0, 0, 0);
   margin-right: 1rem;
 }
 .homePageLink__text {
   margin: 0;
-  color: black;
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-family: "neue montreal", serif;
   font-weight: 100;
@@ -787,6 +820,18 @@ table {
   font-family: "Neue Montreal", serif;
   position: relative;
 }
+.home__name {
+  font-size: 4rem;
+  font-weight: 100;
+  padding: 4vw 0 0 4vw;
+  margin-right: 4vw;
+}
+.home__textWrapper {
+  overflow: hidden;
+}
+.home__fullName, .home__title {
+  transform: translateY(100%);
+}
 .home--blur {
   animation: fadeBlur 0.8s ease;
 }
@@ -804,15 +849,6 @@ table {
 .home--light .home__title {
   color: rgb(0, 0, 0);
 }
-.home__name {
-  font-size: 4rem;
-  font-weight: 100;
-  padding: 4vw 0 0 4vw;
-  margin-right: 4vw;
-}
-.home__textWrapper {
-  overflow: hidden;
-}
 .home__fullName {
   animation: slideFromBottom 0.8s ease 0.3s forwards;
 }
@@ -822,33 +858,6 @@ table {
   padding-left: 4vw;
   animation: slideFromBottom 0.8s ease 0.8s forwards;
   padding-bottom: 5px;
-}
-.home__fullName, .home__title {
-  transform: translateY(100%);
-}
-@media (max-width: 1440px) {
-  .home__name {
-    font-size: 3.5rem;
-  }
-  .home__title {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 1280px) {
-  .home__name {
-    font-size: 2rem;
-  }
-  .home__title {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 768px) {
-  .home__name {
-    font-size: 1.8rem;
-  }
-  .home__title {
-    font-size: 1rem;
-  }
 }
 
 .portrait {
@@ -878,7 +887,14 @@ table {
   white-space: nowrap;
   animation: typing 4s 1.5s steps(40, end) forwards;
 }
+
 @media (max-width: 1440px) {
+  .home__name {
+    font-size: 3.5rem;
+  }
+  .home__title {
+    font-size: 1.5rem;
+  }
   .portrait {
     margin: auto 0 auto 20%;
   }
@@ -887,6 +903,12 @@ table {
   }
 }
 @media (max-width: 1280px) {
+  .home__name {
+    font-size: 2rem;
+  }
+  .home__title {
+    font-size: 1.2rem;
+  }
   .portrait {
     margin: auto 0 auto 15%;
   }
@@ -895,6 +917,12 @@ table {
   }
 }
 @media (max-width: 768px) {
+  .home__name {
+    font-size: 1.8rem;
+  }
+  .home__title {
+    font-size: 1rem;
+  }
   .portrait {
     margin: 10vh 0 auto 15%;
   }
@@ -922,7 +950,6 @@ table {
     width: 60%;
   }
 }
-
 .project {
   display: flex;
   flex-direction: column;
@@ -1004,6 +1031,7 @@ table {
   font-size: clamp(1rem, 4vw, 2rem);
   font-weight: 100;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 .formation__skills {
   list-style-type: disc;

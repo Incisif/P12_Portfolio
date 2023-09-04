@@ -5,17 +5,22 @@ import { useSelector } from "react-redux";
 import { selectLanguage } from "../../features/languageSlice";
 import Loader from "../../pages/Loader";
 import { useEffect, useState } from "react";
+
 function Home() {
+  // STATE AND REDUX SELECTORS
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const backgroundColorClass = darkMode ? "home--dark" : "home--light";
   const language = useSelector(selectLanguage);
   const [showLoader, setShowLoader] = useState(false);
   const [blur, setBlur] = useState(false);
 
+  // SIDE EFFECTS
+  // Set the document title
   useEffect(() => {
     document.title = "Accueil - Portfolio Desmortreux Emmanuel";
   }, []);
 
+  // Handle the loader logic
   useEffect(() => {
     if (sessionStorage.getItem("visited") !== "true") {
       setShowLoader(true);
@@ -30,6 +35,7 @@ function Home() {
     }
   }, []);
 
+  // RENDER
   return (
     <>
       {showLoader ? <Loader /> : null}
@@ -50,7 +56,11 @@ function Home() {
             </h1>
           </div>
           <div className="portrait">
-            <img className="portrait__image" src={portrait} />
+            <img
+              className="portrait__image"
+              src={portrait}
+              alt="DESMORTREUX EMMANUEL portrait"
+            />
             <p className="portrait__quote">{`// Dans les détails se trouve la perfection.`}</p>
           </div>
 
@@ -60,4 +70,5 @@ function Home() {
     </>
   );
 }
+
 export default Home;

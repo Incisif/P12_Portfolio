@@ -1,50 +1,54 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/fonts/fonts" as *;
 
+// BASE
 .ThemeSwitcher {
   position: absolute;
   top: 1rem;
   right: 2.5rem;
   display: flex;
+}
 
-  &__input {
-    display: none;
+// INPUT
+.ThemeSwitcher__input {
+  display: none;
 
-    & + .ThemeSwitcher__text::before {
-      content: "";
-      display: inline-block;
-      width: 0.65rem;
-      height: 0.65rem;
-      border: 1px solid $white;
-      margin: 0 0.5rem 0 0.5rem;
-    }
-
-    &:checked + .ThemeSwitcher__text::before {
-      background-color: white;
-    }
+  & + .ThemeSwitcher__text::before {
+    content: "";
+    display: inline-block;
+    width: 0.65rem;
+    height: 0.65rem;
+    border: 1px solid $white;
+    margin: 0 0.5rem 0 0.5rem;
   }
 
-  &__text {
-    font-family: "Neue Montreal";
-    color: $white;
-    font-size: 1rem;
-    font-weight: 100;
-    text-transform: uppercase;
-    cursor: pointer;
+  &:checked + .ThemeSwitcher__text::before {
+    background-color: white;
   }
 }
 
+// TEXT
+.ThemeSwitcher__text {
+  font-family: "Neue Montreal";
+  color: $white;
+  font-size: 1rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+// LIGHT THEME
 .ThemeSwitcher--light {
   .ThemeSwitcher__text {
-    color: black;
+    color: $black;
     font-weight: 400;
   }
 
   .ThemeSwitcher__input + .ThemeSwitcher__text::before {
-    border: 1px solid black;
+    border: 1px solid $black;
   }
 
   .ThemeSwitcher__input:checked + .ThemeSwitcher__text::before {
-    background-color: black;
+    background-color: $black;
   }
 }

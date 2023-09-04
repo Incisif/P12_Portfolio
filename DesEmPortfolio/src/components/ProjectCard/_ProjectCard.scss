@@ -1,5 +1,8 @@
+// IMPORTS
 @use "../../utils/style/variables" as *;
-@use"../../utils/style/devices" as *;
+@use "../../utils/style/devices" as *;
+
+// KEYFRAMES
 @keyframes appear {
   from {
     opacity: 0;
@@ -9,6 +12,7 @@
   }
 }
 
+// PROJECT CARD STYLES
 .projectCard {
   width: 20%;
   min-width: 187px;
@@ -20,16 +24,27 @@
   border: 1px solid $black;
   border-radius: 5px;
 
+  // HOVER EFFECTS
   &:hover {
     cursor: pointer;
     transform: scale(1.03);
     box-shadow: 0 0 10px rgba(22, 22, 22, 0.4);
+
+    & .projectCard__img {
+      filter: grayscale(0%) brightness(100%);
+    }
+
+    & .projectCard__overlay {
+      opacity: 1;
+    }
   }
 
+  // ANIMATION APPEARANCE
   &.show {
     animation: appear 1s ease forwards;
   }
 
+  // IMAGE STYLING
   &__img {
     width: 100%;
     height: auto;
@@ -38,34 +53,31 @@
     transition: filter 0.3s ease, transform 0.3s ease;
   }
 
-  &:hover &__img {
-    filter: grayscale(0%) brightness(100%);
+  // BANNER STYLING
+  &__banner {
+    position: absolute;
+    top: 0;
+    left: -0px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    z-index: 1;
+
+    // DARK THEME
+    &--dark {
+      background-color: white;
+      color: black;
+    }
   }
-  @include laptop{
+
+  // MEDIA QUERIES
+  @include laptop {
     width: 40%;
   }
-  @include tablet{
+
+  @include tablet {
     width: 80%;
-  }
-}
-
-.projectCard:hover .projectCard__overlay {
-  opacity: 1;
-}
-.projectCard__banner {
-  position: absolute;
-  top: 0;
-  left: -0px;
-  
-  background-color: black;
-  color: white;
-  padding: 5px 10px;
-  font-size: 12px;
-  text-transform: uppercase;
-  z-index: 1;
-
-  &--dark {
-    background-color: white;
-    color: black;
   }
 }

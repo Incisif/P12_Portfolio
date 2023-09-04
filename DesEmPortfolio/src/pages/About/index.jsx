@@ -6,14 +6,17 @@ import { useEffect } from "react";
 import Link from "../../components/Link";
 
 function About() {
+  // STATE SELECTION
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const backgroundColorClass = darkMode ? "about--dark" : "about--light";
   const language = useSelector(selectLanguage);
 
+  // SIDE EFFECTS
   useEffect(() => {
     document.title = "À propos - Portfolio Desmortreux Emmanuel";
   }, []);
 
+  // RENDER
   return (
     <Layout>
       <div className={`about ${backgroundColorClass}`}>

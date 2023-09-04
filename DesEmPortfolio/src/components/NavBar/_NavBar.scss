@@ -2,6 +2,7 @@
 @use "../../utils/fonts/fonts";
 @use "../../utils/style/devices" as *;
 
+// ANIMATION
 @keyframes slideFromRight {
   100% {
     transform: translateX(0);
@@ -9,6 +10,7 @@
   }
 }
 
+// NAVBAR STYLING
 .navBar {
   position: absolute;
   bottom: 3vw;
@@ -16,29 +18,38 @@
   font-size: 4rem;
   font-weight: 100;
   text-align: right;
+  
+  // DARK THEME
   &--dark {
     a {
       color: $white;
     }
   }
+  
+  // LIGHT THEME
   &--light {
     .navBar__item {
       color: $black;
     }
   }
 
+  // LIST 
   &__list {
     display: flex;
   }
 
+  // ITEM 
   &__item {
     cursor: pointer;
     transition: transform 0.4s ease;
+    
     &:hover {
       color: $gold;
       transform: translateX(-1rem);
     }
   }
+  
+  // MEDIA QUERIES
   @include desktop {
     &__item {
       font-size: 3.5rem;

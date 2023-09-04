@@ -2,17 +2,20 @@
 @use "../../utils/fonts/fonts";
 @use "../../utils/style/devices" as *;
 
+//KEYFRAMES
 @keyframes slideFromBottom {
   100% {
     transform: translateY(0);
   }
 }
+
 @keyframes popUp {
   100% {
     transform: scale(1);
     opacity: 1;
   }
 }
+
 @keyframes typing {
   from {
     width: 0;
@@ -21,6 +24,7 @@
     width: 100%;
   }
 }
+
 @keyframes fadeBlur {
   0% {
     -webkit-filter: blur(10px);
@@ -35,15 +39,36 @@
     -ms-filter: blur(0px);
   }
 }
+
+//GENERAL HOME STYLE
 .home {
   height: 100%;
   width: 100%;
   background-size: cover;
   font-family: "Neue Montreal", serif;
   position: relative;
+
+  &__name {
+    font-size: 4rem;
+    font-weight: 100;
+    padding: 4vw 0 0 4vw;
+    margin-right: 4vw;
+  }
+
+  &__textWrapper {
+    overflow: hidden;
+  }
+
+  &__fullName,
+  &__title {
+    transform: translateY(100%);
+  }
+
+ //THEME STYLE FOR HOME
   &--blur {
     animation: fadeBlur 0.8s ease;
   }
+
   &--dark {
     background-color: $grey-background;
     .home__fullName,
@@ -51,6 +76,7 @@
       color: $white;
     }
   }
+
   &--light {
     background-color: $white;
     .home__fullName,
@@ -58,15 +84,7 @@
       color: $black;
     }
   }
-  &__name {
-    font-size: 4rem;
-    font-weight: 100;
-    padding: 4vw 0 0 4vw;
-    margin-right: 4vw;
-  }
-  &__textWrapper {
-    overflow: hidden;
-  }
+
   &__fullName {
     animation: slideFromBottom 0.8s ease 0.3s forwards;
   }
@@ -78,35 +96,8 @@
     animation: slideFromBottom 0.8s ease 0.8s forwards;
     padding-bottom: 5px;
   }
-  &__fullName,
-  &__title {
-    transform: translateY(100%);
-  }
-  @include desktop {
-    &__name {
-      font-size: 3.5rem;
-    }
-    &__title {
-      font-size: 1.5rem;
-    }
-  }
-  @include laptopL {
-    &__name {
-      font-size: 2rem;
-    }
-    &__title {
-      font-size: 1.2rem;
-    }
-  }
-  @include tablet {
-    &__name {
-      font-size: 1.8rem;
-    }
-    &__title {
-      font-size: 1rem;
-    }
-  }
 }
+//GENRAL PORTRAIT STYLE
 .portrait {
   display: flex;
   top: 0;
@@ -117,13 +108,15 @@
   margin: 14% 0 auto 26%;
   padding-top: 4rem;
   height: 45%;
+
+ //PORTRAIT THEME STYLE 
   &__image {
     animation: popUp 0.7s ease-in-out 1s forwards;
     transform: scale(0);
-
     opacity: 0;
     border: 1px solid $black;
   }
+
   &__quote {
     font-size: 1.5rem;
     font-weight: 100;
@@ -134,25 +127,63 @@
     white-space: nowrap;
     animation: typing 4s 1.5s steps(40, end) forwards;
   }
-  @include desktop {
+}
+
+//MEDIA QUERIES
+
+@include desktop {
+  .home {
+    &__name {
+      font-size: 3.5rem;
+    }
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+  .portrait {
     margin: auto 0 auto 20%;
     &__quote {
       font-size: 1.2rem;
     }
   }
-  @include laptopL {
+}
+
+@include laptopL {
+  .home {
+    &__name {
+      font-size: 2rem;
+    }
+    &__title {
+      font-size: 1.2rem;
+    }
+  }
+  .portrait {
     margin: auto 0 auto 15%;
     &__quote {
       font-size: 1rem;
     }
   }
-  @include tablet {
+}
+
+@include tablet {
+  .home {
+    &__name {
+      font-size: 1.8rem;
+    }
+    &__title {
+      font-size: 1rem;
+    }
+  }
+  .portrait {
     margin: 10vh 0 auto 15%;
     &__quote {
       visibility: hidden;
     }
   }
-  @include mobileL {
+}
+
+@include mobileL {
+  .portrait {
     padding: 0;
     flex-direction: column;
     align-items: center;
@@ -165,7 +196,10 @@
       display: none;
     }
   }
-  @include mobileM {
+}
+
+@include mobileM {
+  .portrait {
     width: 60%;
   }
 }

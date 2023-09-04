@@ -1,13 +1,21 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleDarkMode } from "../../features/darkModeSlice";
 
+// THEME SWITCHER COMPONENT
 const ThemeSwitcher = () => {
+  // REDUX HOOKS
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.darkMode.darkMode);
-  const themeSwitcherClass = darkMode ? "ThemeSwitcher--dark" : "ThemeSwitcher--light";                  
 
+  // DETERMINE THEME CLASS
+  const themeSwitcherClass = darkMode
+    ? "ThemeSwitcher--dark"
+    : "ThemeSwitcher--light";
+
+  // RENDER COMPONENT
   return (
     <div className={`ThemeSwitcher ${themeSwitcherClass}`}>
+      {/* DARK MODE LABEL AND INPUT */}
       <label>
         <input
           type="radio"
@@ -18,6 +26,8 @@ const ThemeSwitcher = () => {
         />
         <p className="ThemeSwitcher__text">Dark</p>
       </label>
+
+      {/* LIGHT MODE LABEL AND INPUT */}
       <label>
         <input
           type="radio"

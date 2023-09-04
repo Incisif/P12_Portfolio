@@ -1,6 +1,7 @@
 @use "../../utils/style/variables" as *;
 @use "../../utils/style/devices" as *;
 
+// ANIMATION DEFINITIONS
 @keyframes appearFromCenter {
   from {
     opacity: 0;
@@ -13,6 +14,7 @@
 }
 
 .ProjectModal {
+  // BASE STYLING
   position: fixed;
   top: 50%;
   left: 50%;
@@ -25,11 +27,11 @@
   z-index: 1000;
   animation: appearFromCenter 0.3s cubic-bezier(0.94, 0.29, 0.11, 0.76);
 
+  // THEME STYLING
   &.ProjectModal--dark {
     background-color: $black;
     color: $white;
   }
-
   &.ProjectModal--light {
     background-color: $white;
     color: $black;
@@ -44,9 +46,11 @@
       }
     }
   }
+
+  // CONTENT STYLING
   &__content {
     margin: clamp(1rem, 2vh, 1.2rem);
-    padding:0 clamp(1rem, 2vh, 1.2rem);
+    padding: 0 clamp(1rem, 2vh, 1.2rem);
   }
   &__mainContent {
     display: flex;
@@ -54,7 +58,6 @@
     flex-direction: column;
     margin-top: clamp(1rem, 2vh, 1.2rem);
   }
-
   &__img {
     width: 100%;
     height: 20vh;
@@ -62,13 +65,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     align-self: center;
   }
-
   &__title {
     font-size: clamp(1.5rem, 3vw, 1.7rem);
     font-weight: 400;
     padding-top: clamp(0.5rem, 2vh, 1rem);
   }
-
   &__skillsTitle {
     margin: clamp(0.5rem, 2vw, 1.2rem);
     font-size: clamp(0.8rem, 2vw, 1.4rem);
@@ -105,6 +106,8 @@
     font-size: 1.5rem;
     fill: $white;
   }
+  
+  // NAVIGATION AND BUTTONS
   .container {
     border-bottom: 1px solid $white;
     display: flex;
@@ -127,20 +130,20 @@
   .leftClickableArea,
   .rightClickableArea {
     position: absolute;
-    top: 0;
+    top: 1.7rem;
     bottom: 0;
     width: 50%;
     height: 80%;
-    cursor: pointer
+    cursor: pointer;
   }
-
   .leftClickableArea {
     left: 0;
   }
-
   .rightClickableArea {
     right: 0;
   }
+
+  // RESPONSIVE MEDIA QUERIES
   @include desktop {
     width: 50%;
   }
@@ -162,18 +165,52 @@
     }
     &__githubIcon,
     &__gitPageIcon {
-      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-size: clamp(1rem, 2vw, 2rem);
+      margin: 1rem 0;
     }
   }
   @include tablet {
-    width: 70%;
+    width: 80%;
     &__title {
-      font-size: clamp(1rem, 3vw, 1.3rem);
+      font-size: clamp(1.8rem, 2.5vw, 2rem);
+    }
+    &__skillsTitle {
+      font-size: clamp(1.2rem, 2.3vw, 2rem);
+    }
+    &__skill {
+      font-size: clamp(1.2rem, 2vw, 2rem);
+      line-height: 1.5rem;
+      padding-left: clamp(0.5rem, 2vw, 2rem);
+    }
+    &__icon {
+      font-size: clamp(1.2rem, 3.5vw, 2rem);
+    }
+    &__githubIcon,
+    &__gitPageIcon {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      margin: 1rem 0.5rem;
     }
   }
   @include mobileL {
-    &__img {
-      height: 20%;
+    width: 100%;
+    &__title {
+      font-size: clamp(2rem, 4.5vw, 2.5rem);
+    }
+    &__skillsTitle {
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    }
+    &__skill {
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      line-height: 2rem;
+      padding-left: clamp(0.7rem, 3vw, 2.5rem);
+    }
+    &__icon {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+    }
+    &__githubIcon,
+    &__gitPageIcon {
+      font-size: clamp(1.5rem, 3.5vw, 3rem);
+      margin: 1rem 0.3rem;
     }
   }
 }

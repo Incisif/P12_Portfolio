@@ -3,6 +3,8 @@ import { switchToEnglish, switchToFrench } from "../../features/languageSlice";
 
 function LanguageSwitcher() {
   const dispatch = useDispatch();
+
+  // REDUX STATE
   const language = useSelector((state) => state.language.value);
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const languageSwitcherClass = darkMode
@@ -10,6 +12,7 @@ function LanguageSwitcher() {
     : "language-switcher--light";
   const lineClass = `language-switcher__line language-switcher__line--${language}`;
 
+  // COMPONENT RENDER
   return (
     <div className={`language-switcher ${languageSwitcherClass}`}>
       <div className="language-switcher__options">

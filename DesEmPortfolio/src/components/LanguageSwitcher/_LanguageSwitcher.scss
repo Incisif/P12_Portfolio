@@ -10,6 +10,7 @@
   transform: rotate(-90deg);
   transform-origin: left top;
 
+  // DARK THEME
   &--dark {
     .language-switcher__option {
       color: $white;
@@ -19,6 +20,7 @@
     }
   }
 
+  // LIGHT THEME
   &--light {
     .language-switcher__line {
       background-color: $black;
@@ -40,10 +42,9 @@
     font-size: 16px;
     outline: none;
     transition: color 0.3s;
-
-    
   }
 
+  // LINE TRANSITION
   &__line {
     position: absolute;
     top: 50%;
