@@ -18,14 +18,14 @@
   font-size: 4rem;
   font-weight: 100;
   text-align: right;
-  
+
   // DARK THEME
   &--dark {
     a {
       color: $white;
     }
   }
-  
+
   // LIGHT THEME
   &--light {
     .navBar__item {
@@ -33,22 +33,23 @@
     }
   }
 
-  // LIST 
   &__list {
     display: flex;
   }
 
-  // ITEM 
+  // ITEM
   &__item {
     cursor: pointer;
     transition: transform 0.4s ease;
-    
+
     &:hover {
-      color: $gold;
       transform: translateX(-1rem);
+      a {
+        color: $gold;
+      }
     }
   }
-  
+
   // MEDIA QUERIES
   @include desktop {
     &__item {

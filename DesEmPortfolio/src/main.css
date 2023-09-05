@@ -480,7 +480,6 @@ table {
   right: 2.5rem;
   display: flex;
 }
-
 .ThemeSwitcher__input {
   display: none;
 }
@@ -493,9 +492,8 @@ table {
   margin: 0 0.5rem 0 0.5rem;
 }
 .ThemeSwitcher__input:checked + .ThemeSwitcher__text::before {
-  background-color: white;
+  background-color: rgb(245, 245, 245);
 }
-
 .ThemeSwitcher__text {
   font-family: "Neue Montreal";
   color: rgb(245, 245, 245);
@@ -504,7 +502,6 @@ table {
   text-transform: uppercase;
   cursor: pointer;
 }
-
 .ThemeSwitcher--light .ThemeSwitcher__text {
   color: rgb(0, 0, 0);
   font-weight: 400;
@@ -715,8 +712,10 @@ table {
   transition: transform 0.4s ease;
 }
 .navBar__item:hover {
-  color: rgb(249, 198, 16);
   transform: translateX(-1rem);
+}
+.navBar__item:hover a {
+  color: rgb(249, 198, 16);
 }
 @media (max-width: 1440px) {
   .navBar__item {
@@ -772,6 +771,9 @@ table {
   font-size: 16px;
   outline: none;
   transition: color 0.3s;
+}
+.language-switcher__option:hover {
+  color: rgb(249, 198, 16);
 }
 .language-switcher__line {
   position: absolute;
