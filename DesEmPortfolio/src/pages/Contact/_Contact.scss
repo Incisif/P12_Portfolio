@@ -75,7 +75,12 @@
     margin: 1rem;
     font-size: clamp(1rem, 2vw, 1.5rem);
   }
+  @include tablet{
+    position: static;
+    flex-direction: row-reverse;
+  }
   @include mobileM {
+    position: static;
     bottom: 0;
     right: 0;
   }

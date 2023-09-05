@@ -436,12 +436,13 @@ table {
   }
   .ProjectModal__skill {
     font-size: clamp(0.8rem, 2vw, 2rem);
-    line-height: 1.5rem;
+    line-height: 1.2rem;
     padding-left: clamp(0.5rem, 2vw, 2rem);
   }
   .ProjectModal__icon {
     font-size: clamp(1rem, 3.5vw, 2rem);
-    margin: 0;
+    margin: 0 0.5rem;
+    align-self: flex-start;
   }
   .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
     margin: 0;
@@ -453,6 +454,17 @@ table {
   .ProjectModal__gitPageIcon span {
     font-size: clamp(0.8rem, 3vw, 2rem);
     margin: 1rem 0.5rem;
+  }
+}
+@media (max-width: 1024px) and (orientation: landscape) {
+  .ProjectModal {
+    width: 70%;
+  }
+  .ProjectModal__img {
+    display: none;
+  }
+  .ProjectModal__links {
+    display: flex;
   }
 }
 
@@ -1084,7 +1096,7 @@ table {
 }
 .about__content {
   display: flex;
-  margin: 9vw 0 0 9vw;
+  margin: 13vh 0 0 9vw;
   align-items: flex-end;
   flex-wrap: wrap;
 }
@@ -1218,8 +1230,15 @@ table {
   margin: 1rem;
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
+@media (max-width: 768px) {
+  .social {
+    position: static;
+    flex-direction: row-reverse;
+  }
+}
 @media (max-width: 375px) {
   .social {
+    position: static;
     bottom: 0;
     right: 0;
   }

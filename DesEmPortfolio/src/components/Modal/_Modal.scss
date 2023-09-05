@@ -187,12 +187,13 @@
     }
     &__skill {
       font-size: clamp(0.8rem, 2vw, 2rem);
-      line-height: 1.5rem;
+      line-height: 1.2rem;
       padding-left: clamp(0.5rem, 2vw, 2rem);
     }
     &__icon {
       font-size: clamp(1rem, 3.5vw, 2rem);
-      margin: 0;
+      margin: 0 0.5rem;
+      align-self: flex-start;
     }
     &__githubIcon,
     &__gitPageIcon {
@@ -205,6 +206,16 @@
     &__gitPageIcon span {
       font-size: clamp(0.8rem, 3vw, 2rem);
       margin: 1rem 0.5rem;
+    }
+  }
+  @include laptop-landscape {
+    width: 70%;
+
+    &__img {
+      display: none;
+    }
+    &__links {
+      display: flex; 
     }
   }
 }
