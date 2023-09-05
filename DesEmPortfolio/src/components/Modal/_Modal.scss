@@ -106,7 +106,7 @@
     font-size: 1.5rem;
     fill: $white;
   }
-  
+
   // NAVIGATION AND BUTTONS
   .container {
     border-bottom: 1px solid $white;
@@ -171,32 +171,12 @@
   }
   @include tablet {
     width: 80%;
-    &__title {
-      font-size: clamp(1.8rem, 2.5vw, 2rem);
-    }
-    &__skillsTitle {
-      font-size: clamp(1.2rem, 2.3vw, 2rem);
-    }
-    &__skill {
-      font-size: clamp(1.2rem, 2vw, 2rem);
-      line-height: 1.5rem;
-      padding-left: clamp(0.5rem, 2vw, 2rem);
-    }
-    &__icon {
-      font-size: clamp(1.2rem, 3.5vw, 2rem);
-    }
-    &__githubIcon,
-    &__gitPageIcon {
-      font-size: clamp(1.2rem, 3vw, 2rem);
-      margin: 1rem 0.5rem;
-    }
   }
   @include mobileL {
-
     width: 70%;
-    &__content{
-      margin: 0 ;
-      padding:1rem;
+    &__content {
+      margin: 0;
+      padding: 1rem;
       width: 100%;
     }
     &__title {
@@ -214,14 +194,15 @@
       font-size: clamp(1rem, 3.5vw, 2rem);
       margin: 0;
     }
-    &__githubIcon, &_githubPages{
-      margin: 0 ;
+    &__githubIcon,
+    &__gitPageIcon {
+      margin: 0;
     }
     &__githubIcon span {
       font-size: clamp(0.8rem, 3vw, 2rem);
       margin: 1rem 0.5rem;
     }
-    &__githubPages span{
+    &__gitPageIcon span {
       font-size: clamp(0.8rem, 3vw, 2rem);
       margin: 1rem 0.5rem;
     }

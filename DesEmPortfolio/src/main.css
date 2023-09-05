@@ -418,24 +418,6 @@ table {
   .ProjectModal {
     width: 80%;
   }
-  .ProjectModal__title {
-    font-size: clamp(1.8rem, 2.5vw, 2rem);
-  }
-  .ProjectModal__skillsTitle {
-    font-size: clamp(1.2rem, 2.3vw, 2rem);
-  }
-  .ProjectModal__skill {
-    font-size: clamp(1.2rem, 2vw, 2rem);
-    line-height: 1.5rem;
-    padding-left: clamp(0.5rem, 2vw, 2rem);
-  }
-  .ProjectModal__icon {
-    font-size: clamp(1.2rem, 3.5vw, 2rem);
-  }
-  .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
-    font-size: clamp(1.2rem, 3vw, 2rem);
-    margin: 1rem 0.5rem;
-  }
 }
 @media (max-width: 480px) {
   .ProjectModal {
@@ -461,14 +443,14 @@ table {
     font-size: clamp(1rem, 3.5vw, 2rem);
     margin: 0;
   }
-  .ProjectModal__githubIcon, .ProjectModal_githubPages {
+  .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
     margin: 0;
   }
   .ProjectModal__githubIcon span {
     font-size: clamp(0.8rem, 3vw, 2rem);
     margin: 1rem 0.5rem;
   }
-  .ProjectModal__githubPages span {
+  .ProjectModal__gitPageIcon span {
     font-size: clamp(0.8rem, 3vw, 2rem);
     margin: 1rem 0.5rem;
   }
