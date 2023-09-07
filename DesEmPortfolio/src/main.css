@@ -784,11 +784,22 @@ table {
   right: 8rem;
   bottom: 8rem;
 }
+.link--light .link__text,
+.link--light .link__icon {
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+}
+.link--light .link__text:hover {
+  color: rgb(249, 198, 16);
+}
 .link__text {
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 100;
   color: rgb(245, 245, 245);
   text-decoration: none;
+}
+.link__text .link__icon {
+  color: inherit;
 }
 .link__text:hover {
   color: rgb(249, 198, 16);

@@ -3,27 +3,45 @@
 
 // LINK
 .link {
-    position: absolute;
-    right: 8rem;
-    bottom: 8rem;
+  position: absolute;
+  right: 8rem;
+  bottom: 8rem;
 
-    // TEXT
-    &__text {
-      font-size: clamp(1rem, 2vw, 1.5rem);
-      font-weight: 100;
-      color: $white;
-      text-decoration: none;
-
-      // HOVER STATE
-      &:hover {
-        color: $gold;
-      }
+  // LIGHT MODE
+  &--light {
+    .link__text,
+    .link__icon {
+      color: $black;
+      font-weight: 400;
     }
 
-    // LAPTOP VIEW
-    @include laptop {
-      position: static;
-      text-align: end;
-      margin: 2rem 2rem 0 0;
+    .link__text:hover {
+      color: $gold;
     }
+  }
+
+  // TEXT
+  &__text {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 100;
+    color: $white;
+    text-decoration: none;
+
+    // ICON
+    .link__icon {
+      color: inherit;
+    }
+
+    // HOVER STATE
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  // LAPTOP VIEW
+  @include laptop {
+    position: static;
+    text-align: end;
+    margin: 2rem 2rem 0 0;
+  }
 }

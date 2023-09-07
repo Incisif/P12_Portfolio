@@ -44,6 +44,7 @@ function Contact() {
               <Link
                 className="social__link"
                 to="https://www.linkedin.com/in/emmanuel-desmortreux-1223a5257/"
+                aria-label="LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
               </Link>
@@ -52,12 +53,17 @@ function Contact() {
               <Link
                 className="social__link"
                 to="https://www.instagram.com/loeildejack/?hl=fr"
+                aria-label="Instagram"
               >
                 <FontAwesomeIcon icon={faSquareInstagram} />
               </Link>
             </li>
             <li>
-              <Link className="social__link" to="https://twitter.com/_Emdodj">
+              <Link
+                className="social__link"
+                to="https://twitter.com/_Emdodj"
+                aria-label="Twitter"
+              >
                 <FontAwesomeIcon icon={faSquareXTwitter} />
               </Link>
             </li>
