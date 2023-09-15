@@ -46,6 +46,7 @@ function Modal({ handlePrev, handleNext }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [handleClose, isModalOpen]);
+  if(language === "en") console.log("modalContent", modalContent.content.enTitle)
 
   return (
     <div className={`ProjectModal__wrapper ${isModalOpen ? "is-open" : ""}`}>
@@ -74,8 +75,14 @@ function Modal({ handlePrev, handleNext }) {
                 <h2 className="ProjectModal__title">
                   {language === "fr"
                     ? modalContent.content.frTitle
-                    : modalContent.enTitle}
+                    : modalContent.content.enTitle}
                 </h2>
+
+                {/* PROJECT DESCRIPTION */}
+                <p className="ProjectModal__description">
+                  {language === "fr" ? modalContent.content.frDescription : modalContent.content.enDescription}
+                </p>
+
                 <h3 className="ProjectModal__skillsTitle">
                   {language === "fr" ? "Compétences:" : "Skills:"}
                 </h3>

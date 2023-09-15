@@ -70,6 +70,12 @@
     font-weight: 400;
     padding-top: clamp(0.5rem, 2vh, 1rem);
   }
+  &__description {
+    font-size: clamp(0.9rem, 2vw, 1.1rem); 
+    margin-top: clamp(0.5rem, 1vh, 0.7rem); 
+    line-height: 1.4;
+    padding: 0.5rem 0;
+  }
   &__skillsTitle {
     margin: clamp(0.5rem, 2vw, 1.2rem);
     font-size: clamp(0.8rem, 2vw, 1.4rem);
@@ -199,11 +205,11 @@
     &__gitPageIcon {
       margin: 0;
     }
-    &__githubIcon span, &__gitPageIcon span {
+    &__githubIcon span,
+    &__gitPageIcon span {
       font-size: clamp(0.8rem, 3vw, 2rem);
       margin: 0.5rem 0.5rem;
     }
-     
   }
   @include laptop-landscape {
     width: 70%;
@@ -212,7 +218,7 @@
       display: none;
     }
     &__links {
-      display: flex; 
+      display: flex;
     }
   }
 }
