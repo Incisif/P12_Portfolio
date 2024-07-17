@@ -5,7 +5,7 @@ import sophie_bluel from "../assets/projets/sophie_bluel.webp";
 import kasa from "../assets/projets/kasa.webp";
 import events from "../assets/projets/77events.webp";
 import argentBank from "../assets/projets/argentBank.webp";
-import booki from "../assets/projets/booki.webp";
+import booki from "../assets/projets/Booki.webp";
 
 const projects = [
   {

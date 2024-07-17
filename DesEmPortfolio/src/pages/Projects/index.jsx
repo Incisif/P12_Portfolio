@@ -21,12 +21,6 @@ function Projects() {
   const darkModeClass = darkMode ? "project--dark" : "project--light";
   const modalBlurClass = isModalOpen ? "project--blur" : "";
   const classes = `project ${darkModeClass} ${modalBlurClass}`;
-  const translations = {
-    comingSoon: {
-      en: "Comming soon",
-      fr: "Bientôt disponible",
-    },
-  };
 
   // EFFECTS
   useEffect(() => {
@@ -94,6 +88,22 @@ function Projects() {
           {language === "fr" ? "Projets" : "Projects"}
         </h1>
         <h2 className="project__subtitle">
+          {language === "fr" ? "Personnels" : "Personal"}
+        </h2>
+        <div className="card__container">
+          {dataPersonalProjects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              imagePath={project.imagePath}
+              alt={project.alt}
+              className={showCards.includes(project.id) ? "show" : ""}
+              bannerText={language === "fr" ? project.frBanner : project.enBanner}
+              theme={darkMode ? "dark" : "light"}
+              onClick={() => handleCardClick(project, index)}
+            />
+          ))}
+        </div>
+        <h2 className="project__subtitle">
           {language === "fr" ? "Scolaires" : "School"}
         </h2>
         <div className="card__container">
@@ -104,21 +114,6 @@ function Projects() {
               alt={project.alt}
               className={showCards.includes(project.id) ? "show" : ""}
               onClick={() => handleCardClick(project, index)}
-            />
-          ))}
-        </div>
-        <h2 className="project__subtitle">
-          {language === "fr" ? "Personnels" : "Personal"}
-        </h2>
-        <div className="card__container">
-          {dataPersonalProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              imagePath={project.imagePath}
-              alt={project.alt}
-              className={showCards.includes(project.id) ? "show" : ""}
-              bannerText={translations.comingSoon[language]}
-              theme={darkMode ? "dark" : "light"}
             />
           ))}
         </div>
