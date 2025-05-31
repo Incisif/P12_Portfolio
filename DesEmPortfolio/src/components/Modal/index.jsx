@@ -8,7 +8,7 @@ import { faGlobe, faCheck, faX } from "@fortawesome/free-solid-svg-icons";
 import { selectLanguage } from "../../features/languageSlice";
 
 // MODAL COMPONENT
-function Modal({ handlePrev, handleNext }) {
+function Modal() {
   const dispatch = useDispatch();
 
   // REDUX SELECTORS
@@ -60,15 +60,17 @@ function Modal({ handlePrev, handleNext }) {
         {modalContent && (
           <div className="ProjectModal__content">
             {/* NAVIGATION AREAS */}
-            <div className="leftClickableArea" onClick={handlePrev}></div>
+            
 
             <div className="ProjectModal__mainContent">
               {/* IMAGE CONTENT */}
+              <a href={modalContent.content.gitPageLink} target="_blank" rel="noreferrer" >
               <img
                 className="ProjectModal__img"
                 src={modalContent.content.imagePath}
                 alt={modalContent.content.alt}
               />
+              </a>
 
               {/* TEXTUAL CONTENT */}
               <div className="ProjectModal__text-container">
@@ -128,7 +130,6 @@ function Modal({ handlePrev, handleNext }) {
               </div>
             </div>
 
-            <div className="rightClickableArea" onClick={handleNext}></div>
           </div>
         )}
       </div>
