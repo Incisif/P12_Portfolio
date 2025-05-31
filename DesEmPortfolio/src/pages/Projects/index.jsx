@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import dataProjects from "../../data/dataProjects";
-import dataPersonalProjects from "../../data/dataPersonnalProjects";
 import ProjectCard from "../../components/ProjectCard";
 import ProjectModal from "../../components/Modal";
 import { selectLanguage } from "../../features/languageSlice";
@@ -87,25 +86,7 @@ function Projects() {
         <h1 className="project__title">
           {language === "fr" ? "Projets" : "Projects"}
         </h1>
-        <h2 className="project__subtitle">
-          {language === "fr" ? "Personnels" : "Personal"}
-        </h2>
-        <div className="card__container">
-          {dataPersonalProjects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              imagePath={project.imagePath}
-              alt={project.alt}
-              className={showCards.includes(project.id) ? "show" : ""}
-              bannerText={language === "fr" ? project.frBanner : project.enBanner}
-              theme={darkMode ? "dark" : "light"}
-              onClick={() => handleCardClick(project, index)}
-            />
-          ))}
-        </div>
-        <h2 className="project__subtitle">
-          {language === "fr" ? "Scolaires" : "School"}
-        </h2>
+
         <div className="card__container">
           {dataProjects.map((project, index) => (
             <ProjectCard
@@ -114,6 +95,8 @@ function Projects() {
               alt={project.alt}
               className={showCards.includes(project.id) ? "show" : ""}
               onClick={() => handleCardClick(project, index)}
+              bannerText={language === "fr" ? project.frBanner : project.enBanner}
+              theme={darkMode ? "dark" : "light"}
             />
           ))}
         </div>
