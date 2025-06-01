@@ -306,12 +306,19 @@ table {
   margin-top: clamp(1rem, 2vh, 1.2rem);
 }
 .ProjectModal__img {
-  width: 100%;
-  height: 20vh;
+  width: 99%;
+  height: 30vh;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   align-self: center;
+}
+.ProjectModal__img-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .ProjectModal__title {
   font-size: clamp(1.5rem, 3vw, 1.7rem);
@@ -358,6 +365,28 @@ table {
   margin-right: 1.2rem;
   font-size: 1.5rem;
   fill: rgb(245, 245, 245);
+}
+.ProjectModal__nav {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  background-color: rgb(201, 201, 201);
+  transition: ease 0.3s;
+}
+.ProjectModal__nav:hover {
+  background-color: rgb(249, 198, 16);
+}
+.ProjectModal__nav--left {
+  left: 4px;
+  transform: translateY(-50%);
+}
+.ProjectModal__nav--right {
+  right: 4px;
+  transform: translateY(-50%);
 }
 .ProjectModal .container {
   border-bottom: 1px solid rgb(245, 245, 245);
@@ -453,7 +482,7 @@ table {
   .ProjectModal__githubIcon, .ProjectModal__gitPageIcon {
     margin: 0;
   }
-  .ProjectModal__githubIcon span, .ProjectModal__gitPageIcon span {
+  .ProjectModal__githubIcon span {
     font-size: clamp(0.8rem, 3vw, 2rem);
     margin: 0.5rem 0.5rem;
   }

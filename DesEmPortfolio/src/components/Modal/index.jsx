@@ -1,14 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
-import { closeModal } from "../../features/modalSlice";
 import PropTypes from "prop-types";
+import { closeModal } from "../../features/modalSlice";
 import { useEffect, useRef, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCheck,
+  faX,
+  faArrowRight,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe, faCheck, faX } from "@fortawesome/free-solid-svg-icons";
+
 import { selectLanguage } from "../../features/languageSlice";
 
 // MODAL COMPONENT
-function Modal() {
+function Modal({ handlePrev, handleNext }) {
   const dispatch = useDispatch();
 
   // REDUX SELECTORS
@@ -46,11 +52,30 @@ function Modal() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [handleClose, isModalOpen]);
-  if(language === "en") console.log("modalContent", modalContent.content.enTitle)
+  if (language === "en")
+    console.log("modalContent", modalContent.content.enTitle);
 
   return (
     <div className={`ProjectModal__wrapper ${isModalOpen ? "is-open" : ""}`}>
       <div ref={modalRef} className={`ProjectModal ${modalModeClass}`}>
+        {/* NAVIGATION BUTTONS */}
+
+        <button
+          onClick={handleNext}
+          aria-label="Suivant"
+          className="ProjectModal__nav ProjectModal__nav--right"
+        >
+          <FontAwesomeIcon icon={faArrowRight} label="check" />
+        </button>
+
+        <button
+          onClick={handlePrev}
+          aria-label="Précédent"
+          className="ProjectModal__nav ProjectModal__nav--left"
+        >
+          <FontAwesomeIcon icon={faArrowLeft} label="check" />
+        </button>
+
         <div className="container">
           <button className="container__close" onClick={handleClose}>
             <FontAwesomeIcon className="close__icon" icon={faX} label="close" />
@@ -59,17 +84,19 @@ function Modal() {
 
         {modalContent && (
           <div className="ProjectModal__content">
-            {/* NAVIGATION AREAS */}
-            
-
             <div className="ProjectModal__mainContent">
               {/* IMAGE CONTENT */}
-              <a href={modalContent.content.gitPageLink} target="_blank" rel="noreferrer" >
-              <img
-                className="ProjectModal__img"
-                src={modalContent.content.imagePath}
-                alt={modalContent.content.alt}
-              />
+              <a
+                href={modalContent.content.gitPageLink}
+                target="_blank"
+                rel="noreferrer"
+                className="ProjectModal__img-link"
+              >
+                <img
+                  className="ProjectModal__img"
+                  src={modalContent.content.imagePath}
+                  alt={modalContent.content.alt}
+                />
               </a>
 
               {/* TEXTUAL CONTENT */}
@@ -82,7 +109,9 @@ function Modal() {
 
                 {/* PROJECT DESCRIPTION */}
                 <p className="ProjectModal__description">
-                  {language === "fr" ? modalContent.content.frDescription : modalContent.content.enDescription}
+                  {language === "fr"
+                    ? modalContent.content.frDescription
+                    : modalContent.content.enDescription}
                 </p>
 
                 <h3 className="ProjectModal__skillsTitle">
@@ -113,23 +142,15 @@ function Modal() {
                   <a
                     className="ProjectModal__githubIcon"
                     href={modalContent.content.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <FontAwesomeIcon icon={faGithub} label="github link" />
                     <span>GitHub</span>
                   </a>
                 )}
-                {modalContent.content.gitPageLink && (
-                  <a
-                    className="ProjectModal__gitPageIcon"
-                    href={modalContent.content.gitPageLink}
-                  >
-                    <FontAwesomeIcon icon={faGlobe} label="github pages link" />
-                    <span>GitHub Pages</span>
-                  </a>
-                )}
               </div>
             </div>
-
           </div>
         )}
       </div>
@@ -137,9 +158,7 @@ function Modal() {
   );
 }
 
-// PROP TYPES VALIDATION
 Modal.propTypes = {
-  children: PropTypes.node,
   handlePrev: PropTypes.func.isRequired,
   handleNext: PropTypes.func.isRequired,
 };
