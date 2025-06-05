@@ -28,13 +28,13 @@ function About() {
           <div className="about__textContainer">
             <p className="about__text">
               {language === "fr"
-                ? "Fasciné par l'esthétisme et l'informatique depuis toujours, j'ai saisi l'opportunité à 40 ans de reprendre mes études et de devenir intégrateur web. La fusion de la créativité artistique avec la technologie était mon appel."
-                : "Fascinated by aesthetics and computer science from a young age, I seized the opportunity at 40 to return to school and become a web integrator. The fusion of artistic creativity with technology was my calling."}
+                ? "Passionné par l’esthétisme et les technologies numériques, j’ai décidé à 40 ans de me reconvertir pour devenir développeur web. Ce choix m’a permis d’allier rigueur technique et sens du design au service de projets concrets."
+                : "Driven by a passion for aesthetics and digital technologies, I chose to retrain at the age of 40 to become a web developer. This decision allowed me to combine technical precision and design sensibility to serve real-world projects."}
             </p>
             <p className="about__text">
               {language === "fr"
-                ? "Aujourd'hui, je crée des sites web esthétiques et solides. Cette seconde carrière n'est pas seulement un métier pour moi, c'est ma vocation. Je suis prêt à vous aider à concrétiser vos rêves numériques."
-                : "Today, I create aesthetically pleasing and robust websites. This second career isn't just a job for me, it's my vocation. I'm ready to help you bring your digital dreams to life."}
+                ? "Aujourd’hui, je conçois et développe des sites web performants, modernes et adaptés aux besoins des clients. Mon objectif : transformer vos idées en solutions digitales fiables et efficaces."
+                : "Today, I design and develop modern, high-performance websites tailored to client needs. My goal: to turn your ideas into reliable and effective digital solutions."}
             </p>
           </div>
         </div>

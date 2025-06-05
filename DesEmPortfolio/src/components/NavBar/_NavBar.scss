@@ -35,6 +35,9 @@
 
   &__list {
     display: flex;
+    flex-direction: column; 
+    align-items: flex-end;
+    gap: 0.5rem;
   }
 
   // ITEM
@@ -42,12 +45,38 @@
     cursor: pointer;
     transition: transform 0.4s ease;
 
-    &:hover {
-      transform: translateX(-1rem);
-      a {
+    a {
+      display: inline-block;
+      font-variation-settings: 'wght' 100;
+      font-weight: 300; // ← Réserve l'espace maximum visuellement
+      color: inherit;
+
+      span {
+        display: inline-block;
+        font-variation-settings: 'wght' 100;
+        transition: font-variation-settings 0.2s ease, color 0.2s ease;
+        color: inherit;
+      }
+
+      &:hover span {
+        font-variation-settings: 'wght' 300;
         color: $gold;
       }
+
+      
+      span:nth-child(1) { transition-delay: 0s; }
+      span:nth-child(2) { transition-delay: 0.03s; }
+      span:nth-child(3) { transition-delay: 0.06s; }
+      span:nth-child(4) { transition-delay: 0.09s; }
+      span:nth-child(5) { transition-delay: 0.12s; }
+      span:nth-child(6) { transition-delay: 0.15s; }
+      span:nth-child(7) { transition-delay: 0.18s; }
+      span:nth-child(8) { transition-delay: 0.21s; }
+      span:nth-child(9) { transition-delay: 0.24s; }
+      span:nth-child(10) { transition-delay: 0.27s; }
     }
+
+   
   }
 
   // MEDIA QUERIES

@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectLanguage } from "../../features/languageSlice";
 
+// REDUX STATE SELECTORS
+const renderAnimatedText = (text) => [...text].map((char, i) => <span key={i}>{char}</span>);
+
 function NavBar() {
   // REDUX STATE SELECTORS
   const darkMode = useSelector((state) => state.darkMode.darkMode);
@@ -13,20 +16,26 @@ function NavBar() {
   // COMPONENT RENDER
   return (
     <nav className={`navBar ${backgroundColorClass}`}>
-      <ul className="navBar_list">
+      <ul className="navBar__list">
         <li className="navBar__item">
           <Link to="/projects">
-            {language === "fr" ? "Projets" : "Projects"}
+            {renderAnimatedText(language === "fr" ? "Projets" : "Projects")}
           </Link>
         </li>
         <li className="navBar__item">
-          <Link to="/formation">Formation</Link>
+          <Link to="/formation">
+            {renderAnimatedText("Formation")}
+          </Link>
         </li>
         <li className="navBar__item">
-          <Link to="/about">{language === "fr" ? "À propos" : "About"}</Link>
+          <Link to="/about">
+            {renderAnimatedText(language === "fr" ? "À propos" : "About")}
+          </Link>
         </li>
         <li className="navBar__item">
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">
+            {renderAnimatedText("Contact")}
+          </Link>
         </li>
       </ul>
     </nav>

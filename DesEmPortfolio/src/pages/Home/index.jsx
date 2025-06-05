@@ -51,8 +51,8 @@ function Home() {
           <div className="home__textWrapper">
             <h1 className="home__title">
               {language === "fr"
-                ? "Intégrateur Web junior"
-                : "Junior Web Developer"}
+                ? "Développeur Web"
+                : "Web Developer"}
             </h1>
           </div>
           <div className="portrait">
