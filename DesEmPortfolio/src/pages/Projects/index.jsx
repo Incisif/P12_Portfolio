@@ -8,7 +8,6 @@ import { selectLanguage } from "../../features/languageSlice";
 import { openModal } from "../../features/modalSlice";
 
 function Projects() {
-
   // STATES
   const [showCards, setShowCards] = useState([]);
   const isModalOpen = useSelector((state) => state.modal.isOpen);
@@ -23,60 +22,55 @@ function Projects() {
 
   // EFFECTS
   useEffect(() => {
-    document.title = 'Projets - Portfolio Desmortreux Emmanuel';
+    document.title = "Projets - Portfolio Desmortreux Emmanuel";
   }, []);
 
-  useEffect(() => {
-    dataProjects.forEach((project) => {
-      const delay = Math.random() * 1000;
+  // Helper function to show a card with delay
+  const showCardWithDelay = (project) => {
+    const delay = Math.random() * 1500;
+    setTimeout(() => {
+      setShowCards((prevShowCards) => [...prevShowCards, project.id]);
+    }, delay);
+  };
 
-      setTimeout(() => {
-        setShowCards((prevShowCards) => [...prevShowCards, project.id]);
-      }, delay);
-    });
+  useEffect(() => {
+    dataProjects.forEach(showCardWithDelay);
   }, []);
 
   // HANDLERS
+  const validProjects = dataProjects.filter(
+    (project) => !project.isPreviewOnly
+  );
+
   const dispatch = useDispatch();
 
-  const handleCardClick = (project, index) => {
+  const handleCardClick = (project) => {
+    const index = validProjects.findIndex((p) => p.id === project.id);
     dispatch(openModal({ content: project, index }));
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      dispatch(
-        openModal({
-          content: dataProjects[currentIndex - 1],
-          index: currentIndex - 1,
-        })
-      );
-    } else {
-      dispatch(
-        openModal({
-          content: dataProjects[dataProjects.length - 1],
-          index: dataProjects.length - 1,
-        })
-      );
-    }
+    const newIndex =
+      currentIndex > 0 ? currentIndex - 1 : validProjects.length - 1;
+
+    dispatch(
+      openModal({
+        content: validProjects[newIndex],
+        index: newIndex,
+      })
+    );
   };
 
   const handleNext = () => {
-    if (currentIndex < dataProjects.length - 1) {
-      dispatch(
-        openModal({
-          content: dataProjects[currentIndex + 1],
-          index: currentIndex + 1,
-        })
-      );
-    } else {
-      dispatch(
-        openModal({
-          content: dataProjects[0],
-          index: 0,
-        })
-      );
-    }
+    const newIndex =
+      currentIndex < validProjects.length - 1 ? currentIndex + 1 : 0;
+
+    dispatch(
+      openModal({
+        content: validProjects[newIndex],
+        index: newIndex,
+      })
+    );
   };
 
   // RENDER
@@ -88,14 +82,20 @@ function Projects() {
         </h1>
 
         <div className="card__container">
-          {dataProjects.map((project, index) => (
+          {dataProjects.map((project) => (
             <ProjectCard
               key={project.id}
               imagePath={project.imagePath}
               alt={project.alt}
               className={showCards.includes(project.id) ? "show" : ""}
-              onClick={() => handleCardClick(project, index)}
-              bannerText={language === "fr" ? project.frBanner : project.enBanner}
+              onClick={
+                !project.isPreviewOnly
+                  ? () => handleCardClick(project)
+                  : undefined
+              }
+              bannerText={
+                language === "fr" ? project.frBanner : project.enBanner
+              }
               theme={darkMode ? "dark" : "light"}
             />
           ))}

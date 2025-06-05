@@ -204,7 +204,8 @@ const projects = [
       "Green code development",
       "API route design for transactions",
     ],
-  },{
+  },
+  {
     id: 9,
     frTitle: "Intégration de Booki",
     enTitle: "Booki Integration",
@@ -223,10 +224,9 @@ const projects = [
       "Responsive Design",
     ],
   },
-  
-  
   {
     id: 11,
+    isPreviewOnly: true,
     frTitle: "",
     enTitle: "",
     imagePath: inComming3,
@@ -240,6 +240,7 @@ const projects = [
   },
   {
     id: 12,
+    isPreviewOnly: true,
     frTitle: "",
     enTitle: "",
     imagePath: inComming4,
@@ -252,4 +253,5 @@ const projects = [
     enBanner: "In Progress ...",
   },
 ];
+
 export default projects;
